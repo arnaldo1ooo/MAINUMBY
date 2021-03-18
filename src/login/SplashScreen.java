@@ -107,7 +107,7 @@ public class SplashScreen extends javax.swing.JFrame implements Runnable {
         lmCargando.setText("Cargando sistema...");
         lmCargando.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
-        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_syschool.png"))); // NOI18N
+        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoProductoSinFoto.png"))); // NOI18N
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);

@@ -916,8 +916,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblTituloDescripcion" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="txtDescripcionProducto" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
@@ -937,16 +936,17 @@
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                               <Component id="btnABMProducto" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="lblTituloDescripcion1" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                               <Component id="lblCodigo6" min="-2" pref="77" max="-2" attributes="0"/>
                           </Group>
                           <Component id="txtExistenciaActual" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="chFechaVencimiento" max="32767" attributes="0"/>
-                          <Component id="dcFechaVencimiento" alignment="0" max="32767" attributes="0"/>
+                          <Component id="dcFechaVencimiento" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                          <Component id="lblTituloDescripcion" min="-2" pref="140" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                       <Component id="lblImagen" min="-2" pref="136" max="-2" attributes="0"/>
@@ -978,18 +978,15 @@
                                           <Component id="txtIdentificadorProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
                                           <Component id="txtIdProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="chFechaVencimiento" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                              <Component id="dcFechaVencimiento" min="-2" pref="32" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="lblTituloDescripcion" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                              <Component id="txtDescripcionProducto" min="-2" pref="32" max="-2" attributes="0"/>
-                                          </Group>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblTituloDescripcion" pref="18" max="32767" attributes="0"/>
+                                          <Component id="lblTituloDescripcion1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="dcFechaVencimiento" min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="txtDescripcionProducto" min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   </Group>
@@ -1038,7 +1035,7 @@
                   <Font name="SansSerif" size="12" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="Descripci&#xf3;n del producto"/>
+                <Property name="text" type="java.lang.String" value="Fecha de vencimiento"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
@@ -1159,13 +1156,15 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="chFechaVencimiento">
+            <Component class="javax.swing.JLabel" name="lblTituloDescripcion1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Fecha de vencimiento"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="Descripci&#xf3;n del producto"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chFechaVencimientoActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1600,12 +1599,13 @@
                       <Font name="Tahoma" size="12" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="5" rowCount="0">
+                      <Table columnCount="6" rowCount="0">
                         <Column editable="false" title="ID producto" type="java.lang.Integer"/>
                         <Column editable="false" title="Descripcion" type="java.lang.String"/>
                         <Column editable="true" title="Cantidad (Unidades)" type="java.lang.Integer"/>
                         <Column editable="false" title="Costo (Unidad)" type="java.lang.Double"/>
                         <Column editable="false" title="SubTotal" type="java.lang.Double"/>
+                        <Column editable="false" title="Fecha de venc." type="java.lang.String"/>
                       </Table>
                     </Property>
                     <Property name="autoResizeMode" type="int" value="4"/>
