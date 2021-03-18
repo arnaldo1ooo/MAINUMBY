@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
 
 public class MetodosTXT {
 
-    static Logger log_historial = Logger.getLogger(MetodosTXT.class.getName());
+    private static Logger log_historial = Logger.getLogger(MetodosTXT.class.getName());
 
     public void FiltroCaracteresProhibidos(java.awt.event.KeyEvent evt) {
         // Verificar si la tecla pulsada no es '
@@ -82,13 +82,18 @@ public class MetodosTXT {
         }
     }
 
-    public void SoloNumeroDecimalKeyTyped(KeyEvent evt, JTextField ElTXT) {
+    public void SoloNumeroDecimalKeyTyped(KeyEvent evt, JTextField elTXT) {
         // Que solo entre numeros y .
         char teclaoprimida = evt.getKeyChar();
+
+        if (elTXT.getText().equals("") && teclaoprimida == ',') {
+            evt.consume();
+        }
+
         if ((teclaoprimida < '0' || teclaoprimida > '9')
                 && teclaoprimida != KeyEvent.VK_BACK_SPACE //Para que no entre espacio
                 && teclaoprimida != KeyEvent.VK_LEFT
-                && (teclaoprimida != ',' && teclaoprimida != '.' || ElTXT.getText().contains(",") == true)) { //Para que solo tenga una coma
+                && (teclaoprimida != ',' && teclaoprimida != '.' || elTXT.getText().contains(",") == true)) { //Para que solo tenga una coma
             evt.consume(); // ignorar el evento de teclado
         } else {
             if (teclaoprimida == '.') { //Si se oprime . lo reemplaza con ,
@@ -151,23 +156,23 @@ public class MetodosTXT {
 
     }
 
-    public Double StringAFormatoAmericano(String ElNumString) {
+    public Double StringAFormatoAmericano(String ElNumStringSudamerica) {               
         double ElNumDouble = 0.0;
 
-        if (ElNumString.equals("")) {
+        if (ElNumStringSudamerica.equals("")) {
             return ElNumDouble;
         }
 
         try {
-            if (ElNumString.endsWith(".0")) { //Si termina en .0 se borra esa parte
-                ElNumString = ElNumString.substring(0, ElNumString.length() - 2); //Borra los dos ultimos caracteres de la cadena
+            if (ElNumStringSudamerica.endsWith(".0")) { //Si termina en .0 se borra esa parte
+                ElNumStringSudamerica = ElNumStringSudamerica.substring(0, ElNumStringSudamerica.length() - 2); //Borra los dos ultimos caracteres de la cadena
             }
 
-            ElNumString = ElNumString.replace(".", ""); //Saca los puntos de miles
-            ElNumString = ElNumString.replace(",", "."); //Cambia la coma en punto
-            ElNumDouble = Double.parseDouble(ElNumString);
+            ElNumStringSudamerica = ElNumStringSudamerica.replace(".", ""); //Saca los puntos de miles
+            ElNumStringSudamerica = ElNumStringSudamerica.replace(",", "."); //Cambia la coma en punto
+            ElNumDouble = Double.parseDouble(ElNumStringSudamerica);
         } catch (NumberFormatException e) {
-            System.out.println("Error DoubleAFormatoAmericano valor: " + ElNumString + ", Error:" + e);
+            System.out.println("Error DoubleAFormatoAmericano valor: " + ElNumStringSudamerica + ", Error:" + e);
             /*log_historial.error("Error 1019 valor: " + ElNumero + ", Error:" + e);
             e.printStackTrace();*/
         } catch (NullPointerException e) {
@@ -209,15 +214,15 @@ public class MetodosTXT {
     }
 
     //Formatear double para que tenga solo dos numeros despues de la coma, y la coma es punto
-    public double DoubleATresDecimales(double ElDouble) {
+    public double DoubleCantidadDecimales(double ElDouble, int cantidadDecimales) {
         String elDoubleString = "";
-        Double elNumeroDouble = 0.000;
+        Double elNumeroDouble = 0.0;
         try {
-            elDoubleString = String.format("%.3f", ElDouble);
+            elDoubleString = String.format("%." + cantidadDecimales + "f", ElDouble);
             elDoubleString = elDoubleString.replace(",", ".");
             elNumeroDouble = Double.parseDouble(elDoubleString);
         } catch (NumberFormatException e) {
-            System.out.println("Error al poner DosDecimales al numero " + ElDouble + "   " + e);
+            System.out.println("Error al poner Cantidad Decimales al numero " + ElDouble + "   " + e);
             log_historial.error("Error 1020: " + e);
             e.printStackTrace();
         }
@@ -254,13 +259,13 @@ public class MetodosTXT {
             ElTXT.requestFocus();
             return false;
         } else {
-            String ElTXTString = ElTXT.getText().replace(".", "");
-            ElTXTString = ElTXT.getText().replace(",", ".");
+            /*String ElTXTString = ElTXT.getText().replace(".", "");
+            ElTXTString = ElTXT.getText().replace(",", ".");*/
             try {
-                double ElTXTDouble = Double.parseDouble(ElTXTString);
+                double ElTXTDouble = StringAFormatoAmericano(ElTXT.getText());
                 return true;
             } catch (NumberFormatException e) {
-                System.out.println("Error al validar double, no valido: " + ElTXTString);
+                System.out.println("Error al validar double, no valido: " + ElTXT.getText());
                 log_historial.error("Error 1022: " + e);
                 e.printStackTrace();
 

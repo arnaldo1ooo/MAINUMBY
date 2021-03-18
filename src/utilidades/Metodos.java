@@ -221,7 +221,7 @@ public class Metodos {
         try {
             if (LaTabla.getRowCount() > 0) {
                 for (int i = 0; i < LaTabla.getRowCount(); i++) {
-                    valor = metodostxt.StringAFormatoAmericano(LaTabla.getValueAt(i, LaColumna) + "");
+                    valor = Double.parseDouble(LaTabla.getValueAt(i, LaColumna) + "");
                     totalDouble = totalDouble + valor;
                 }
             }

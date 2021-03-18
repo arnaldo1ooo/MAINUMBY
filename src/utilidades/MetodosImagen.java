@@ -28,10 +28,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class MetodosImagen {
 
-    JFileChooser fc;
-    Boolean fcEstaCargado = false;
-
-    public void CargarImagenFC(JLabel ElLabelImagen) throws HeadlessException {
+    public File CargarImagenFC(JLabel ElLabelImagen) throws HeadlessException {
         CambiarLookSwing("windows"); //Cambiamos el look a Windows
 
         //Traducir
@@ -44,7 +41,7 @@ public class MetodosImagen {
 
         String userDir = System.getProperty("user.home"); //Directorio
         //JFileChooser fc = new JDirectoryChooser(); //Para directorios
-        fc = new JFileChooser(userDir + "/Desktop"); //Para archivos
+        JFileChooser fc = new JFileChooser(userDir + "/Desktop"); //Para archivos
 
         //Vista previa de imagenes del Fc
         VistaPreviaEnFC vistapreviaenfc = new VistaPreviaEnFC(); //File Chooser FC
@@ -59,71 +56,95 @@ public class MetodosImagen {
         if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             EscalarImagen(ElLabelImagen, fc, null);
             ElLabelImagen.setText("");
-            fcEstaCargado = true;
         } else {
             System.out.println("Cargar Imagen Cancelado");
-            fcEstaCargado = false;
         }
-        System.out.println("CargarImagenFC esta cargado " + fcEstaCargado);
         CambiarLookSwing("nimbus"); //Cambiamos el look a Nimbus otra vez
+        return fc.getSelectedFile();
     }
 
-    public void GuardarImagen(String rutadestinoimagen) {
+    public void GuardarImagen(String rutaDestinoImagen, File elFichero) {
         //Guardar nuevo imagen
-        //rutadestinoimagen = System.getProperty("user.dir") + rutadestinoimagen;
+        //rutaDestinoImagen = System.getProperty("user.dir") + rutaDestinoImagen; Para Guardar imagen interna
         try {
-            if (fcEstaCargado == true) { //Si la FileChooser tiene cargado un file
-                BufferedImage biImagen = ImageIO.read(fc.getSelectedFile());
-                //Obtener extension
-                String filenombre = fc.getSelectedFile().getName();
-                String fileextension = filenombre.substring(filenombre.lastIndexOf(".") + 1, fc.getSelectedFile().getName().length());
+            if (elFichero != null) { //Si el fichero no es vacio
+                BufferedImage biImagen;
+                ImageIcon icon;
+                Graphics2D g2;
+                String ficheroNombre, ficheroExtension;
+                biImagen = ImageIO.read(elFichero);
+                ficheroNombre = elFichero.getName();
+                ficheroExtension = ficheroNombre.substring(ficheroNombre.lastIndexOf(".") + 1, ficheroNombre.length()); //Obtener extension
 
-                ImageIcon icon = new ImageIcon(biImagen); //Convierte un BufferedImage a ImageIcon
-                Graphics2D g2 = biImagen.createGraphics();
+                icon = new ImageIcon(biImagen); //Convierte un BufferedImage a ImageIcon
+                g2 = biImagen.createGraphics();
                 g2.drawImage(icon.getImage(), 0, 0, icon.getImageObserver());
                 g2.dispose();
+
                 // Escribe la imagen
-                try {
-                    EliminarImagen(rutadestinoimagen + "." + fileextension); //Elimina la imagen por si ya existe, sucede en el caso de modificar imagen
-                    System.out.println("Guardando imagen... " + rutadestinoimagen + "." + fileextension);
-                    ImageIO.write(biImagen, fileextension, new File(rutadestinoimagen + "." + fileextension));
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(null, "Error al guardar imagen del producto... " + ex, "Error", JOptionPane.ERROR_MESSAGE);
-   
-                }
+                EliminarImagen(rutaDestinoImagen + "." + ficheroExtension); //Elimina la imagen por si ya existe, sucede en el caso de modificar imagen
+                System.out.println("Guardando imagen... " + rutaDestinoImagen + "." + ficheroExtension);
+                ImageIO.write(biImagen, ficheroExtension, new File(rutaDestinoImagen + "." + ficheroExtension)); //Guarda la imagen
             }
         } catch (HeadlessException | IOException e) {
             System.out.println("Error al Guardar Imagen del registro" + e);
+            e.printStackTrace();
         }
     }
 
-    public boolean LeerImagen(JLabel ElLabel, String rutaimagen) {
-        rutaimagen = System.getProperty("user.dir") + rutaimagen;
-        //ObtenerImagen Escalado al Label
+    public boolean LeerImagen(JLabel ElLabel, String rutaImagen, String rutaPorDefault) {
         String ruta;
-        File ficheroimagen;
+        File fileImagen;
+        ElLabel.setText("");
 
-        ruta = rutaimagen + ".png";
-        ficheroimagen = new File(ruta);
-        if (ficheroimagen.exists()) {
-            ElLabel.setText("");
+        //Probar si es ruta interna PNG
+        ruta = System.getProperty("user.dir") + rutaImagen + ".png";
+        fileImagen = new File(ruta);
+        if (fileImagen.exists()) {
             EscalarImagen(ElLabel, null, ruta);
             System.out.println("Se cargó la imagen: " + ruta);
             return true;
-        } else {
-            System.out.println("Error al LeerImagen, La imagen solicitada no existe o la ruta esta mal, revise la extension o ruta: " + ficheroimagen.getAbsolutePath());
         }
 
-        ruta = rutaimagen + ".jpg";
-        ficheroimagen = new File(ruta);
-        if (ficheroimagen.exists()) {
-            ElLabel.setText("");
+        //Probar si es ruta interna JPG
+        ruta = System.getProperty("user.dir") + rutaImagen + ".jpg";
+        fileImagen = new File(ruta);
+        if (fileImagen.exists()) {
             EscalarImagen(ElLabel, null, ruta);
             System.out.println("Se cargó la imagen: " + ruta);
             return true;
-        } else {
-            System.out.println("Error al LeerImagen, La imagen solicitada no existe o la ruta esta mal, revise la extension o ruta: " + ficheroimagen.getAbsolutePath());
         }
+
+        //Probar si es ruta externa PNG
+        ruta = rutaImagen + ".png";
+        fileImagen = new File(ruta);
+        if (fileImagen.exists()) {
+            EscalarImagen(ElLabel, null, ruta);
+            System.out.println("Se cargó la imagen externa: " + ruta);
+            return true;
+        }
+
+        //Probar si es ruta externa JPG
+        ruta = rutaImagen + ".jpg";
+        fileImagen = new File(ruta);
+        if (fileImagen.exists()) {
+            EscalarImagen(ElLabel, null, ruta);
+            System.out.println("Se cargó la imagen externa: " + ruta);
+            return true;
+        }
+
+        //Cargar imagen por Default
+        ruta = System.getProperty("user.dir") + rutaPorDefault;
+        fileImagen = new File(ruta);
+        if (fileImagen.exists()) {
+            EscalarImagen(ElLabel, null, ruta);
+            System.out.println("Se cargó la imagen por Default: " + ruta);
+            return false;
+        } else {
+            System.out.println("No se encontró imagen por defecto: " + rutaPorDefault);
+        }
+
+        System.out.println("No se encontró LeerImagen: " + rutaImagen);
         return false;
     }
 

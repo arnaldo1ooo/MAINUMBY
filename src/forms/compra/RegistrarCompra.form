@@ -55,7 +55,7 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="txtCantidadUnitariaCalculoPacks" max="32767" attributes="0"/>
                                           <Component id="lblCantidadAdquirida1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="lblCantidadAdquirida3" alignment="0" pref="109" max="32767" attributes="0"/>
+                                          <Component id="lblCantidadAdquirida3" alignment="0" max="32767" attributes="0"/>
                                           <Component id="spUnidadPorPackCalculoPacks" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -90,7 +90,7 @@
                               <Component id="btnAgregar" min="-2" pref="207" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -155,13 +155,13 @@
                   <Color blue="ff" green="99" red="0" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="18" style="1"/>
+                  <Font name="sansserif" size="14" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoGuardar.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoOk.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="AGREGAR"/>
                 <Property name="toolTipText" type="java.lang.String" value="Inserta el nuevo registro"/>
@@ -183,7 +183,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="Costo unitario"/>
+                <Property name="text" type="java.lang.String" value="Costo (Unidad)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCantidadAdquirida1">
@@ -195,7 +195,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="Cantidad unitaria"/>
+                <Property name="text" type="java.lang.String" value="Cantidad (Unidades)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCantidadAdquirida2">
@@ -388,7 +388,7 @@
     </Container>
     <Container class="javax.swing.JDialog" name="BuscadorProductos">
       <Properties>
-        <Property name="title" type="java.lang.String" value="Buscador de apoderados"/>
+        <Property name="title" type="java.lang.String" value="Buscador de productos"/>
         <Property name="modal" type="boolean" value="true"/>
         <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[760, 310]"/>
@@ -414,24 +414,28 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="scProductosBuscadorProductos" alignment="1" min="-2" pref="717" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="lbCantRegistrosBuscadorProductos" min="-2" pref="359" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel12" min="-2" pref="129" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtBuscarApoderado" min="-2" pref="276" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="lblBuscarCampoApoderado" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cbCampoBuscarBuscadorProductos" min="-2" pref="166" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel12" min="-2" pref="129" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtBuscarApoderado" min="-2" pref="276" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Component id="lblBuscarCampoApoderado" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbCampoBuscarBuscadorProductos" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="scProductosBuscadorProductos" alignment="1" min="-2" pref="709" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -622,7 +626,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jpPrincipal" alignment="0" pref="778" max="32767" attributes="0"/>
+          <Component id="jpPrincipal" min="-2" pref="706" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -642,20 +646,26 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="panel2" alignment="1" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
-                  <Component id="jpBotones1" min="-2" pref="433" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jpProductos" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jpDatosCompra" max="32767" attributes="0"/>
-                          <Component id="jpDatosProducto" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jpBotones1" min="-2" pref="433" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="lblTituloTotalCompra1" max="32767" attributes="0"/>
+                                  <Component id="txtTotalCompra" min="-2" pref="156" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblTotalMoneda" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jpDatosCompra" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jpDatosProducto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jpProductos" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -670,8 +680,16 @@
                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   <Component id="jpProductos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jpBotones1" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblTituloTotalCompra1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblTotalMoneda" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="txtTotalCompra" min="-2" max="-2" attributes="0"/>
+                      <Component id="jpBotones1" min="-2" pref="55" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="43" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -697,37 +715,39 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblIDProducto2" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtNumDoc" max="32767" attributes="0"/>
-                                  <Component id="lblIDProducto1" min="-2" pref="127" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cbTipoDocumento" max="32767" attributes="0"/>
-                                  <Component id="lblRucCedula1" pref="152" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblRucCedula" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="cbProveedor" min="-2" pref="205" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                      <Component id="btnProveedor1" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtNumDoc" max="32767" attributes="0"/>
+                                      <Component id="lblIDProducto1" min="-2" pref="127" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="cbTipoDocumento" max="32767" attributes="0"/>
+                                      <Component id="lblRucCedula1" min="-2" pref="152" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblRucCedula" min="-2" pref="201" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="cbProveedor" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="btnProveedor1" min="-2" pref="36" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="dcFechaCompra" max="32767" attributes="0"/>
+                                      <Component id="lblFechaCompra" min="-2" pref="154" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="dcFechaCompra" pref="154" max="32767" attributes="0"/>
-                                  <Component id="lblFechaCompra" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jScrollPane1" alignment="0" min="-2" pref="787" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="83" max="32767" attributes="0"/>
+                      <EmptySpace pref="29" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -751,8 +771,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblIDProducto2" min="-2" pref="16" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="38" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -896,49 +916,43 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblTituloDescripcion" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblTituloDescripcion" min="-2" pref="140" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="txtDescripcionProducto" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lblIDProducto" min="-2" pref="46" max="-2" attributes="0"/>
-                                          <Component id="txtIDProducto" min="-2" pref="73" max="-2" attributes="0"/>
+                                          <Component id="txtIdProducto" min="-2" pref="73" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lblCodigoProducto" min="-2" pref="120" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="txtCodigoProducto" max="32767" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btnBuscarProducto" min="-2" pref="36" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                              <Component id="btnABMProducto" min="-2" pref="36" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txtIdentificadorProducto" pref="258" max="32767" attributes="0"/>
+                                          <Component id="lblCodigoProducto" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtExistenciaActual" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                              <Component id="lblCodigo6" min="-2" pref="77" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnBuscarProducto" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Component id="btnABMProducto" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                              <Component id="lblCodigo6" min="-2" pref="77" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="txtExistenciaActual" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="chFechaVencimiento" max="32767" attributes="0"/>
+                          <Component id="dcFechaVencimiento" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                       <Component id="lblImagen" min="-2" pref="136" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnPantallaCompleta" min="-2" pref="39" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -948,30 +962,42 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="lblIDProducto" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblCodigoProducto" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblCodigo6" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="btnPantallaCompleta" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="lblIDProducto" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblCodigoProducto" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblCodigo6" alignment="2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="2" attributes="0">
+                                          <Component id="txtExistenciaActual" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="btnABMProducto" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="btnBuscarProducto" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="txtIdentificadorProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="txtIdProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="chFechaVencimiento" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                              <Component id="dcFechaVencimiento" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblTituloDescripcion" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                              <Component id="txtDescripcionProducto" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="txtExistenciaActual" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="btnABMProducto" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="btnBuscarProducto" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="txtCodigoProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="txtIDProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="lblTituloDescripcion" min="-2" pref="16" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                              <Component id="txtDescripcionProducto" min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lblImagen" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
-                                  <Component id="btnPantallaCompleta" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lblImagen" min="-2" pref="136" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -986,10 +1012,10 @@
                   <Font name="SansSerif" size="12" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="C&#xf3;digo del producto"/>
+                <Property name="text" type="java.lang.String" value="Identificador del producto (C&#xf3;digo)"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtCodigoProducto">
+            <Component class="javax.swing.JTextField" name="txtIdentificadorProducto">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="14" style="1"/>
@@ -999,8 +1025,8 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodigoProductoKeyReleased"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodigoProductoKeyTyped"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdentificadorProductoKeyReleased"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtIdentificadorProductoKeyTyped"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
@@ -1048,7 +1074,7 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtIDProducto">
+            <Component class="javax.swing.JTextField" name="txtIdProducto">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="0"/>
@@ -1103,8 +1129,11 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                    <EmptyBorder/>
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder bevelType="0">
+                      <Color PropertyName="highlight" blue="cc" green="cc" red="cc" type="rgb"/>
+                      <Color PropertyName="shadow" blue="99" green="99" red="99" type="rgb"/>
+                    </EtchetBorder>
                   </Border>
                 </Property>
               </Properties>
@@ -1118,6 +1147,24 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnABMProductoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="dcFechaVencimiento">
+              <Properties>
+                <Property name="maxSelectableDate" type="java.util.Date" editor="org.netbeans.beaninfo.editors.DateEditor">
+                  <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,117,116,105,108,46,68,97,116,101,104,106,-127,1,75,89,116,25,3,0,0,120,112,119,8,0,0,3,-69,45,104,-93,-128,120"/>
+                </Property>
+                <Property name="minSelectableDate" type="java.util.Date" editor="org.netbeans.beaninfo.editors.DateEditor">
+                  <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,117,116,105,108,46,68,97,116,101,104,106,-127,1,75,89,116,25,3,0,0,120,112,119,8,0,0,0,-110,-12,60,7,-128,120"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chFechaVencimiento">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fecha de vencimiento"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chFechaVencimientoActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -1137,42 +1184,28 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblCantidadAdquirida" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtCantidadUnitaria" min="-2" pref="105" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnPack" min="-2" pref="94" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtCostoUnitario" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
-                                  <Component id="lblPrecioUnitario" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblPrecioUnitario2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbMoneda" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="137" max="32767" attributes="0"/>
-                              <Component id="btnAnadir" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnQuitar" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="scPrincipal" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblTituloTotalCompra1" max="32767" attributes="0"/>
-                                  <Component id="txtTotalCompra" min="-2" pref="156" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lblTotalMoneda" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblCantidadAdquirida" max="32767" attributes="0"/>
+                          <Component id="txtCantidadUnitaria" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnPack" min="-2" pref="94" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblCostoUnitario" max="32767" attributes="0"/>
+                          <Component id="txtCostoUnitario" pref="153" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblPrecioUnitario2" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbMoneda" min="-2" pref="109" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="128" max="32767" attributes="0"/>
+                      <Component id="btnAnadir" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnQuitar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1183,10 +1216,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
                           <Component id="lblCantidadAdquirida" alignment="2" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPrecioUnitario" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCostoUnitario" alignment="2" min="-2" max="-2" attributes="0"/>
                           <Component id="lblPrecioUnitario2" alignment="2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
                           <Component id="txtCantidadUnitaria" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="btnPack" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
@@ -1194,15 +1227,6 @@
                           <Component id="cbMoneda" alignment="2" min="-2" pref="37" max="-2" attributes="0"/>
                           <Component id="btnAnadir" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="btnQuitar" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                      <Component id="scPrincipal" min="-2" pref="123" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="lblTituloTotalCompra1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblTotalMoneda" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
-                          <Component id="txtTotalCompra" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -1257,13 +1281,13 @@
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCostoUnitarioKeyTyped"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblPrecioUnitario">
+            <Component class="javax.swing.JLabel" name="lblCostoUnitario">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="0"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="Costo unitario*"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="Costo (Unidad)*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCantidadUnitaria">
@@ -1278,6 +1302,7 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCantidadUnitariaActionPerformed"/>
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCantidadUnitariaKeyReleased"/>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCantidadUnitariaKeyTyped"/>
               </Events>
@@ -1287,100 +1312,8 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="0"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="Cantidad unitaria*"/>
-              </Properties>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="scPrincipal">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTable" name="tbPrincipal">
-                  <Properties>
-                    <Property name="autoCreateRowSorter" type="boolean" value="true"/>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tahoma" size="12" style="0"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="6" rowCount="0">
-                        <Column editable="false" title="ID" type="java.lang.Integer"/>
-                        <Column editable="false" title="Codigo del producto" type="java.lang.String"/>
-                        <Column editable="false" title="Descripcion" type="java.lang.String"/>
-                        <Column editable="true" title="Cantidad" type="java.lang.Integer"/>
-                        <Column editable="false" title="Costo unitario" type="java.lang.Double"/>
-                        <Column editable="false" title="SubTotal" type="java.lang.Double"/>
-                      </Table>
-                    </Property>
-                    <Property name="autoResizeMode" type="int" value="4"/>
-                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
-                    </Property>
-                    <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="99" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="opaque" type="boolean" value="false"/>
-                    <Property name="rowHeight" type="int" value="20"/>
-                    <Property name="selectionMode" type="int" value="0"/>
-                    <Property name="selectionModel" type="javax.swing.ListSelectionModel" editor="org.netbeans.modules.form.editors2.JTableSelectionModelEditor">
-                      <JTableSelectionModel selectionMode="0"/>
-                    </Property>
-                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                      <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbPrincipalMousePressed"/>
-                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tbPrincipalKeyPressed"/>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tbPrincipalKeyReleased"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable(){&#xa;    public boolean isCellEditable(int rowIndex, int colIndex) {&#xa;        return false; //Disallow the editing of any cell&#xa;    }&#xa;}"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="lblTituloTotalCompra1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="12" style="1"/>
-                </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="TOTAL DE LA COMPRA"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtTotalCompra">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="22" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="9a" red="0" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="0"/>
-                <Property name="focusable" type="boolean" value="false"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblTotalMoneda">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="14" style="1"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="Gs."/>
-                <Property name="horizontalTextPosition" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="Cantidad (Unidades)*"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbMoneda">
@@ -1401,7 +1334,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="0"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="Moneda"/>
               </Properties>
             </Component>
@@ -1581,6 +1514,128 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
               </Events>
             </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="lblTituloTotalCompra1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+            <Property name="text" type="java.lang.String" value="TOTAL DE LA COMPRA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtTotalCompra">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="sansserif" size="22" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="9a" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="4"/>
+            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTotalMoneda">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="14" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="2"/>
+            <Property name="text" type="java.lang.String" value="Gs."/>
+            <Property name="horizontalTextPosition" type="int" value="2"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="e9" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Detalle de la compra">
+                  <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </TitledBorder>
+              </Border>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="scDetalleCompra" alignment="1" pref="833" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="scDetalleCompra" min="-2" pref="100" max="-2" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="scDetalleCompra">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tbDetalleCompra">
+                  <Properties>
+                    <Property name="autoCreateRowSorter" type="boolean" value="true"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                        <LineBorder/>
+                      </Border>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="12" style="0"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="5" rowCount="0">
+                        <Column editable="false" title="ID producto" type="java.lang.Integer"/>
+                        <Column editable="false" title="Descripcion" type="java.lang.String"/>
+                        <Column editable="true" title="Cantidad (Unidades)" type="java.lang.Integer"/>
+                        <Column editable="false" title="Costo (Unidad)" type="java.lang.Double"/>
+                        <Column editable="false" title="SubTotal" type="java.lang.Double"/>
+                      </Table>
+                    </Property>
+                    <Property name="autoResizeMode" type="int" value="4"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Default Cursor"/>
+                    </Property>
+                    <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="cc" green="99" red="0" type="rgb"/>
+                    </Property>
+                    <Property name="opaque" type="boolean" value="false"/>
+                    <Property name="rowHeight" type="int" value="20"/>
+                    <Property name="selectionMode" type="int" value="0"/>
+                    <Property name="selectionModel" type="javax.swing.ListSelectionModel" editor="org.netbeans.modules.form.editors2.JTableSelectionModelEditor">
+                      <JTableSelectionModel selectionMode="0"/>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbDetalleCompraMousePressed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tbDetalleCompraKeyPressed"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tbDetalleCompraKeyReleased"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable(){&#xa;    public boolean isCellEditable(int rowIndex, int colIndex) {&#xa;        return false; //Disallow the editing of any cell&#xa;    }&#xa;}"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>

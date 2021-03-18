@@ -250,4 +250,21 @@ public class Conexion {
             return false;
         }
     }
+
+    public String ObtenerUltimoID(String consultasql) {
+        String ultimoId = "";
+        Conexion con = new Conexion();
+        try {
+            con = con.ObtenerRSSentencia(consultasql);
+            while (con.getResultSet().next()) {
+                ultimoId = con.getResultSet().getString(1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("No se pudo obtener el idultimo: " + ultimoId);
+            e.printStackTrace();
+        }
+        con.DesconectarBasedeDatos();
+        return ultimoId;
+    }
 }

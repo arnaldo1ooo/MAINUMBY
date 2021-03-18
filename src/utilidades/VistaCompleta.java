@@ -13,17 +13,18 @@ public class VistaCompleta extends javax.swing.JDialog {
 
     /**
      * Creates new form VistaCompleta
+     *
+     * @param rutaImagen
+     * @param rutaImagenDefecto
      */
-    public VistaCompleta(String rutaimagen) {
-        System.out.println("Form Padre " + this.getParent().getName());
+    public VistaCompleta(String rutaImagen, String rutaImagenDefecto) {
         initComponents();
 
         MetodosImagen metodosimagen = new MetodosImagen();
-        metodosimagen.LeerImagen(lbImagen, rutaimagen);
-        System.out.println("Se cargo la imagen a la VistaCompleta " + rutaimagen);
+        metodosimagen.LeerImagen(lbImagen, rutaImagen, rutaImagenDefecto);
+        System.out.println("Se cargo la imagen a la VistaCompleta " + rutaImagen);
 
-        this.setSize(this.getToolkit().getScreenSize());
-
+        //this.setSize(this.getToolkit().getScreenSize());
     }
 
     @SuppressWarnings("unchecked")
@@ -68,7 +69,7 @@ public class VistaCompleta extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @SuppressWarnings("override")
             public void run() {
-                VistaCompleta dialog = new VistaCompleta(null);
+                VistaCompleta dialog = new VistaCompleta(null, null);
 
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
