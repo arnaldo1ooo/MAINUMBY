@@ -101,51 +101,54 @@ public class SplashScreen extends javax.swing.JFrame implements Runnable {
         setUndecorated(true);
         setResizable(false);
 
-        pnPrincipal.setColorPrimario(new java.awt.Color(0, 51, 102));
+        pnPrincipal.setColorPrimario(new java.awt.Color(255, 255, 255));
+        pnPrincipal.setColorSecundario(new java.awt.Color(204, 204, 0));
 
+        lmCargando.setForeground(new java.awt.Color(0, 0, 0));
         lmCargando.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lmCargando.setText("Cargando sistema...");
+        lmCargando.setColorDeSombra(new java.awt.Color(255, 255, 255));
         lmCargando.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
 
-        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoProductoSinFoto.png"))); // NOI18N
+        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_mainumby.png"))); // NOI18N
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
         panelImage1Layout.setHorizontalGroup(
             panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 377, Short.MAX_VALUE)
+            .addGap(0, 210, Short.MAX_VALUE)
         );
         panelImage1Layout.setVerticalGroup(
             panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 162, Short.MAX_VALUE)
+            .addGap(0, 196, Short.MAX_VALUE)
         );
 
         rSProgressMaterial1.setForeground(new java.awt.Color(0, 204, 204));
         rSProgressMaterial1.setAnchoProgress(7);
 
         lbHora1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbHora1.setForeground(new java.awt.Color(255, 255, 255));
+        lbHora1.setForeground(new java.awt.Color(0, 0, 0));
         lbHora1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbHora1.setText("Versión del sistema:");
         lbHora1.setFocusable(false);
         lbHora1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         lbHora3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbHora3.setForeground(new java.awt.Color(255, 255, 255));
+        lbHora3.setForeground(new java.awt.Color(0, 0, 0));
         lbHora3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbHora3.setText("Versión de la BD:");
         lbHora3.setFocusable(false);
         lbHora3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         lblVersionBD.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblVersionBD.setForeground(new java.awt.Color(255, 255, 255));
+        lblVersionBD.setForeground(new java.awt.Color(0, 0, 0));
         lblVersionBD.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblVersionBD.setText("0");
         lblVersionBD.setFocusable(false);
         lblVersionBD.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         lbHora2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbHora2.setForeground(new java.awt.Color(255, 255, 255));
+        lbHora2.setForeground(new java.awt.Color(0, 0, 0));
         lbHora2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lbHora2.setText("1.1.");
         lbHora2.setFocusable(false);
@@ -166,20 +169,20 @@ public class SplashScreen extends javax.swing.JFrame implements Runnable {
                                 .addGap(251, 251, 251)
                                 .addComponent(rSProgressMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelCurves1Layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addComponent(panelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 92, Short.MAX_VALUE)))
+                                .addContainerGap()
+                                .addGroup(panelCurves1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lbHora1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbHora3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(panelCurves1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lbHora2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblVersionBD, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(panelCurves1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelCurves1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbHora1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbHora3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelCurves1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbHora2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblVersionBD, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(167, 167, 167)
+                .addComponent(panelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         panelCurves1Layout.setVerticalGroup(
             panelCurves1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,7 +193,7 @@ public class SplashScreen extends javax.swing.JFrame implements Runnable {
                 .addComponent(rSProgressMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCurves1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbHora2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbHora1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -198,7 +201,7 @@ public class SplashScreen extends javax.swing.JFrame implements Runnable {
                 .addGroup(panelCurves1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbHora3)
                     .addComponent(lblVersionBD))
-                .addGap(43, 43, 43))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout pnPrincipalLayout = new javax.swing.GroupLayout(pnPrincipal);

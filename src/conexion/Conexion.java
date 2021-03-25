@@ -197,6 +197,7 @@ public class Conexion {
                 System.out.println("Se esta ejecutando un update en ObtenerConsulta, cambie de metodo a EjecutarABM sentencia:" + sentencia + ", Error:" + e);
                 JOptionPane.showMessageDialog(null, "Se esta ejecutando un update en ObtenerConsulta, cambie de metodo a EjecutarABM");
             }
+            log_historial.debug("ObtenerRSSentencia: " + sentencia);
         } catch (NullPointerException e) {
             log_historial.error("Error 1026: " + e);
             e.printStackTrace();
@@ -209,7 +210,6 @@ public class Conexion {
         //Ejecuta consultas de Altas, Bajas y Modificaciones
         try {
             System.out.println("EjecutarABM: " + sentencia);
-            log_historial.debug("EjecutarABM: " + sentencia);
             connection = Conexion.ConectarBasedeDatos();
             st = connection.createStatement();
             st.executeUpdate(sentencia);
@@ -220,6 +220,7 @@ public class Conexion {
                 Toolkit.getDefaultToolkit().beep(); //BEEP
                 JOptionPane.showMessageDialog(null, "La operación se realizó correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
+            log_historial.debug("EjecutarABM: " + sentencia);
         } catch (SQLException ex) {
             log_historial.error("Error 1093: " + ex);
             ex.printStackTrace();
