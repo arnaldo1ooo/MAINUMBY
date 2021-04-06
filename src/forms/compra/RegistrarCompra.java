@@ -42,8 +42,8 @@ public final class RegistrarCompra extends javax.swing.JDialog {
     private DefaultTableModel tabmodelDetalleCompra;
     private DefaultTableModel tabmodelProductos;
     private final Color colorVerde = new Color(6, 147, 27);
-    private final Color colorRojo = new Color(206, 16, 45);
-    private final Color colorBlack = Color.BLACK;
+    private final Color colorAdvertencia = new Color(206, 16, 45);
+    private final Color colorTitulos = Color.BLACK;
     private final String rutaFotoProducto = "C:\\MAINUMBY\\productos\\imagenes\\";
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
 
@@ -813,7 +813,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
 
         lblCodigoProducto.setFont(new java.awt.Font("Doppio One", 1, 12)); // NOI18N
         lblCodigoProducto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblCodigoProducto.setText("Identificador del producto (Código)");
+        lblCodigoProducto.setText("Id del producto");
 
         txtIdentificadorProducto.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtIdentificadorProducto.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -850,7 +850,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
 
         lblIDProducto.setFont(new java.awt.Font("Doppio One", 1, 12)); // NOI18N
         lblIDProducto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblIDProducto.setText("ID");
+        lblIDProducto.setText("Código");
 
         btnBuscarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoBuscar.png"))); // NOI18N
         btnBuscarProducto.setToolTipText("Buscador de productos");
@@ -896,22 +896,25 @@ public final class RegistrarCompra extends javax.swing.JDialog {
             jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpDatosProductoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtDescripcionProducto, javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpDatosProductoLayout.createSequentialGroup()
-                        .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblIDProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIdentificadorProducto)
-                            .addComponent(lblCodigoProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblTituloDescripcion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(2, 2, 2)
-                .addComponent(btnABMProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jpDatosProductoLayout.createSequentialGroup()
+                                .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblIDProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(28, 28, 28)
+                                .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblCodigoProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                                    .addComponent(txtIdentificadorProducto))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblTituloDescripcion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(2, 2, 2)
+                        .addComponent(btnABMProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(txtDescripcionProducto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpDatosProductoLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
@@ -946,11 +949,11 @@ public final class RegistrarCompra extends javax.swing.JDialog {
                                     .addComponent(txtIdentificadorProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblTituloDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                                .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                                    .addComponent(lblTituloDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(lblTituloDescripcion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(1, 1, 1)
-                                .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jpDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                     .addComponent(dcFechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtDescripcionProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(13, 13, 13))))
@@ -1309,7 +1312,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
                     .addComponent(lblTotalMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jpBotones1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1320,7 +1323,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 706, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jpPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         getAccessibleContext().setAccessibleName("RegistrarCompra");
@@ -1458,12 +1461,12 @@ public final class RegistrarCompra extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCantidadUnitariaKeyTyped
 
     private void txtCantidadUnitariaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadUnitariaKeyReleased
-        metodostxt.TxtColorLabelKeyReleased(txtCantidadUnitaria, lblCantidadAdquirida, colorBlack);
+        metodostxt.TxtColorLabelKeyReleased(txtCantidadUnitaria, lblCantidadAdquirida, colorTitulos);
     }//GEN-LAST:event_txtCantidadUnitariaKeyReleased
 
     private void txtCostoUnitarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostoUnitarioKeyReleased
         txtCostoUnitario.setText(metodostxt.StringAFormatSudamericaKeyRelease(txtCostoUnitario.getText()));
-        metodostxt.TxtColorLabelKeyReleased(txtCostoUnitario, lblCostoUnitario, colorBlack);
+        metodostxt.TxtColorLabelKeyReleased(txtCostoUnitario, lblCostoUnitario, colorTitulos);
 
     }//GEN-LAST:event_txtCostoUnitarioKeyReleased
 
@@ -1492,7 +1495,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
     }//GEN-LAST:event_txtIdentificadorProductoKeyTyped
 
     private void txtIdentificadorProductoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdentificadorProductoKeyReleased
-        metodostxt.TxtColorLabelKeyReleased(txtIdentificadorProducto, lblCodigoProducto, colorBlack);
+        metodostxt.TxtColorLabelKeyReleased(txtIdentificadorProducto, lblCodigoProducto, colorTitulos);
 
         //Si se oprime espacio se entrara en la ventana de productos en donde se debe seleccionar el  producto
         if (evt.getKeyCode() == KeyEvent.VK_SPACE) {

@@ -49,3 +49,14 @@
 22/03/2021 10:03:31 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraDetalleAlta('12','1','25','1000.0',null)
 22/03/2021 14:23:10 ERROR [AWT-EventQueue-0] (Conexion.java:193) â Error 1092: java.sql.SQLSyntaxErrorException: Table 'mainumby.venta' doesn't exist
 22/03/2021 14:23:15 DEBUG [AWT-EventQueue-0] (Conexion.java:200) â ObtenerRSSentencia: SELECT MAX(ven_numventa) AS numultimaventa FROM venta
+25/03/2021 08:42:02 ERROR [AWT-EventQueue-0] (Conexion.java:193) â Error 1092: java.sql.SQLException: Incorrect integer value: 'null' for column 'codusuario' at row 1
+25/03/2021 08:42:06 DEBUG [AWT-EventQueue-0] (Conexion.java:200) â ObtenerRSSentencia: CALL SP_UsuarioRolConsulta('null','VENTA')
+05/04/2021 11:40:10 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ProductoModificar('3','52454242','SKOL 269ML','1','0','1','')
+05/04/2021 11:46:05 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ProductoModificar('3','52454242','SKOL 269ML','1','0','1','')
+05/04/2021 11:47:13 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ProductoAlta ('54422416','ITAIPAVA 269ML','1','0','1','')
+05/04/2021 11:51:27 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ProductoAlta ('54521515','BURGUESA 269ML','1','0','1','')
+05/04/2021 11:52:48 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ProductoModificar('5','54521515','BURGUESA 269ML','1','0','1','')
+05/04/2021 13:09:26 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraAlta('00000001','2021-04-05 13:09:26','3','12345','2','GUARANIES','26000.0','1','Prueba')
+05/04/2021 13:09:26 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraDetalleAlta('13','3','20','1300.0',null)
+05/04/2021 13:10:37 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraAlta('00000002','2021-04-05 13:10:37','3','123455','2','GUARANIES','45000.0','1','Prueba 2')
+05/04/2021 13:10:37 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraDetalleAlta('14','4','30','1500.0','2021-06-15')

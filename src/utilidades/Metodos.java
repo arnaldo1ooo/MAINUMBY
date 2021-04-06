@@ -214,7 +214,6 @@ public class Metodos {
     }
 
     public double SumarColumnaDouble(JTable LaTabla, int LaColumna) {
-        MetodosTXT metodostxt = new MetodosTXT();
         double valor;
         double totalDouble = 0;
 

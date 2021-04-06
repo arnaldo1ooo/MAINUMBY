@@ -87,6 +87,7 @@ public class MetodosCombo {
             con = con.ObtenerRSSentencia(consulta);
             while (con.getResultSet().next()) {
                 elCombo.addItem(new MetodosCombo(con.getResultSet().getInt(1), con.getResultSet().getString(2)));
+                
                 //Seleccionado por defecto
                 try {
                     if (codItemDefault == con.getResultSet().getInt(1) && codItemDefault >= 0) {
