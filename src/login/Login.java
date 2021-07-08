@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
 import utilidades.PlaceHolder;
 
 public class Login extends javax.swing.JFrame {
-
+//
     public static String codUsuario;
     public String nomapeUsuario;
     public static String alias;
