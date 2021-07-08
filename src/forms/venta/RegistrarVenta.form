@@ -703,7 +703,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="btnBuscarProducto" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="lblCodigoProducto" min="-2" pref="143" max="-2" attributes="0"/>
+                                  <Component id="lblCodIdProducto" min="-2" pref="143" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -768,7 +768,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="2" attributes="0">
                                           <Component id="lblIDProducto" alignment="2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblCodigoProducto" alignment="2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblCodIdProducto" alignment="2" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblExistencia" alignment="2" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
@@ -790,7 +790,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblCodigoProducto">
+            <Component class="javax.swing.JLabel" name="lblCodIdProducto">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Doppio One" size="12" style="1"/>
@@ -1015,14 +1015,11 @@
                           <Component id="lblDescuento1" alignment="0" min="-2" pref="136" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                              <Component id="lblCodigo10" min="-2" pref="139" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="cbMoneda" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="cbMoneda" max="32767" attributes="0"/>
+                          <Component id="lblCodigo10" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="102" max="32767" attributes="0"/>
+                      <EmptySpace pref="157" max="32767" attributes="0"/>
                       <Component id="btnAnadir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnQuitar" min="-2" max="-2" attributes="0"/>
@@ -1036,10 +1033,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="lblCantidad" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblCodigo10" alignment="2" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lblCantidad" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="2" attributes="0">
                                   <Component id="cbMoneda" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
@@ -1051,7 +1045,10 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lblDescuento1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblDescuento1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblCodigo10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                       <Component id="txtSubtotal" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
@@ -1076,7 +1073,7 @@
                   <Font name="sansserif" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoEliminar.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoEliminar20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Quitar"/>
                 <Property name="enabled" type="boolean" value="false"/>
@@ -1164,13 +1161,13 @@
                   <Font name="SansSerif" size="14" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="0"/>
                 <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtDescuentoFocusLost"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDescuentoActionPerformed"/>
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDescuentoKeyReleased"/>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDescuentoKeyTyped"/>

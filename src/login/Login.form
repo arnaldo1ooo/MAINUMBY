@@ -12,7 +12,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/iconos/Iconos20x20/IconoArchivo.png"/>
+              <Image iconType="3" name="/iconos/Iconos20x20/IconoArchivo20.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Archivo"/>
             <Property name="toolTipText" type="java.lang.String" value="Men&#xfa; archivo"/>
@@ -21,7 +21,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoSalir.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoSalir20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
@@ -34,7 +34,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/iconos/Iconos20x20/IconoOpcion.png"/>
+              <Image iconType="3" name="/iconos/Iconos20x20/IconoOpcion20.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Opciones"/>
             <Property name="toolTipText" type="java.lang.String" value="Menu Opciones"/>
@@ -43,7 +43,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/iconos/Iconos20x20/IconoAyuda.png"/>
+              <Image iconType="3" name="/iconos/Iconos20x20/IconoAyuda20.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ayuda"/>
             <Property name="toolTipText" type="java.lang.String" value="Menu Ayuda"/>
@@ -186,12 +186,18 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="panelNice1" min="-2" pref="149" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="2" attributes="0">
-                      <Component id="btnCambiarPass" alignment="2" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="btncancelar" alignment="2" min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="lblError" alignment="2" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="lblError" min="-2" pref="26" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                          <Component id="btncancelar" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="btnCambiarPass" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -214,7 +220,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/iconos/Iconos20x20/IconoCancelar.png"/>
+              <Image iconType="3" name="/iconos/Iconos20x20/IconoLimpiarCampos20.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Limpiar campos"/>
             <Property name="toolTipText" type="java.lang.String" value="Cancelar"/>
@@ -230,7 +236,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/iconos/Iconos20x20/IconoCambiarPass.png"/>
+              <Image iconType="3" name="/iconos/Iconos20x20/IconoCambiarPass20.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cambiar pass"/>
             <Property name="toolTipText" type="java.lang.String" value="Cambiar Contrase&#xf1;a"/>

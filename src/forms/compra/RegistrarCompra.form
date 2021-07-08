@@ -161,7 +161,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoOk.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoOk20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="AGREGAR"/>
                 <Property name="toolTipText" type="java.lang.String" value="Inserta el nuevo registro"/>
@@ -839,7 +839,7 @@
             <Component class="javax.swing.JButton" name="btnProveedor1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo20.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Nuevo proveedor"/>
               </Properties>
@@ -1094,7 +1094,7 @@
             <Component class="javax.swing.JButton" name="btnBuscarProducto">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoBuscar.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoBuscar20.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Buscador de productos"/>
               </Properties>
@@ -1111,7 +1111,7 @@
                   <Font name="sansserif" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoPantallacompleta.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoPantallacompleta20.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Ampliar vista de Imagen del producto"/>
               </Properties>
@@ -1138,7 +1138,7 @@
             <Component class="javax.swing.JButton" name="btnABMProducto">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo20.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Abre la ventana de productos"/>
               </Properties>
@@ -1239,7 +1239,7 @@
                   <Font name="sansserif" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoEliminar.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoEliminar20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Quitar"/>
                 <Property name="enabled" type="boolean" value="false"/>
@@ -1254,7 +1254,7 @@
                   <Font name="sansserif" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Agregar"/>
               </Properties>
@@ -1343,7 +1343,7 @@
                   <Font name="sansserif" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pack"/>
                 <Property name="enabled" type="boolean" value="false"/>
@@ -1479,7 +1479,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoGuardar.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoGuardar20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar compra"/>
                 <Property name="toolTipText" type="java.lang.String" value="Inserta el nuevo registro"/>
@@ -1504,7 +1504,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoCancelar.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoCancelar20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar campos"/>
                 <Property name="toolTipText" type="java.lang.String" value="Cancela la acci&#xf3;n"/>

@@ -745,7 +745,7 @@
                       <Font name="sansserif" size="12" style="1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/iconos/Iconos20x20/IconoPantallacompleta.png"/>
+                      <Image iconType="3" name="/iconos/Iconos20x20/IconoPantallacompleta20.png"/>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="Ampliar vista de Imagen del producto"/>
                   </Properties>
@@ -956,7 +956,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoGuardar.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoGuardar20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Guardar"/>
                 <Property name="toolTipText" type="java.lang.String" value="Inserta el nuevo registro"/>
@@ -982,7 +982,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoCancelar.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoCancelar20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
                 <Property name="toolTipText" type="java.lang.String" value="Cancela la acci&#xf3;n"/>

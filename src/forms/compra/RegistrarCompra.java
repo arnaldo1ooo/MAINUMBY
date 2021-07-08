@@ -334,7 +334,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         btnAgregar.setBackground(new java.awt.Color(0, 153, 255));
         btnAgregar.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoOk.png"))); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoOk20.png"))); // NOI18N
         btnAgregar.setText("AGREGAR");
         btnAgregar.setToolTipText("Inserta el nuevo registro");
         btnAgregar.setPreferredSize(new java.awt.Dimension(128, 36));
@@ -734,7 +734,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         lblIDProducto1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblIDProducto1.setText("N° del documento");
 
-        btnProveedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo.png"))); // NOI18N
+        btnProveedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo20.png"))); // NOI18N
         btnProveedor1.setToolTipText("Nuevo proveedor");
         btnProveedor1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -852,7 +852,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         lblIDProducto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblIDProducto.setText("Código");
 
-        btnBuscarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoBuscar.png"))); // NOI18N
+        btnBuscarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoBuscar20.png"))); // NOI18N
         btnBuscarProducto.setToolTipText("Buscador de productos");
         btnBuscarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -862,7 +862,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
 
         btnPantallaCompleta.setBackground(new java.awt.Color(0, 255, 255));
         btnPantallaCompleta.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        btnPantallaCompleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoPantallacompleta.png"))); // NOI18N
+        btnPantallaCompleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoPantallacompleta20.png"))); // NOI18N
         btnPantallaCompleta.setToolTipText("Ampliar vista de Imagen del producto");
         btnPantallaCompleta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -874,7 +874,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         lblImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblImagen.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(153, 153, 153)));
 
-        btnABMProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo.png"))); // NOI18N
+        btnABMProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo20.png"))); // NOI18N
         btnABMProducto.setToolTipText("Abre la ventana de productos");
         btnABMProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -967,7 +967,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         jpProductos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnQuitar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        btnQuitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoEliminar.png"))); // NOI18N
+        btnQuitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoEliminar20.png"))); // NOI18N
         btnQuitar.setText("Quitar");
         btnQuitar.setEnabled(false);
         btnQuitar.addActionListener(new java.awt.event.ActionListener() {
@@ -977,7 +977,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         });
 
         btnAnadir.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        btnAnadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo.png"))); // NOI18N
+        btnAnadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo20.png"))); // NOI18N
         btnAnadir.setText("Agregar");
         btnAnadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1038,7 +1038,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         lblPrecioUnitario2.setText("Moneda");
 
         btnPack.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        btnPack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo.png"))); // NOI18N
+        btnPack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo20.png"))); // NOI18N
         btnPack.setText("Pack");
         btnPack.setEnabled(false);
         btnPack.addActionListener(new java.awt.event.ActionListener() {
@@ -1142,7 +1142,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         btnGuardar.setBackground(new java.awt.Color(0, 153, 255));
         btnGuardar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoGuardar.png"))); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoGuardar20.png"))); // NOI18N
         btnGuardar.setText("Registrar compra");
         btnGuardar.setToolTipText("Inserta el nuevo registro");
         btnGuardar.setPreferredSize(new java.awt.Dimension(128, 36));
@@ -1160,7 +1160,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         btnCancelar.setBackground(new java.awt.Color(255, 101, 101));
         btnCancelar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoCancelar.png"))); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoCancelar20.png"))); // NOI18N
         btnCancelar.setText("Limpiar campos");
         btnCancelar.setToolTipText("Cancela la acción");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -1288,7 +1288,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblTotalMoneda))
                     .addComponent(jpDatosCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpDatosProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 843, Short.MAX_VALUE)
+                    .addComponent(jpDatosProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE)
                     .addComponent(jpProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(11, Short.MAX_VALUE))

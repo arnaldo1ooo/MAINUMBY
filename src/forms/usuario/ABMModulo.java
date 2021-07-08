@@ -7,14 +7,9 @@ package forms.usuario;
 
 import conexion.Conexion;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.FocusTraversalPolicy;
 
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
@@ -31,9 +26,8 @@ public class ABMModulo extends javax.swing.JDialog {
     private Metodos metodos = new Metodos();
     private MetodosTXT metodostxt = new MetodosTXT();
     private DefaultTableModel modelTableModulos;
-    private Color colorVerde = new Color(6, 147, 27);
-    private Color colorRojo = new Color(206, 16, 45);
-    private Color colorGris = Color.GRAY;
+    private Color colorAdvertencia = new Color(206, 16, 45);
+    private Color colorTitulos = Color.GRAY;
 
     public ABMModulo(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
@@ -414,7 +408,7 @@ public class ABMModulo extends javax.swing.JDialog {
         btnGuardar.setBackground(new java.awt.Color(0, 153, 255));
         btnGuardar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoGuardar.png"))); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoGuardar20.png"))); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.setToolTipText("Inserta el nuevo registro");
         btnGuardar.setEnabled(false);
@@ -433,7 +427,7 @@ public class ABMModulo extends javax.swing.JDialog {
         btnCancelar.setBackground(new java.awt.Color(255, 138, 138));
         btnCancelar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoCancelar.png"))); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoCancelar20.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.setToolTipText("Cancela la acción");
         btnCancelar.setEnabled(false);
@@ -588,7 +582,7 @@ public class ABMModulo extends javax.swing.JDialog {
     }//GEN-LAST:event_txtDenominacionKeyTyped
 
     private void txtDenominacionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDenominacionKeyReleased
-        metodostxt.TxtColorLabelKeyReleased(txtDenominacion, lblNombre, colorGris);
+        metodostxt.TxtColorLabelKeyReleased(txtDenominacion, lblNombre, colorTitulos);
     }//GEN-LAST:event_txtDenominacionKeyReleased
 
     private void tbPrincipalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPrincipalKeyReleased

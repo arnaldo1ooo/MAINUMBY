@@ -57,31 +57,6 @@ public class SplashScreen extends javax.swing.JFrame implements Runnable {
         return versionBD;
     }
 
-    private Date FechaFinPeriodo() {
-        Date fechaFinPeriodo = new Date();
-        String[] diaMes;
-        String diaFinPeriodo;
-        String mesFinPeriodo;
-        String añoActual;
-        Calendar calendar = new java.util.GregorianCalendar();
-        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            con = con.ObtenerRSSentencia("SELECT conf_valor FROM configuracion WHERE conf_codigo = '3'");
-            while (con.getResultSet().next()) {
-                diaMes = con.getResultSet().getString("conf_valor").split("/");
-                diaFinPeriodo = diaMes[0];
-                mesFinPeriodo = diaMes[1];
-                añoActual = calendar.get(Calendar.YEAR) + "";
-                fechaFinPeriodo = formatoFecha.parse(diaFinPeriodo + "/" + mesFinPeriodo + "/" + añoActual);
-            }
-        } catch (SQLException | ParseException e) {
-            e.printStackTrace();
-        }
-        con.DesconectarBasedeDatos();
-        return fechaFinPeriodo;
-    }
-
-
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

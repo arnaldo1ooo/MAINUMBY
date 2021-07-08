@@ -36,13 +36,27 @@
             <MenuItem class="javax.swing.JMenuItem" name="meitRegistrarVenta">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar venta"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="meitRegistrarVentaActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator19">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="meitDeuda">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo20.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Saldar Deudas"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="meitDeudaActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -71,7 +85,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="meitRegistrarCompra">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Compra"/>
                 <Property name="enabled" type="boolean" value="false"/>
@@ -128,7 +142,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="meitRegistrarActualizacionStock">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoNuevo20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Actualizaci&#xf3;n de Stock"/>
                 <Property name="enabled" type="boolean" value="false"/>
@@ -695,7 +709,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/iconos/Iconos20x20/IconoUsuario.png"/>
+                  <Image iconType="3" name="/iconos/Iconos20x20/IconoUsuario20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Usuario:"/>
               </Properties>

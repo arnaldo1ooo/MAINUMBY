@@ -10,6 +10,7 @@ import forms.compra.RegistrarCompra;
 import forms.producto.ABMProducto;
 
 import forms.usuario.ABMModulo;
+import forms.venta.ABMCliente;
 import forms.venta.RegistrarVenta;
 
 import java.sql.SQLException;
@@ -71,6 +72,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
                     case "PROVEEDOR" -> {
                         meitProveedor.setEnabled(true);
+                    }
+
+                    case "CLIENTE" -> {
+                        btnCliente.setEnabled(true);
                     }
 
                     case "USUARIO" -> {
@@ -155,6 +160,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMenuBar1 = new javax.swing.JMenuBar();
         meVenta = new javax.swing.JMenu();
         meitRegistrarVenta = new javax.swing.JMenuItem();
+        jSeparator19 = new javax.swing.JPopupMenu.Separator();
+        meitDeuda = new javax.swing.JMenuItem();
         meCompra = new javax.swing.JMenu();
         meitRegistrarCompra = new javax.swing.JMenuItem();
         jSeparator17 = new javax.swing.JPopupMenu.Separator();
@@ -352,7 +359,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoUsuario.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoUsuario20.png"))); // NOI18N
         jLabel1.setText("Usuario:");
 
         lbAlias.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -493,7 +500,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         meVenta.setMinimumSize(new java.awt.Dimension(150, 70));
         meVenta.setPreferredSize(new java.awt.Dimension(150, 70));
 
-        meitRegistrarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo.png"))); // NOI18N
+        meitRegistrarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo20.png"))); // NOI18N
         meitRegistrarVenta.setText("Registrar venta");
         meitRegistrarVenta.setEnabled(false);
         meitRegistrarVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -502,6 +509,17 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             }
         });
         meVenta.add(meitRegistrarVenta);
+        meVenta.add(jSeparator19);
+
+        meitDeuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo20.png"))); // NOI18N
+        meitDeuda.setText("Saldar Deudas");
+        meitDeuda.setEnabled(false);
+        meitDeuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                meitDeudaActionPerformed(evt);
+            }
+        });
+        meVenta.add(meitDeuda);
 
         jMenuBar1.add(meVenta);
 
@@ -513,7 +531,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         meCompra.setMinimumSize(new java.awt.Dimension(150, 70));
         meCompra.setPreferredSize(new java.awt.Dimension(150, 70));
 
-        meitRegistrarCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo.png"))); // NOI18N
+        meitRegistrarCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo20.png"))); // NOI18N
         meitRegistrarCompra.setText("Registrar Compra");
         meitRegistrarCompra.setEnabled(false);
         meitRegistrarCompra.addActionListener(new java.awt.event.ActionListener() {
@@ -553,7 +571,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         meProducto.add(meiCategoria);
         meProducto.add(jSeparator14);
 
-        meitRegistrarActualizacionStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo.png"))); // NOI18N
+        meitRegistrarActualizacionStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoNuevo20.png"))); // NOI18N
         meitRegistrarActualizacionStock.setText("Actualización de Stock");
         meitRegistrarActualizacionStock.setEnabled(false);
         meitRegistrarActualizacionStock.addActionListener(new java.awt.event.ActionListener() {
@@ -730,9 +748,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        /*ABMCliente abmcliente = new ABMCliente(this, true);
+        ABMCliente abmcliente = new ABMCliente(this, true);
         abmcliente.setLocationRelativeTo(this); //Centrar
-        abmcliente.setVisible(true);*/
+        abmcliente.setVisible(true);
     }//GEN-LAST:event_btnClienteActionPerformed
 
     private void btnAplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAplicacionActionPerformed
@@ -791,12 +809,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         registrarcompra.setVisible(true);
     }//GEN-LAST:event_meitRegistrarActualizacionStockActionPerformed
 
+    private void meitDeudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meitDeudaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_meitDeudaActionPerformed
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -807,92 +824,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        });*/
     }
 
     public void run() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
         Thread current = Thread.currentThread();
         while (current == hilo) {
             ObtenerFechayHora();
@@ -920,6 +854,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPopupMenu.Separator jSeparator14;
     private javax.swing.JPopupMenu.Separator jSeparator17;
     private javax.swing.JPopupMenu.Separator jSeparator18;
+    private javax.swing.JPopupMenu.Separator jSeparator19;
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JLabel lbAlias;
@@ -937,6 +872,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenu meVenta;
     private javax.swing.JMenuItem meiCategoria;
     private javax.swing.JMenuItem meiReportePlanilla;
+    private javax.swing.JMenuItem meitDeuda;
     private javax.swing.JMenuItem meitModulo;
     private javax.swing.JMenuItem meitPerfil;
     private javax.swing.JMenuItem meitProveedor;

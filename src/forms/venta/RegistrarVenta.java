@@ -13,9 +13,7 @@ import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -42,9 +40,9 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
     private DefaultTableModel tabmodelDetalleVenta;
     private DefaultTableModel tabmodelProductos;
-    private Color colorAdvertencia = Color.RED;
-    private Color colorTitulos = Color.BLACK;
-    private int advertenciaDeStock = 5;
+    private final Color colorAdvertencia = Color.RED;
+    private final Color colorTitulos = Color.BLACK;
+    private final int advertenciaDeStock = 5;
 
     public RegistrarVenta(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
@@ -79,9 +77,9 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     public void RegistroNuevo() {
         //Registra la venta
         if (ComprobarCamposVenta() == true) {
-            String numVenta, fechaVenta, horaVenta, numDoc, moneda, obs;
+            String numVenta, fechaVenta, horaVenta, numDoc, moneda, obs, deuda;
             int idvendedor, idcliente, tipoDoc, idusuario;
-            Double importe, totalVenta;
+            Double importe, totalVenta, montoDeuda;
 
             numVenta = lblNumVenta.getText();
 
@@ -97,17 +95,25 @@ public final class RegistrarVenta extends javax.swing.JDialog {
             numDoc = txtNumDoc.getText();
             moneda = cbMoneda.getSelectedItem().toString();
             importe = metodostxt.StringAFormatoAmericano(txtImporte.getText());
-            totalVenta = metodostxt.StringAFormatoAmericano(txtImporte.getText());
+            totalVenta = metodostxt.StringAFormatoAmericano(txtTotalVenta.getText());
             idusuario = Integer.parseInt(codUsuario);
             obs = taObs.getText();
+
+            if (importe < totalVenta) {
+                deuda = "SI";
+                montoDeuda = totalVenta - importe;
+            } else {
+                deuda = "NO";
+                montoDeuda = 0.0;
+            }
 
             int confirmado = JOptionPane.showConfirmDialog(this, "¿Esta seguro de crear esta nueva venta?", "Confirmación", JOptionPane.YES_OPTION);
             if (JOptionPane.YES_OPTION == confirmado) {
                 try {
                     //Registrar nueva venta
-                    String sentencia = "CALL SP_VentaAlta('" + numVenta + "','" + fechaVenta + idvendedor + "','"
-                            + idcliente + "','" + tipoDoc + "','" + numDoc + "','" + moneda + "','" + importe + "','"
-                            + totalVenta + "','" + idusuario + "','" + obs + "')";
+                    String sentencia = "CALL SP_VentaAlta('" + numVenta + "','" + fechaVenta + "','" + idvendedor + "','" + idcliente
+                            + "','" + tipoDoc + "','" + numDoc + "','" + moneda + "','" + importe + "','" + totalVenta
+                            + "','" + idusuario + "','" + obs + "','" + deuda + "','" + montoDeuda + "')";
                     con.EjecutarABM(sentencia, false);
 
                     //Obtener el id de la venta
@@ -166,6 +172,8 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         txtCantidadUnitaria.setText("");
         cbMoneda.setSelectedItem("GUARANIES");
         txtTotalVenta.setText("0");
+        txtImporte.setText("");
+        txtVuelto.setText("");
 
         tabmodelDetalleVenta.setRowCount(0);
         tbDetalleVenta.setModel(tabmodelDetalleVenta);
@@ -174,6 +182,10 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     }
 
     private boolean ComprobarCamposVenta() {
+        double importe = metodostxt.StringAFormatoAmericano(txtImporte.getText());
+        double totalventa = metodostxt.StringAFormatoAmericano(txtTotalVenta.getText());
+        int idcliente = metodoscombo.ObtenerIDSelectCombo(cbCliente);
+
         if (cbVendedor.getSelectedIndex() == -1) {
             JOptionPane.showMessageDialog(this, "Seleccione el vendedor/a", "Advertencia", JOptionPane.WARNING_MESSAGE);
             cbVendedor.requestFocus();
@@ -198,11 +210,15 @@ public final class RegistrarVenta extends javax.swing.JDialog {
             return false;
         }
 
-        double importe = metodostxt.StringAFormatoAmericano(txtImporte.getText());
-        double totalventa = metodostxt.StringAFormatoAmericano(txtTotalVenta.getText());
-        if (totalventa > importe || txtImporte.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "El importe debe ser mayor al total de la venta", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        if (txtImporte.getText().equals("") || importe < 0) {
+            JOptionPane.showMessageDialog(this, "El importe no puede ser menor a 0 o vacio", "Advertencia", JOptionPane.WARNING_MESSAGE);
             txtImporte.requestFocus();
+            return false;
+        }
+
+        if (idcliente == 1 && importe < totalventa || importe == 0) { //Si va a realizar una venta con deuda y se selecciono cliente ocasional
+            JOptionPane.showMessageDialog(this, "Se va a realizar una venta con deuda, especifique el cliente", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            cbCliente.requestFocus();
             return false;
         }
 
@@ -210,7 +226,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     }
 
     private boolean ComprobarCamposProducto() {
-        if (metodostxt.ValidarCampoVacioTXT(txtCodIdProducto, lblCodigoProducto) == false) {
+        if (metodostxt.ValidarCampoVacioTXT(txtCodIdProducto, lblCodIdProducto) == false) {
             System.out.println("Validar CodigoProducto false");
             return false;
         } else {
@@ -244,7 +260,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         if (cantidad <= 0) {
             JOptionPane.showMessageDialog(this, "La cantidad no puede ser menor o igual a 0");
             txtCantidadUnitaria.requestFocus();
-            lblCantidad.setForeground(Color.RED);
+            lblCantidad.setForeground(colorAdvertencia);
             return false;
         }
 
@@ -252,8 +268,10 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         if (cantidad > stock) {
             JOptionPane.showMessageDialog(this, "No hay suficiente stock, el stock actual del producto es de " + stock);
             txtCantidadUnitaria.requestFocus();
-            txtCantidadUnitaria.setForeground(Color.RED);
+            txtCantidadUnitaria.setForeground(colorAdvertencia);
             return false;
+        } else {
+            txtCantidadUnitaria.setForeground(colorTitulos);
         }
 
         double descuento = metodostxt.StringAFormatoAmericano(txtDescuento.getText());
@@ -305,7 +323,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         taObs = new javax.swing.JTextArea();
         panelDatosProducto = new javax.swing.JPanel();
-        lblCodigoProducto = new javax.swing.JLabel();
+        lblCodIdProducto = new javax.swing.JLabel();
         txtCodIdProducto = new javax.swing.JTextField();
         lblTituloDescripcion = new javax.swing.JLabel();
         txtDescripcionProducto = new javax.swing.JTextField();
@@ -675,9 +693,9 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         panelDatosProducto.setBackground(new java.awt.Color(233, 255, 255));
         panelDatosProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Datos del producto"));
 
-        lblCodigoProducto.setFont(new java.awt.Font("Doppio One", 1, 12)); // NOI18N
-        lblCodigoProducto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblCodigoProducto.setText("Codigo Id del producto");
+        lblCodIdProducto.setFont(new java.awt.Font("Doppio One", 1, 12)); // NOI18N
+        lblCodIdProducto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblCodIdProducto.setText("Codigo Id del producto");
 
         txtCodIdProducto.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         txtCodIdProducto.setDisabledTextColor(new java.awt.Color(0, 0, 0));
@@ -787,7 +805,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                                 .addComponent(txtCodIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblCodigoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblCodIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(panelDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtExistenciaActual)
@@ -839,7 +857,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                             .addGroup(panelDatosProductoLayout.createSequentialGroup()
                                 .addGroup(panelDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                                     .addComponent(lblIDProducto)
-                                    .addComponent(lblCodigoProducto)
+                                    .addComponent(lblCodIdProducto)
                                     .addComponent(lblExistencia))
                                 .addGap(1, 1, 1)
                                 .addGroup(panelDatosProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -856,7 +874,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         jpProductos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnQuitar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        btnQuitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoEliminar.png"))); // NOI18N
+        btnQuitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoEliminar20.png"))); // NOI18N
         btnQuitar.setText("Quitar");
         btnQuitar.setEnabled(false);
         btnQuitar.addActionListener(new java.awt.event.ActionListener() {
@@ -909,9 +927,13 @@ public final class RegistrarVenta extends javax.swing.JDialog {
 
         txtDescuento.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         txtDescuento.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtDescuento.setText("0");
         txtDescuento.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtDescuento.setEnabled(false);
+        txtDescuento.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDescuentoFocusLost(evt);
+            }
+        });
         txtDescuento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDescuentoActionPerformed(evt);
@@ -967,12 +989,10 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                     .addComponent(txtSubtotal)
                     .addComponent(lblDescuento1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpProductosLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lblCodigo10, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cbMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGroup(jpProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cbMoneda, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCodigo10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
                 .addComponent(btnAnadir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnQuitar)
@@ -984,9 +1004,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jpProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpProductosLayout.createSequentialGroup()
-                        .addGroup(jpProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(lblCantidad)
-                            .addComponent(lblCodigo10))
+                        .addComponent(lblCantidad)
                         .addGap(1, 1, 1)
                         .addGroup(jpProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(cbMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -996,7 +1014,9 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                     .addGroup(jpProductosLayout.createSequentialGroup()
                         .addGroup(jpProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jpProductosLayout.createSequentialGroup()
-                                .addComponent(lblDescuento1)
+                                .addGroup(jpProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblDescuento1)
+                                    .addComponent(lblCodigo10))
                                 .addGap(1, 1, 1)
                                 .addComponent(txtSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jpProductosLayout.createSequentialGroup()
@@ -1336,6 +1356,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         txtCantidadUnitaria.setEnabled(false);
         txtDescuento.setText("");
         txtDescuento.setEnabled(false);
+        txtSubtotal.setText("");
     }
 
     private void tbDetalleVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbDetalleVentaMouseClicked
@@ -1350,22 +1371,26 @@ public final class RegistrarVenta extends javax.swing.JDialog {
 
     private void btnAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirActionPerformed
         if (ComprobarCamposProducto() == true) {
+            if (txtDescuento.getText().equals("")) {
+                txtDescuento.setText("0");
+            }
+
             try {
-                String codProducto, codIdProducto, descripcion;
+                String codProducto, descripcion;
                 int cantidad;
                 double descuento, subTotalNeto, SubTotalBruto;
 
                 codProducto = txtCodProducto.getText();
-                codIdProducto = txtCodIdProducto.getText();
                 descripcion = txtDescripcionProducto.getText();
                 cantidad = Integer.parseInt(txtCantidadUnitaria.getText());
                 descuento = metodostxt.StringAFormatoAmericano(txtDescuento.getText());
                 descuento = metodostxt.DoubleCantidadDecimales(descuento, 2);
                 subTotalNeto = metodostxt.StringAFormatoAmericano(txtSubtotal.getText());
                 subTotalNeto = metodostxt.DoubleCantidadDecimales(subTotalNeto, 2);
+
                 SubTotalBruto = descuento + subTotalNeto;
 
-                tabmodelDetalleVenta.addRow(new Object[]{codProducto, codIdProducto, descripcion, cantidad, descuento, SubTotalBruto, subTotalNeto});
+                tabmodelDetalleVenta.addRow(new Object[]{codProducto, descripcion, cantidad, descuento, SubTotalBruto, subTotalNeto});
 
                 SumarSubtotalNeto();
 
@@ -1401,7 +1426,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         //Suma la colmna subtotal
         double totalventa = metodos.SumarColumnaDouble(tbDetalleVenta, 5); //El 6 es la columna 5, comienza de 0
         totalventa = metodostxt.DoubleCantidadDecimales(totalventa, 2);
-        txtTotalVenta.setText(metodostxt.DoubleAFormatSudamerica(totalventa)); 
+        txtTotalVenta.setText(metodostxt.DoubleAFormatSudamerica(totalventa));
     }
 
     private void cbMonedaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbMonedaItemStateChanged
@@ -1430,7 +1455,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         double subtotal;
         if (txtPromocion.getText().equals("-")) {
             subtotal = cantidad * precioUnitario;
-            txtSubtotal.setText(subtotal + "");
+            txtSubtotal.setText(metodostxt.DoubleAFormatSudamerica(subtotal));
         } else {
             String[] promocion = (txtPromocion.getText()).replaceAll(" ", "").split("x");
             int cantidadPromocion = Integer.parseInt(promocion[0]);
@@ -1442,7 +1467,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                 txtSubtotal.setText(metodostxt.DoubleAFormatSudamerica(subtotal));
             } else {
                 if (cantidad < cantidadPromocion) { //Si cantidad es menor a la cantidad por promocion
-                    txtSubtotal.setText((cantidad * precioUnitario) + "");
+                    txtSubtotal.setText(metodostxt.DoubleAFormatSudamerica((cantidad * precioUnitario)));
                 }
                 if (cantidad > cantidadPromocion) { //Si cantidad es mayor a la cantidad por promocion
                     cantDivision = cantidad;
@@ -1508,7 +1533,9 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                 txtDescuento.setEnabled(true);
                 txtCantidadUnitaria.requestFocus();
 
-                txtCodIdProducto.setForeground(colorTitulos);
+                lblCodIdProducto.setForeground(colorTitulos);
+                lblExistencia.setForeground(colorTitulos);
+
                 return true;
             } else {
                 LimpiarProducto();
@@ -1527,6 +1554,8 @@ public final class RegistrarVenta extends javax.swing.JDialog {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         RegistroNuevo();
+        
+        TablaAllProducto(); //Actualiza el stock en busqueda producto
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnGuardarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnGuardarKeyPressed
@@ -1662,6 +1691,10 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSubtotalKeyTyped
 
+    private void txtDescuentoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDescuentoFocusLost
+
+    }//GEN-LAST:event_txtDescuentoFocusLost
+
     private double ObtenerUltimoPrecioCompra(String codigoproducto) {
         con = con.ObtenerRSSentencia("SELECT compro_costounitario AS ultimacostounitariocompra FROM compra_producto "
                 + "WHERE compro_producto = '" + codigoproducto + "' ORDER BY compro_costounitario DESC LIMIT 0,1");
@@ -1796,10 +1829,10 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     private javax.swing.JLabel lblBuscarCampoProducto;
     private javax.swing.JLabel lblCantRegistrosDetalleVenta;
     private javax.swing.JLabel lblCantidad;
+    private javax.swing.JLabel lblCodIdProducto;
     private javax.swing.JLabel lblCodigo10;
     private javax.swing.JLabel lblCodigo7;
     private javax.swing.JLabel lblCodigo8;
-    private javax.swing.JLabel lblCodigoProducto;
     private javax.swing.JLabel lblDescuento;
     private javax.swing.JLabel lblDescuento1;
     private javax.swing.JLabel lblExistencia;

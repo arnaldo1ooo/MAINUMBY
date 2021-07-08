@@ -145,7 +145,7 @@ public class ABMUsuarioRol extends javax.swing.JDialog {
 
         btnModificarGuardar.setText("Modificar");
 
-        URL url = this.getClass().getResource("/iconos/Iconos20x20/IconoModificar.png");
+        URL url = this.getClass().getResource("/iconos/Iconos20x20/IconoModificar20.png");
         btnModificarGuardar.setIcon(new ImageIcon(url));
 
         chbAlta.setSelected(false);
@@ -244,7 +244,7 @@ public class ABMUsuarioRol extends javax.swing.JDialog {
         btnModificarGuardar.setBackground(new java.awt.Color(0, 153, 102));
         btnModificarGuardar.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
         btnModificarGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        btnModificarGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoModificar.png"))); // NOI18N
+        btnModificarGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoModificar20.png"))); // NOI18N
         btnModificarGuardar.setText("Modificar");
         btnModificarGuardar.setToolTipText("Inserta el nuevo registro");
         btnModificarGuardar.setEnabled(false);
@@ -309,7 +309,7 @@ public class ABMUsuarioRol extends javax.swing.JDialog {
         btnCancelar.setBackground(new java.awt.Color(255, 153, 153));
         btnCancelar.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoCancelar.png"))); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoCancelar20.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.setToolTipText("Inserta el nuevo registro");
         btnCancelar.setEnabled(false);
@@ -448,7 +448,7 @@ public class ABMUsuarioRol extends javax.swing.JDialog {
         if (btnModificarGuardar.getText().equals("Modificar")) {
             btnModificarGuardar.setText("Guardar");
 
-            URL url = this.getClass().getResource("/iconos/Iconos20x20/IconoGuardar.png");
+            URL url = this.getClass().getResource("/iconos/Iconos20x20/IconoGuardar20.png");
             btnModificarGuardar.setIcon(new ImageIcon(url));
 
             ModoEdicion(true);

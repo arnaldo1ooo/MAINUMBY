@@ -60,3 +60,32 @@
 05/04/2021 13:09:26 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraDetalleAlta('13','3','20','1300.0',null)
 05/04/2021 13:10:37 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraAlta('00000002','2021-04-05 13:10:37','3','123455','2','GUARANIES','45000.0','1','Prueba 2')
 05/04/2021 13:10:37 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraDetalleAlta('14','4','30','1500.0','2021-06-15')
+19/04/2021 11:20:38 ERROR [AWT-EventQueue-0] (Conexion.java:225) â Error 1093: java.sql.SQLSyntaxErrorException: Incorrect number of arguments for PROCEDURE mainumby.SP_VentaAlta; expected 11, got 10
+19/04/2021 11:20:40 ERROR [AWT-EventQueue-0] (Conexion.java:225) â Error 1093: java.sql.SQLException: Incorrect integer value: 'null' for column 'idventa' at row 1
+19/04/2021 11:20:40 ERROR [AWT-EventQueue-0] (Conexion.java:225) â Error 1093: java.sql.SQLException: Incorrect integer value: 'null' for column 'idventa' at row 1
+19/04/2021 11:24:36 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaAlta('00000001','2021-04-19 11:24:35','1','1','2','48181','Guaranies','100000.0','100000.0','1','prueba')
+19/04/2021 11:24:36 ERROR [AWT-EventQueue-0] (Conexion.java:225) â Error 1093: java.sql.SQLSyntaxErrorException: Unknown column 'producto' in 'where clause'
+19/04/2021 11:24:36 ERROR [AWT-EventQueue-0] (Conexion.java:225) â Error 1093: java.sql.SQLSyntaxErrorException: Unknown column 'producto' in 'where clause'
+19/04/2021 11:35:30 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaAlta('00000001','2021-04-19 11:35:29','1','1','2','4154599','Guaranies','50000.0','24000.0','1','prueba')
+19/04/2021 11:35:30 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaDetalleAlta('15','4','4','1500.0','0.0','14000.0')
+19/04/2021 11:35:31 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaDetalleAlta('15','3','3','1300.0','5000.0','15000.0')
+19/04/2021 15:24:08 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ModuloAlta ('CLIENTE')
+19/04/2021 15:25:34 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ModuloAlta ('DEUDA')
+19/04/2021 15:27:09 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_PerfilModificar('1','ADMINISTRADOR','Tiene acceso a todos los modulos del sistema.')
+19/04/2021 15:27:09 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_PerfilModuloAlta('1','11')
+19/04/2021 15:27:09 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_PerfilModuloAlta('1','12')
+19/04/2021 15:28:53 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_UsuarioRolAlta ('1','45')
+19/04/2021 15:28:53 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_UsuarioRolAlta ('1','44')
+19/04/2021 15:28:55 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_UsuarioRolAlta ('1','43')
+19/04/2021 15:29:02 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_UsuarioRolAlta ('1','48')
+19/04/2021 15:29:02 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_UsuarioRolAlta ('1','46')
+19/04/2021 15:29:02 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_UsuarioRolAlta ('1','47')
+19/04/2021 18:58:42 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ClienteAlta ('1542467-7','Alejandro','Cantero Barrios','Minga guazú, km 14 monday','0973502047','alejandro_karanday@hotmail.com','')
+07/07/2021 19:11:47 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ProductoAlta ('021541211215415','FRUGOS 1L.','2','0','1','')
+07/07/2021 19:18:52 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraAlta('00000003','2021-07-07 19:18:52','4','','1','GUARANIES','390000.6','1','')
+07/07/2021 19:18:52 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_CompraDetalleAlta('15','3','180','2166.67',null)
+07/07/2021 19:21:24 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_ProductoAlta ('585458452','BUDWEISSER 66 FINO 310ML','1','0','1','')
+07/07/2021 19:45:23 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaAlta('00000001','2021-07-07 19:45:22','1','12','0','','Guaranies','500000.0','485000.0','1','','NO','0.0')
+07/07/2021 19:45:23 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaDetalleAlta('16','3','97','2166.67','0.0','485000.0')
+07/07/2021 19:48:24 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaAlta('00000002','2021-07-07 19:48:23','1','12','0','','Guaranies','50000.0','25000.0','1','','NO','0.0')
+07/07/2021 19:48:24 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaDetalleAlta('17','3','5','2166.67','0.0','25000.0')
