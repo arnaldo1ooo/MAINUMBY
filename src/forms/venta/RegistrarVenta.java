@@ -18,11 +18,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import utilidades.Metodos;
-import utilidades.MetodosCombo;
-import utilidades.MetodosImagen;
-import utilidades.MetodosTXT;
-import utilidades.VistaCompleta;
+import helpers.Metodos;
+import helpers.MetodosCombo;
+import helpers.MetodosImagen;
+import helpers.MetodosTXT;
+import helpers.VistaCompleta;
 import static login.Login.codUsuario;
 
 /**
@@ -1384,9 +1384,9 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                 descripcion = txtDescripcionProducto.getText();
                 cantidad = Integer.parseInt(txtCantidadUnitaria.getText());
                 descuento = metodostxt.StringAFormatoAmericano(txtDescuento.getText());
-                descuento = metodostxt.DoubleCantidadDecimales(descuento, 2);
+                descuento = metodostxt.arredondamientoDouble(descuento, 2);
                 subTotalNeto = metodostxt.StringAFormatoAmericano(txtSubtotal.getText());
-                subTotalNeto = metodostxt.DoubleCantidadDecimales(subTotalNeto, 2);
+                subTotalNeto = metodostxt.arredondamientoDouble(subTotalNeto, 2);
 
                 SubTotalBruto = descuento + subTotalNeto;
 
@@ -1425,7 +1425,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     private void SumarSubtotalNeto() {
         //Suma la colmna subtotal
         double totalventa = metodos.SumarColumnaDouble(tbDetalleVenta, 5); //El 6 es la columna 5, comienza de 0
-        totalventa = metodostxt.DoubleCantidadDecimales(totalventa, 2);
+        totalventa = metodostxt.arredondamientoDouble(totalventa, 2);
         txtTotalVenta.setText(metodostxt.DoubleAFormatSudamerica(totalventa));
     }
 
@@ -1626,7 +1626,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         } else {
             txtImporte.setText(metodostxt.StringAFormatSudamericaKeyRelease(txtImporte.getText()));
             double vuelto = importe - totalventa;
-            vuelto = metodostxt.DoubleCantidadDecimales(vuelto, 2);
+            vuelto = metodostxt.arredondamientoDouble(vuelto, 2);
             txtVuelto.setText(metodostxt.DoubleAFormatSudamerica(vuelto));
             txtImporte.setForeground(new Color(0, 153, 51)); //Verde
         }

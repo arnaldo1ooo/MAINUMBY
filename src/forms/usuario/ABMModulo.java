@@ -13,8 +13,8 @@ import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
-import utilidades.Metodos;
-import utilidades.MetodosTXT;
+import helpers.Metodos;
+import helpers.MetodosTXT;
 
 /**
  *

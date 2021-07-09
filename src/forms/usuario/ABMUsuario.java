@@ -23,9 +23,9 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
-import utilidades.Metodos;
-import utilidades.MetodosCombo;
-import utilidades.MetodosTXT;
+import helpers.Metodos;
+import helpers.MetodosCombo;
+import helpers.MetodosTXT;
 
 /**
  *

@@ -7,6 +7,11 @@ package forms.compra;
 
 import conexion.Conexion;
 import forms.producto.ABMProducto;
+import helpers.Metodos;
+import helpers.MetodosCombo;
+import helpers.MetodosImagen;
+import helpers.MetodosTXT;
+import helpers.VistaCompleta;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.HeadlessException;
@@ -22,11 +27,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
-import utilidades.Metodos;
-import utilidades.MetodosCombo;
-import utilidades.MetodosImagen;
-import utilidades.MetodosTXT;
-import utilidades.VistaCompleta;
 
 
 /*
@@ -1402,7 +1402,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
                 descriProducto = txtDescripcionProducto.getText();
                 cantidadUnitaria = Integer.parseInt(txtCantidadUnitaria.getText());
                 costoUnitario = metodostxt.StringAFormatoAmericano(txtCostoUnitario.getText());
-                costoUnitario = metodostxt.DoubleCantidadDecimales(costoUnitario, 2);
+                costoUnitario = metodostxt.arredondamientoDouble(costoUnitario, 2);
                 subtotal = cantidadUnitaria * costoUnitario;
                 SimpleDateFormat formatosuda = new SimpleDateFormat("dd/MM/yyyy");
                 if (dcFechaVencimiento.getDate() != null) {
@@ -1429,7 +1429,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
     private void SumarSubtotal() {
         //Suma la colmna subtotal
         double totalcompra = metodos.SumarColumnaDouble(tbDetalleCompra, 4);
-        totalcompra = metodostxt.DoubleCantidadDecimales(totalcompra, 2);
+        totalcompra = metodostxt.arredondamientoDouble(totalcompra, 2);
         String totalcompraString = metodostxt.DoubleAFormatSudamerica(totalcompra);
         txtTotalCompra.setText(totalcompraString);
     }
@@ -1636,8 +1636,8 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         int cantidadpacks = Integer.parseInt(spCantidadPackCalculoPacks.getValue() + "");
         int unidadporpack = Integer.parseInt(spUnidadPorPackCalculoPacks.getValue() + "");
         double costoporpack = metodostxt.StringAFormatoAmericano(txtCostoPackCalculoPacks.getText());
-        double costototalpacks = metodostxt.DoubleCantidadDecimales(cantidadpacks * costoporpack, 2);
-        double costounitario = metodostxt.DoubleCantidadDecimales(costoporpack / unidadporpack, 2);
+        double costototalpacks = metodostxt.arredondamientoDouble(cantidadpacks * costoporpack, 2);
+        double costounitario = metodostxt.arredondamientoDouble(costoporpack / unidadporpack, 2);
 
         txtCostoTotalPacksCalculoPacks.setText(metodostxt.DoubleAFormatSudamerica(costototalpacks));
         txtCostoUnitarioCalculoPacks.setText(metodostxt.DoubleAFormatSudamerica(costounitario));
@@ -1661,8 +1661,8 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         int cantidadpacks = Integer.parseInt(spCantidadPackCalculoPacks.getValue() + "");
         int unidadporpack = Integer.parseInt(spUnidadPorPackCalculoPacks.getValue() + "");
         double costototalpacks = metodostxt.StringAFormatoAmericano(txtCostoTotalPacksCalculoPacks.getText());
-        double costoporpack = metodostxt.DoubleCantidadDecimales(costototalpacks / cantidadpacks, 2);
-        double costounitario = metodostxt.DoubleCantidadDecimales(costoporpack / unidadporpack, 2);
+        double costoporpack = metodostxt.arredondamientoDouble(costototalpacks / cantidadpacks, 2);
+        double costounitario = metodostxt.arredondamientoDouble(costoporpack / unidadporpack, 2);
 
         txtCostoPackCalculoPacks.setText(metodostxt.DoubleAFormatSudamerica(costoporpack));
         txtCostoUnitarioCalculoPacks.setText(metodostxt.DoubleAFormatSudamerica(costounitario));
@@ -1683,8 +1683,8 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         txtCantidadUnitariaCalculoPacks.setText(cantidadunitaria + "");
 
         double costoporpack = metodostxt.StringAFormatoAmericano(txtCostoPackCalculoPacks.getText());
-        double costototalpacks = metodostxt.DoubleCantidadDecimales(cantidadpacks * costoporpack, 2);
-        double costounitario = metodostxt.DoubleCantidadDecimales(costoporpack / unidadporpack, 2);
+        double costototalpacks = metodostxt.arredondamientoDouble(cantidadpacks * costoporpack, 2);
+        double costounitario = metodostxt.arredondamientoDouble(costoporpack / unidadporpack, 2);
 
         txtCostoTotalPacksCalculoPacks.setText(metodostxt.DoubleAFormatSudamerica(costototalpacks));
         txtCostoUnitarioCalculoPacks.setText(metodostxt.DoubleAFormatSudamerica(costounitario));

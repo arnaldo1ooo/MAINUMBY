@@ -14,8 +14,8 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
-import utilidades.Metodos;
-import utilidades.MetodosTXT;
+import helpers.Metodos;
+import helpers.MetodosTXT;
 
 /**
  *

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utilidades;
+package helpers;
 
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -214,7 +214,7 @@ public class MetodosTXT {
     }
 
     //Formatear double para que tenga solo dos numeros despues de la coma, y la coma es punto
-    public double DoubleCantidadDecimales(double ElDouble, int cantidadDecimales) {
+    public double arredondamientoDouble(double ElDouble, int cantidadDecimales) {
         String elDoubleString = "";
         Double elNumeroDouble = 0.0;
         try {

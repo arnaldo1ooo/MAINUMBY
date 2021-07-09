@@ -19,9 +19,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
-import utilidades.Metodos;
-import utilidades.MetodosTXT;
-import utilidades.MetodosCombo;
+import helpers.Metodos;
+import helpers.MetodosTXT;
+import helpers.MetodosCombo;
 
 /**
  *

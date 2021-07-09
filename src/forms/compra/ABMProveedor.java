@@ -17,10 +17,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
-import utilidades.MetodosImagen;
-import utilidades.Metodos;
-import utilidades.MetodosCombo;
-import utilidades.MetodosTXT;
+import helpers.MetodosImagen;
+import helpers.Metodos;
+import helpers.MetodosCombo;
+import helpers.MetodosTXT;
 
 /**
  *

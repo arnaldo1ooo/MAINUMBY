@@ -15,11 +15,11 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
-import utilidades.Metodos;
-import utilidades.MetodosCombo;
-import utilidades.MetodosImagen;
-import utilidades.MetodosTXT;
-import utilidades.VistaCompleta;
+import helpers.Metodos;
+import helpers.MetodosCombo;
+import helpers.MetodosImagen;
+import helpers.MetodosTXT;
+import helpers.VistaCompleta;
 
 /**
  *

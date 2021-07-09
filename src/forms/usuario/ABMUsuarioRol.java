@@ -13,8 +13,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import utilidades.Metodos;
-import utilidades.MetodosCombo;
+import helpers.Metodos;
+import helpers.MetodosCombo;
 import org.apache.log4j.Logger;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
 

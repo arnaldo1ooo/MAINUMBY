@@ -3,7 +3,7 @@
  * Carga una consulta realizada a un combobox
  * 
  */
-package utilidades;
+package helpers;
 
 import java.awt.Color;
 import java.awt.Component;
