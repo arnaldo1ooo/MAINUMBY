@@ -20,8 +20,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
 import helpers.Metodos;
-import helpers.MetodosTXT;
-import helpers.MetodosCombo;
+import helpers.HelpersTextField;
+import helpers.HelpersComboBox;
 
 /**
  *
@@ -31,8 +31,8 @@ public class ABMPerfil extends javax.swing.JDialog {
 
     private Conexion con = new Conexion();
     private Metodos metodos = new Metodos();
-    private MetodosTXT metodostxt = new MetodosTXT();
-    private MetodosCombo metodoscombo = new MetodosCombo();
+    private HelpersTextField metodostxt = new HelpersTextField();
+    private HelpersComboBox metodoscombo = new HelpersComboBox();
     private DefaultTableModel tablemodelPerfil;
     private DefaultTableModel tablemodelAllModulos;
 

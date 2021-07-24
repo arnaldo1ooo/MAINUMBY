@@ -17,10 +17,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
-import helpers.MetodosImagen;
+import helpers.HelpersImagen;
 import helpers.Metodos;
-import helpers.MetodosCombo;
-import helpers.MetodosTXT;
+import helpers.HelpersComboBox;
+import helpers.HelpersTextField;
 
 /**
  *
@@ -30,9 +30,9 @@ public class ABMProveedor extends javax.swing.JDialog {
 
     private Conexion con = new Conexion();
     private Metodos metodos = new Metodos();
-    private MetodosTXT metodostxt = new MetodosTXT();
-    private MetodosCombo metodoscombo = new MetodosCombo();
-    private MetodosImagen metodosimagen = new MetodosImagen();
+    private HelpersTextField metodostxt = new HelpersTextField();
+    private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersImagen metodosimagen = new HelpersImagen();
     private DefaultTableModel tableModelProveedor;
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);

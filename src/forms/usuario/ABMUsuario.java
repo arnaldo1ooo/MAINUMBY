@@ -24,8 +24,8 @@ import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
 import helpers.Metodos;
-import helpers.MetodosCombo;
-import helpers.MetodosTXT;
+import helpers.HelpersComboBox;
+import helpers.HelpersTextField;
 
 /**
  *
@@ -35,8 +35,8 @@ public class ABMUsuario extends javax.swing.JDialog {
 
     private Conexion con = new Conexion();
     private Metodos metodos = new Metodos();
-    private MetodosTXT metodostxt = new MetodosTXT();
-    private MetodosCombo metodoscombo = new MetodosCombo();
+    private HelpersTextField metodostxt = new HelpersTextField();
+    private HelpersComboBox metodoscombo = new HelpersComboBox();
     private DefaultTableModel tablemodelUsuario;
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);

@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class ColorearCelda extends DefaultTableCellRenderer {
 
-    private MetodosTXT metodostxt = new MetodosTXT();
+    private HelpersTextField metodostxt = new HelpersTextField();
 
     public Component getTableCellRendererComponent(JTable table, Object valor, boolean isSelected, boolean hasFocus, int fila, int columna) {
         //super.getTableCellRendererComponent(table, valor, isSelected, hasFocus, fila, columna);

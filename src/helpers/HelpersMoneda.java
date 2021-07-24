@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  *
  * @author Arnaldo_Cantero
  */
-public class MonedasHelper {
+public class HelpersMoneda {
        
     
     public static final BigDecimal arredondamientoBigdecimal(BigDecimal valor, int cantidadDecimales)

@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import org.apache.log4j.Logger;
 
-public class MetodosTXT {
+public class HelpersTextField {
 
-    private static Logger log_historial = Logger.getLogger(MetodosTXT.class.getName());
+    private static Logger log_historial = Logger.getLogger(HelpersTextField.class.getName());
 
     public void FiltroCaracteresProhibidos(java.awt.event.KeyEvent evt) {
         // Verificar si la tecla pulsada no es '

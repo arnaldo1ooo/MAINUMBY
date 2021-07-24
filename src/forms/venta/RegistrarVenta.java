@@ -19,9 +19,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import helpers.Metodos;
-import helpers.MetodosCombo;
-import helpers.MetodosImagen;
-import helpers.MetodosTXT;
+import helpers.HelpersComboBox;
+import helpers.HelpersImagen;
+import helpers.HelpersTextField;
 import helpers.VistaCompleta;
 import static login.Login.codUsuario;
 
@@ -33,9 +33,9 @@ public final class RegistrarVenta extends javax.swing.JDialog {
 
     Conexion con = new Conexion();
     Metodos metodos = new Metodos();
-    MetodosTXT metodostxt = new MetodosTXT();
-    MetodosCombo metodoscombo = new MetodosCombo();
-    MetodosImagen metodosimagen = new MetodosImagen();
+    HelpersTextField metodostxt = new HelpersTextField();
+    HelpersComboBox metodoscombo = new HelpersComboBox();
+    HelpersImagen metodosimagen = new HelpersImagen();
     private final String rutaFotoProducto = "C:\\MAINUMBY\\productos\\imagenes\\";
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
     private DefaultTableModel tabmodelDetalleVenta;
@@ -1810,10 +1810,10 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     private javax.swing.JButton btnPantallaCompleta;
     private javax.swing.JButton btnQuitar;
     private javax.swing.JComboBox cbCampoBuscarProducto;
-    private static javax.swing.JComboBox<MetodosCombo> cbCliente;
+    private static javax.swing.JComboBox<HelpersComboBox> cbCliente;
     private javax.swing.JComboBox<String> cbMoneda;
     private javax.swing.JComboBox<String> cbTipoDocumento;
-    private javax.swing.JComboBox<MetodosCombo> cbVendedor;
+    private javax.swing.JComboBox<HelpersComboBox> cbVendedor;
     private com.toedter.calendar.JDateChooser dcFechaVenta;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JPanel jPanel1;

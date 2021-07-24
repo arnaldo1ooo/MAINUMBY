@@ -21,17 +21,17 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
  *
  * @author Lic. Arnaldo Cantero
  */
-public class MetodosCombo {
+public class HelpersComboBox {
 
     private Conexion con = new Conexion();
     private int codigo;
     private String descripcion;
-    static Logger log_historial = Logger.getLogger(MetodosCombo.class.getName());
+    static Logger log_historial = Logger.getLogger(HelpersComboBox.class.getName());
 
-    public MetodosCombo() { //No borrar
+    public HelpersComboBox() { //No borrar
     }
 
-    public MetodosCombo(int codigo, String descripcion) {
+    public HelpersComboBox(int codigo, String descripcion) {
         this.codigo = codigo;
         this.descripcion = descripcion;
     }
@@ -58,9 +58,9 @@ public class MetodosCombo {
     }
 
     public void SetSelectedNombreItem(JComboBox ElCombo, String nombreitem) {
-        MetodosCombo item;
+        HelpersComboBox item;
         for (int i = 0; i < ElCombo.getItemCount(); i++) {
-            item = (MetodosCombo) ElCombo.getItemAt(i);
+            item = (HelpersComboBox) ElCombo.getItemAt(i);
             if (item.getDescripcion().equalsIgnoreCase(nombreitem)) {
                 ElCombo.setSelectedIndex(i);
                 break;
@@ -69,9 +69,9 @@ public class MetodosCombo {
     }
 
     public void SetSelectedCodigoItem(JComboBox ElCombo, int codigoitem) {
-        MetodosCombo item;
+        HelpersComboBox item;
         for (int i = 0; i < ElCombo.getItemCount(); i++) {
-            item = (MetodosCombo) ElCombo.getItemAt(i);
+            item = (HelpersComboBox) ElCombo.getItemAt(i);
             if (item.getCodigo() == codigoitem) {
                 ElCombo.setSelectedIndex(i);
                 break;
@@ -86,7 +86,7 @@ public class MetodosCombo {
 
             con = con.ObtenerRSSentencia(consulta);
             while (con.getResultSet().next()) {
-                elCombo.addItem(new MetodosCombo(con.getResultSet().getInt(1), con.getResultSet().getString(2)));
+                elCombo.addItem(new HelpersComboBox(con.getResultSet().getInt(1), con.getResultSet().getString(2)));
                 
                 //Seleccionado por defecto
                 try {
@@ -128,7 +128,7 @@ public class MetodosCombo {
         });
     }
 
-    public int ObtenerIDSelectCombo(JComboBox<MetodosCombo> elCombo) {
+    public int ObtenerIDSelectCombo(JComboBox<HelpersComboBox> elCombo) {
         int coditemselect = -1;
         try {
             coditemselect = elCombo.getItemAt(elCombo.getSelectedIndex()).getCodigo();
