@@ -5,7 +5,7 @@
  */
 package login;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -20,7 +20,7 @@ import principal.Principal;
  */
 public class SplashScreen extends javax.swing.JFrame implements Runnable {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
 
     public SplashScreen(java.awt.Frame parent, boolean modal) {
         initComponents();

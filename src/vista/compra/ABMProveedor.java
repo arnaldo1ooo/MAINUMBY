@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.compra;
+package vista.compra;
 
-import forms.producto.*;
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
@@ -28,7 +27,7 @@ import helpers.HelpersTextField;
  */
 public class ABMProveedor extends javax.swing.JDialog {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Metodos metodos = new Metodos();
     private HelpersTextField metodostxt = new HelpersTextField();
     private HelpersComboBox metodoscombo = new HelpersComboBox();

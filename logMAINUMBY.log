@@ -172,3 +172,4 @@
 24/07/2021 09:32:50 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('5','54521515','BURGUESA 269ML','1','2','A','')
 24/07/2021 09:33:28 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoAlta ('4324324','teste','3','0','A','teste')
 24/07/2021 09:33:48 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoEliminar(29)
+24/07/2021 17:49:59 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('6','021541211215415','FRUGOS DEL VALLE 1L','2','5','A','')

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.producto;
+package vista.producto;
 
-import conexion.Conexion;
+import dao.DAO;
 import converters.ConvertersEstado;
 import java.awt.Color;
 import java.awt.HeadlessException;
@@ -26,9 +26,9 @@ import helpers.VistaCompleta;
  *
  * @author Arnaldo Cantero
  */
-public class ABMProducto extends javax.swing.JDialog {
+public class ProductoVista extends javax.swing.JDialog {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Metodos metodos = new Metodos();
     private HelpersTextField metodostxt = new HelpersTextField();
     private HelpersComboBox metodoscombo = new HelpersComboBox();
@@ -42,7 +42,7 @@ public class ABMProducto extends javax.swing.JDialog {
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
     private File elFichero;
 
-    public ABMProducto(java.awt.Frame parent, Boolean modal) {
+    public ProductoVista(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
         initComponents();
 
@@ -1104,9 +1104,13 @@ public class ABMProducto extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ABMProducto.class
+            java.util.logging.Logger.getLogger(ProductoVista.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -1117,7 +1121,7 @@ public class ABMProducto extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ABMProducto dialog = new ABMProducto(new javax.swing.JFrame(), true);
+                ProductoVista dialog = new ProductoVista(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -1143,7 +1147,7 @@ public class ABMProducto extends javax.swing.JDialog {
     private javax.swing.JButton btnPantallaCompleta;
     private org.edisoncor.gui.button.ButtonAeroLeft buttonAeroLeft1;
     private javax.swing.JComboBox cbCampoBuscar;
-    private javax.swing.JComboBox<HelpersComboBox> cbCategoria;
+    private javax.swing.JComboBox<helpers.HelpersComboBox> cbCategoria;
     private javax.swing.JComboBox cbEstado;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;

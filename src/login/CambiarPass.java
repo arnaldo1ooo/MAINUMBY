@@ -5,7 +5,7 @@
  */
 package login;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.sql.Connection;
@@ -241,7 +241,7 @@ public class CambiarPass extends javax.swing.JDialog {
 
             try {   //Buscar si alias y contraseña actual estan
                 Connection conexion;
-                conexion = Conexion.ConectarBasedeDatos();
+                conexion = DAO.ConectarBasedeDatos();
                 String consulta = "SELECT * FROM usuario WHERE usu_alias = '" + alias + "' AND usu_pass = '" + passactual + "'";
                 System.out.println("consulta: " + consulta);
                 Statement st;
@@ -275,7 +275,7 @@ public class CambiarPass extends javax.swing.JDialog {
                 System.out.println("Actualizar registro: " + sentencia);
                 try {
                     Connection conexion;
-                    conexion = Conexion.ConectarBasedeDatos();
+                    conexion = DAO.ConectarBasedeDatos();
                     PreparedStatement pst;
                     pst = conexion.prepareStatement(sentencia);
                     pst.executeUpdate();

@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Desktop;
 import java.awt.Dialog;
 import java.awt.Image;
@@ -56,7 +56,7 @@ import org.apache.log4j.Logger;
  */
 public class Metodos {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     public int CantRegistros = 0;
     static Logger log_historial = Logger.getLogger(Metodos.class.getName());
 
@@ -187,7 +187,7 @@ public class Metodos {
         Statement st;
         ResultSet rs;
         try {
-            connection = (Connection) Conexion.ConectarBasedeDatos();
+            connection = (Connection) DAO.ConectarBasedeDatos();
             st = connection.createStatement();
             rs = st.executeQuery(sentencia);
             ResultSetMetaData mdrs = rs.getMetaData();

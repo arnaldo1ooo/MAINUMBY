@@ -5,7 +5,7 @@
  */
 package helpers;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.sql.SQLException;
@@ -23,7 +23,7 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
  */
 public class HelpersComboBox {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private int codigo;
     private String descripcion;
     static Logger log_historial = Logger.getLogger(HelpersComboBox.class.getName());

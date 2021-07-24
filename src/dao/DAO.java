@@ -1,4 +1,5 @@
-package conexion;
+package dao;
+//Objeto de acceso a datos (en inglés, data access object, abreviado DAO)
 
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -12,9 +13,9 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.apache.log4j.Logger;
 
-public class Conexion {
+public class DAO {
 
-    private Conexion con;
+    private DAO con;
     private Connection connection;
     private Statement st;
     private ResultSet rs;
@@ -25,7 +26,7 @@ public class Conexion {
     private static String host;
     private static String puerto;
     private static String servidor;
-    static Logger log_historial = Logger.getLogger(Conexion.class.getName());
+    static Logger log_historial = Logger.getLogger(DAO.class.getName());
 
     public static Connection ConectarBasedeDatos() {
         String tipoHost = "local";
@@ -179,11 +180,11 @@ public class Conexion {
         return modelotabla;
     }
 
-    public Conexion ObtenerRSSentencia(String sentencia) { //con.Desconectar luego de usar el metodo
+    public DAO ObtenerRSSentencia(String sentencia) { //con.Desconectar luego de usar el metodo
         System.out.println("ObtenerRSSentencia: " + sentencia);
-        con = new Conexion();
+        con = new DAO();
         try {
-            con.connection = (Connection) Conexion.ConectarBasedeDatos();
+            con.connection = (Connection) DAO.ConectarBasedeDatos();
             con.st = con.connection.createStatement();
             con.rs = con.st.executeQuery(sentencia);
 
@@ -211,7 +212,7 @@ public class Conexion {
         //Ejecuta consultas de Altas, Bajas y Modificaciones
         try {
             System.out.println("EjecutarABM: " + sentencia);
-            connection = Conexion.ConectarBasedeDatos();
+            connection = DAO.ConectarBasedeDatos();
             st = connection.createStatement();
             st.executeUpdate(sentencia);
             connection.close();
@@ -229,11 +230,11 @@ public class Conexion {
     }
 
     public Boolean SiYaExisteEnLaBD(String sentencia) {
-        con = new Conexion();
+        con = new DAO();
         int cantreg = 0;
         try {
             System.out.println("Comprobar si ya existe en la BD: " + sentencia);
-            con.connection = (Connection) Conexion.ConectarBasedeDatos();
+            con.connection = (Connection) DAO.ConectarBasedeDatos();
             con.st = con.connection.createStatement();
             con.rs = con.st.executeQuery(sentencia);
             while (con.rs.next() && cantreg < 2) { //Revisamos cuantos registro trajo la consulta
@@ -255,7 +256,7 @@ public class Conexion {
 
     public String ObtenerUltimoID(String consultasql) {
         String ultimoId = "";
-        Conexion con = new Conexion();
+        DAO con = new DAO();
         try {
             con = con.ObtenerRSSentencia(consultasql);
             while (con.getResultSet().next()) {

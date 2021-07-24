@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.compra;
+package vista.compra;
 
-import conexion.Conexion;
-import forms.producto.ABMProducto;
+import dao.DAO;
+import vista.producto.ProductoVista;
 import helpers.Metodos;
 import helpers.HelpersComboBox;
 import helpers.HelpersImagen;
@@ -35,7 +35,7 @@ import static login.Login.codUsuario;
 public final class RegistrarCompra extends javax.swing.JDialog {
 
     private HelpersTextField metodostxt = new HelpersTextField();
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Metodos metodos = new Metodos();
     private HelpersComboBox metodoscombo = new HelpersComboBox();
     private HelpersImagen metodosimagen = new HelpersImagen();
@@ -1585,7 +1585,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
     }//GEN-LAST:event_btnProveedor1ActionPerformed
 
     private void btnABMProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnABMProductoActionPerformed
-        ABMProducto abmproducto = new ABMProducto(null, true);
+        ProductoVista abmproducto = new ProductoVista(null, true);
         abmproducto.setLocationRelativeTo(this);
         abmproducto.setVisible(true);
     }//GEN-LAST:event_btnABMProductoActionPerformed

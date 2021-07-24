@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.usuario;
+package vista.usuario;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
@@ -33,7 +33,7 @@ import helpers.HelpersTextField;
  */
 public class ABMUsuario extends javax.swing.JDialog {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Metodos metodos = new Metodos();
     private HelpersTextField metodostxt = new HelpersTextField();
     private HelpersComboBox metodoscombo = new HelpersComboBox();
@@ -340,7 +340,7 @@ public class ABMUsuario extends javax.swing.JDialog {
         btnNuevo.setBackground(new java.awt.Color(14, 154, 153));
         btnNuevo.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         btnNuevo.setForeground(new java.awt.Color(255, 255, 255));
-        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/iconos40x40/IconoNuevo.png"))); // NOI18N
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/iconos40x40/IconoNuevo40.png"))); // NOI18N
         btnNuevo.setText("NUEVO");
         btnNuevo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -353,7 +353,7 @@ public class ABMUsuario extends javax.swing.JDialog {
         btnModificar.setBackground(new java.awt.Color(14, 154, 153));
         btnModificar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         btnModificar.setForeground(new java.awt.Color(255, 255, 255));
-        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/iconos40x40/IconoModifcar.png"))); // NOI18N
+        btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/iconos40x40/IconoModifcar40.png"))); // NOI18N
         btnModificar.setText("MODIFICAR");
         btnModificar.setEnabled(false);
         btnModificar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -366,7 +366,7 @@ public class ABMUsuario extends javax.swing.JDialog {
         btnEliminar.setBackground(new java.awt.Color(14, 154, 153));
         btnEliminar.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/iconos40x40/IconoEliminar.png"))); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/iconos40x40/IconoEliminar40.png"))); // NOI18N
         btnEliminar.setText("ELIMINAR");
         btnEliminar.setEnabled(false);
         btnEliminar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -406,7 +406,7 @@ public class ABMUsuario extends javax.swing.JDialog {
         btnGuardar.setBackground(new java.awt.Color(0, 153, 255));
         btnGuardar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoGuardar.png"))); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoGuardar20.png"))); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.setToolTipText("Inserta el nuevo registro");
         btnGuardar.setEnabled(false);
@@ -425,7 +425,7 @@ public class ABMUsuario extends javax.swing.JDialog {
         btnCancelar.setBackground(new java.awt.Color(255, 138, 138));
         btnCancelar.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoCancelar.png"))); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Iconos20x20/IconoCancelar20.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.setToolTipText("Cancela la acción");
         btnCancelar.setEnabled(false);

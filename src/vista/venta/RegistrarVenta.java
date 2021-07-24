@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.venta;
+package vista.venta;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
@@ -31,7 +31,7 @@ import static login.Login.codUsuario;
  */
 public final class RegistrarVenta extends javax.swing.JDialog {
 
-    Conexion con = new Conexion();
+    DAO con = new DAO();
     Metodos metodos = new Metodos();
     HelpersTextField metodostxt = new HelpersTextField();
     HelpersComboBox metodoscombo = new HelpersComboBox();
