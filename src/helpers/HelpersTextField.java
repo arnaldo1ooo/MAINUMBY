@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utilidades;
+package helpers;
 
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import org.apache.log4j.Logger;
 
-public class MetodosTXT {
+public class HelpersTextField {
 
-    private static Logger log_historial = Logger.getLogger(MetodosTXT.class.getName());
+    private static Logger log_historial = Logger.getLogger(HelpersTextField.class.getName());
 
     public void FiltroCaracteresProhibidos(java.awt.event.KeyEvent evt) {
         // Verificar si la tecla pulsada no es '
@@ -214,7 +214,7 @@ public class MetodosTXT {
     }
 
     //Formatear double para que tenga solo dos numeros despues de la coma, y la coma es punto
-    public double DoubleCantidadDecimales(double ElDouble, int cantidadDecimales) {
+    public double arredondamientoDouble(double ElDouble, int cantidadDecimales) {
         String elDoubleString = "";
         Double elNumeroDouble = 0.0;
         try {

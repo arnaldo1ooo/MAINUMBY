@@ -18,10 +18,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
-import utilidades.MetodosImagen;
-import utilidades.Metodos;
-import utilidades.MetodosCombo;
-import utilidades.MetodosTXT;
+import helpers.HelpersImagen;
+import helpers.Metodos;
+import helpers.HelpersComboBox;
+import helpers.HelpersTextField;
 
 /**
  *
@@ -31,9 +31,9 @@ public class Deudas extends javax.swing.JDialog {
 
     private Conexion con = new Conexion();
     private Metodos metodos = new Metodos();
-    private MetodosTXT metodostxt = new MetodosTXT();
-    private MetodosCombo metodoscombo = new MetodosCombo();
-    private MetodosImagen metodosimagen = new MetodosImagen();
+    private HelpersTextField metodostxt = new HelpersTextField();
+    private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersImagen metodosimagen = new HelpersImagen();
     private DefaultTableModel tableModelProveedor;
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);
@@ -591,7 +591,7 @@ public class Deudas extends javax.swing.JDialog {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox cbCampoBuscar;
-    private static javax.swing.JComboBox<MetodosCombo> cbCliente;
+    private static javax.swing.JComboBox<HelpersComboBox> cbCliente;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JPanel jpBotones2;
     private javax.swing.JPanel jpPrincipal;

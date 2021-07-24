@@ -89,3 +89,86 @@
 07/07/2021 19:45:23 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaDetalleAlta('16','3','97','2166.67','0.0','485000.0')
 07/07/2021 19:48:24 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaAlta('00000002','2021-07-07 19:48:23','1','12','0','','Guaranies','50000.0','25000.0','1','','NO','0.0')
 07/07/2021 19:48:24 DEBUG [AWT-EventQueue-0] (Conexion.java:223) â EjecutarABM: CALL SP_VentaDetalleAlta('17','3','5','2166.67','0.0','25000.0')
+09/07/2021 15:18:13 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:14 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:14 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 15:18:15 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:15 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:16 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 15:18:16 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:16 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:16 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 15:18:17 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:17 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:17 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 15:18:17 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:18 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:18 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 15:18:18 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:19 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:19 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 15:18:19 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:19 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:19 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 15:18:19 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:19 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:20 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 15:18:20 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:20 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:20 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 15:18:20 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 15:18:22 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 15:18:23 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 19:11:36 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 19:11:38 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 19:11:38 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 20:00:31 ERROR [AWT-EventQueue-0] (Conexion.java:98) â Error 1089: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+09/07/2021 20:00:33 ERROR [AWT-EventQueue-0] (Conexion.java:202) â Error 1026: java.lang.NullPointerException
+09/07/2021 20:00:33 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 20:02:32 ERROR [AWT-EventQueue-0] (Conexion.java:99) â Error 1089: java.sql.SQLException: Access denied for user 'root'@'Arnaldo-PC' (using password: YES)
+09/07/2021 20:02:34 ERROR [AWT-EventQueue-0] (Conexion.java:203) â Error 1026: java.lang.NullPointerException
+09/07/2021 20:02:35 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 20:02:35 ERROR [AWT-EventQueue-0] (Conexion.java:99) â Error 1089: java.sql.SQLException: Access denied for user 'root'@'Arnaldo-PC' (using password: YES)
+09/07/2021 20:02:36 ERROR [AWT-EventQueue-0] (Conexion.java:203) â Error 1026: java.lang.NullPointerException
+09/07/2021 20:02:36 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+09/07/2021 20:02:36 ERROR [AWT-EventQueue-0] (Conexion.java:99) â Error 1089: java.sql.SQLException: Access denied for user 'root'@'Arnaldo-PC' (using password: YES)
+09/07/2021 20:02:37 ERROR [AWT-EventQueue-0] (Conexion.java:203) â Error 1026: java.lang.NullPointerException
+09/07/2021 20:02:37 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+23/07/2021 16:14:21 ERROR [AWT-EventQueue-0] (Conexion.java:99) â Error 1089: java.sql.SQLException: Access denied for user 'supervisor'@'Arnaldo-PC' (using password: YES)
+23/07/2021 16:14:22 ERROR [AWT-EventQueue-0] (Conexion.java:203) â Error 1026: java.lang.NullPointerException
+23/07/2021 16:14:23 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+23/07/2021 16:14:23 ERROR [AWT-EventQueue-0] (Conexion.java:99) â Error 1089: java.sql.SQLException: Access denied for user 'supervisor'@'Arnaldo-PC' (using password: YES)
+23/07/2021 16:14:24 ERROR [AWT-EventQueue-0] (Conexion.java:203) â Error 1026: java.lang.NullPointerException
+23/07/2021 16:14:25 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+23/07/2021 16:14:32 ERROR [AWT-EventQueue-0] (Conexion.java:99) â Error 1089: java.sql.SQLException: Access denied for user 'supervisor'@'Arnaldo-PC' (using password: YES)
+23/07/2021 16:14:33 ERROR [AWT-EventQueue-0] (Conexion.java:203) â Error 1026: java.lang.NullPointerException
+23/07/2021 16:14:34 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+23/07/2021 16:14:38 ERROR [AWT-EventQueue-0] (Conexion.java:99) â Error 1089: java.sql.SQLException: Access denied for user 'supervisor'@'Arnaldo-PC' (using password: YES)
+23/07/2021 16:14:39 ERROR [AWT-EventQueue-0] (Conexion.java:203) â Error 1026: java.lang.NullPointerException
+23/07/2021 16:14:39 ERROR [AWT-EventQueue-0] (Login.java:60) â Error 1072: java.lang.NullPointerException
+23/07/2021 16:25:44 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoAlta ('888','DUFF','1','0','1','')
+23/07/2021 16:34:28 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoAlta ('999','BRAHMA SUBZERO','1','0','1','')
+23/07/2021 16:36:55 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraAlta('00000001','2021-07-23 16:36:55','1','','1','GUARANIES','1279210.0','1','')
+23/07/2021 16:36:55 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraDetalleAlta('16','8','79','5500.0',null)
+23/07/2021 16:36:55 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraDetalleAlta('16','1','101','3791.0',null)
+23/07/2021 16:36:55 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraDetalleAlta('16','3','137','2533.0',null)
+23/07/2021 16:36:55 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraDetalleAlta('16','4','53','2166.0',null)
+23/07/2021 20:41:02 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('9','3253322','BRAHMA SUBZERO 269 ML','1','0','1','')
+23/07/2021 20:41:54 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('9','3253322','BRAHMA SUBZERO 269 ML','1','0','1','')
+23/07/2021 20:46:47 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('7','585458452','BUDWEISSER 66 FINO 310ML','1','0','1','')
+23/07/2021 21:04:08 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoAlta ('5345345','KING 2L','3','0','1','')
+23/07/2021 21:05:52 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoAlta ('33352532','COCA Cola 250ml','2','0','1','')
+23/07/2021 21:06:03 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('11','33352532','COCA COLA 250ML','2','0','1','')
+23/07/2021 21:11:22 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoAlta ('423432434','SPRITE 250ML','2','0','1','')
+23/07/2021 21:12:19 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoAlta ('3523543645','FANTA 250ML','2','0','1','')
+23/07/2021 21:12:50 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraAlta('00000002','2021-07-23 21:12:50','1','','1','GUARANIES','55146.0','1','Primer registro de stock (2)')
+23/07/2021 21:12:50 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraDetalleAlta('17','10','6','2162.0',null)
+23/07/2021 21:12:50 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraDetalleAlta('17','11','6','1917.0',null)
+23/07/2021 21:12:50 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraDetalleAlta('17','12','8','1917.0',null)
+23/07/2021 21:12:50 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_CompraDetalleAlta('17','13','8','1917.0',null)
+24/07/2021 09:30:19 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('5','54521515','BURGUESA 269ML','1','2','I','')
+24/07/2021 09:32:29 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('4','54422416','ITAIPAVA 269ML','3','53','I','')
+24/07/2021 09:32:43 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('4','54422416','ITAIPAVA 269ML','1','53','A','')
+24/07/2021 09:32:50 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoModificar('5','54521515','BURGUESA 269ML','1','2','A','')
+24/07/2021 09:33:28 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoAlta ('4324324','teste','3','0','A','teste')
+24/07/2021 09:33:48 DEBUG [AWT-EventQueue-0] (Conexion.java:224) â EjecutarABM: CALL SP_ProductoEliminar(29)

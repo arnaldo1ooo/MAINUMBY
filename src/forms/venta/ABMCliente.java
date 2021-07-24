@@ -14,8 +14,8 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
-import utilidades.Metodos;
-import utilidades.MetodosTXT;
+import helpers.Metodos;
+import helpers.HelpersTextField;
 
 /**
  *
@@ -25,7 +25,7 @@ public final class ABMCliente extends javax.swing.JDialog {
 
     private Conexion con = new Conexion();
     private Metodos metodos = new Metodos();
-    private MetodosTXT metodostxt = new MetodosTXT();
+    private HelpersTextField metodostxt = new HelpersTextField();
     private DefaultTableModel modelTableClientes;
     private final Color colorAdvertencia = Color.RED;
     private final Color colorTitulos = Color.BLACK;

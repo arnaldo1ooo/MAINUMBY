@@ -52,22 +52,23 @@ public class Conexion {
                 //Modo host remoto
                 usuarioDB = "supervisor";
                 passDB = "toor5127-"; //Contrasena de la BD
-                nombreBD = "syschool";
-                host = "192.168.100.234"; //San roque 192.168.1.240
+                nombreBD = "mainumby";
+                host = "192.168.100.240"; //San roque 192.168.1.240
                 puerto = "3306";
                 servidor = "jdbc:mysql://" + host + ":" + puerto + "/" + nombreBD
                         + "?useUnicode=true"
                         + "&useJDBCCompliantTimezoneShift=true"
                         + "&useLegacyDatetimeCode=false"
                         + "&serverTimezone=UTC"
-                        + "&useSSL=false";
+                        + "&useSSL=false"
+                        + "&allowPublicKeyRetrieval=true";;
                 break;
             }
             case "online" -> {
                 //Modo host online
                 usuarioDB = "root";
                 passDB = "toor5127-"; //Contrasena de la BD
-                nombreBD = "escuela";
+                nombreBD = "mainumby";
                 host = "181.123.175.39";
                 puerto = "3306";
                 servidor = "jdbc:mysql://" + host + ":" + puerto + "/" + nombreBD
@@ -97,7 +98,7 @@ public class Conexion {
             connection = null;
             log_historial.error("Error 1089: " + ex);
             ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error de conexion a la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Error de conexion a la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
         }
         return connection;
     }

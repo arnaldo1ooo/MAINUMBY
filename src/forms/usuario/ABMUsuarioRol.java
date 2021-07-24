@@ -13,8 +13,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import utilidades.Metodos;
-import utilidades.MetodosCombo;
+import helpers.Metodos;
+import helpers.HelpersComboBox;
 import org.apache.log4j.Logger;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
 
@@ -26,7 +26,7 @@ public class ABMUsuarioRol extends javax.swing.JDialog {
 
     private Conexion con = new Conexion();
     private Metodos metodos = new Metodos();
-    private MetodosCombo metodoscombo = new MetodosCombo();
+    private HelpersComboBox metodoscombo = new HelpersComboBox();
     private DefaultTableModel tableModelModulo;
 
     static Logger log_historial = Logger.getLogger(ABMUsuarioRol.class.getName());

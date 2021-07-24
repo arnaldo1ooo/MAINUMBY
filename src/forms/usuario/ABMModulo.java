@@ -13,8 +13,8 @@ import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
-import utilidades.Metodos;
-import utilidades.MetodosTXT;
+import helpers.Metodos;
+import helpers.HelpersTextField;
 
 /**
  *
@@ -24,7 +24,7 @@ public class ABMModulo extends javax.swing.JDialog {
 
     private Conexion con = new Conexion();
     private Metodos metodos = new Metodos();
-    private MetodosTXT metodostxt = new MetodosTXT();
+    private HelpersTextField metodostxt = new HelpersTextField();
     private DefaultTableModel modelTableModulos;
     private Color colorAdvertencia = new Color(206, 16, 45);
     private Color colorTitulos = Color.GRAY;

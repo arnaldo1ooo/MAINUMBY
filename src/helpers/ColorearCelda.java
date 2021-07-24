@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utilidades;
+package helpers;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableCellRenderer;
  */
 public class ColorearCelda extends DefaultTableCellRenderer {
 
-    private MetodosTXT metodostxt = new MetodosTXT();
+    private HelpersTextField metodostxt = new HelpersTextField();
 
     public Component getTableCellRendererComponent(JTable table, Object valor, boolean isSelected, boolean hasFocus, int fila, int columna) {
         //super.getTableCellRendererComponent(table, valor, isSelected, hasFocus, fila, columna);

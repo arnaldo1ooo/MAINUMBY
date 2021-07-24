@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utilidades;
+package helpers;
 
 import java.awt.Graphics2D;
 import java.awt.HeadlessException;
@@ -11,13 +11,10 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -26,7 +23,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author Lic. Arnaldo Cantero
  */
-public class MetodosImagen {
+public class HelpersImagen {
 
     public File CargarImagenFC(JLabel ElLabelImagen) throws HeadlessException {
         CambiarLookSwing("windows"); //Cambiamos el look a Windows

@@ -2,7 +2,7 @@
  *
  * Avisa al form1 de que su form2 hijo se ha cerrado (dispose)
  */
-package utilidades;
+package helpers;
 
 /**
  *

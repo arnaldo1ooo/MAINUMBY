@@ -6,6 +6,7 @@
 package forms.producto;
 
 import conexion.Conexion;
+import converters.ConvertersEstado;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
@@ -15,11 +16,11 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
-import utilidades.Metodos;
-import utilidades.MetodosCombo;
-import utilidades.MetodosImagen;
-import utilidades.MetodosTXT;
-import utilidades.VistaCompleta;
+import helpers.Metodos;
+import helpers.HelpersComboBox;
+import helpers.HelpersImagen;
+import helpers.HelpersTextField;
+import helpers.VistaCompleta;
 
 /**
  *
@@ -29,9 +30,10 @@ public class ABMProducto extends javax.swing.JDialog {
 
     private Conexion con = new Conexion();
     private Metodos metodos = new Metodos();
-    private MetodosTXT metodostxt = new MetodosTXT();
-    private MetodosCombo metodoscombo = new MetodosCombo();
-    private MetodosImagen metodosimagen = new MetodosImagen();
+    private HelpersTextField metodostxt = new HelpersTextField();
+    private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersImagen metodosimagen = new HelpersImagen();
+    private ConvertersEstado convertersEstado = new ConvertersEstado();
     private DefaultTableModel tableModelProducto;
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);
@@ -105,8 +107,8 @@ public class ABMProducto extends javax.swing.JDialog {
     public void RegistroNuevoModificar() {
         try {
             if (ComprobarCampos() == true) {
-                String codigo, identificador, descripcion, categoria, obs;
-                int existencia, estado;
+                String codigo, identificador, descripcion, categoria, obs, estado;
+                int existencia;
                 String sentencia = "";
 
                 codigo = txtCodigo.getText();
@@ -114,7 +116,7 @@ public class ABMProducto extends javax.swing.JDialog {
                 descripcion = txtDescripcion.getText();
                 categoria = metodoscombo.ObtenerIDSelectCombo(cbCategoria) + "";
                 existencia = Integer.parseInt(txtExistencia.getText());
-                estado = cbEstado.getSelectedIndex();
+                estado = convertersEstado.converterEstado(cbEstado.getSelectedItem().toString());
                 obs = taObs.getText();
 
                 if (txtCodigo.getText().equals("")) {//Si es nuevo
@@ -1141,7 +1143,7 @@ public class ABMProducto extends javax.swing.JDialog {
     private javax.swing.JButton btnPantallaCompleta;
     private org.edisoncor.gui.button.ButtonAeroLeft buttonAeroLeft1;
     private javax.swing.JComboBox cbCampoBuscar;
-    private javax.swing.JComboBox<MetodosCombo> cbCategoria;
+    private javax.swing.JComboBox<HelpersComboBox> cbCategoria;
     private javax.swing.JComboBox cbEstado;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;

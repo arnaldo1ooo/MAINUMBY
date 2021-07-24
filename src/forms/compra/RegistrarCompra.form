@@ -794,7 +794,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;MetodosCombo&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;helpers.HelpersComboBox&gt;"/>
               </AuxValues>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="dcFechaCompra">
@@ -854,7 +854,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;MetodosCombo&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;helpers.HelpersComboBox&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="lblRucCedula1">

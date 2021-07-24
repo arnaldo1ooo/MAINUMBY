@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package utilidades;
+package helpers;
 
 /**
  *
@@ -20,7 +20,7 @@ public class VistaCompleta extends javax.swing.JDialog {
     public VistaCompleta(String rutaImagen, String rutaImagenDefecto) {
         initComponents();
 
-        MetodosImagen metodosimagen = new MetodosImagen();
+        HelpersImagen metodosimagen = new HelpersImagen();
         metodosimagen.LeerImagen(lbImagen, rutaImagen, rutaImagenDefecto);
         System.out.println("Se cargo la imagen a la VistaCompleta " + rutaImagen);
 
