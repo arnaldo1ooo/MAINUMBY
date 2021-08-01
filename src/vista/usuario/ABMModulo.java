@@ -140,7 +140,7 @@ public class ABMModulo extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.ValidarCampoVacioTXT(txtDenominacion, lblNombre) == false) {
+        if (metodostxt.CampoNoNulo(txtDenominacion, lblNombre) == false) {
             return false;
         }
         return true;

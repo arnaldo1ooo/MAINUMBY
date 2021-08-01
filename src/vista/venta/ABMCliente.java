@@ -184,19 +184,19 @@ public final class ABMCliente extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.ValidarCampoVacioTXT(txtRucCedula, lblRucCedula) == false) {
+        if (metodostxt.CampoNoNulo(txtRucCedula, lblRucCedula) == false) {
             return false;
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtNombre, lblNombre) == false) {
+        if (metodostxt.CampoNoNulo(txtNombre, lblNombre) == false) {
             return false;
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtApellido, lblApellido) == false) {
+        if (metodostxt.CampoNoNulo(txtApellido, lblApellido) == false) {
             return false;
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtDireccion, lblDireccion) == false) {
+        if (metodostxt.CampoNoNulo(txtDireccion, lblDireccion) == false) {
             return false;
         }
 

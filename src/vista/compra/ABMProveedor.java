@@ -181,7 +181,7 @@ public class ABMProveedor extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.ValidarCampoVacioTXT(txtDescripcion, lblDescripcion) == false) {
+        if (metodostxt.CampoNoNulo(txtDescripcion, lblDescripcion) == false) {
             return false;
         }
 

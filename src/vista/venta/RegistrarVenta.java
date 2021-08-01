@@ -226,7 +226,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     }
 
     private boolean ComprobarCamposProducto() {
-        if (metodostxt.ValidarCampoVacioTXT(txtCodIdProducto, lblCodIdProducto) == false) {
+        if (metodostxt.CampoNoNulo(txtCodIdProducto, lblCodIdProducto) == false) {
             System.out.println("Validar CodigoProducto false");
             return false;
         } else {
@@ -247,7 +247,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
             }
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtCantidadUnitaria, lblCantidad) == false) {
+        if (metodostxt.CampoNoNulo(txtCantidadUnitaria, lblCantidad) == false) {
             System.out.println("Validar Cantidad adquirida false");
             return false;
         }

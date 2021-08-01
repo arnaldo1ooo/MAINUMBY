@@ -248,7 +248,7 @@ public class ABMPerfil extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.ValidarCampoVacioTXT(txtDenominacion, lblDenominacion) == false) {
+        if (metodostxt.CampoNoNulo(txtDenominacion, lblDenominacion) == false) {
             return false;
         }
 

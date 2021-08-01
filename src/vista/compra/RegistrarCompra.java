@@ -219,7 +219,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
             }
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtCantidadUnitaria, lblCantidadAdquirida) == false) {
+        if (metodostxt.CampoNoNulo(txtCantidadUnitaria, lblCantidadAdquirida) == false) {
             System.out.println("Validar Cantidad adquirida false");
             return false;
         }

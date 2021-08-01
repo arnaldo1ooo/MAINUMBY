@@ -192,18 +192,18 @@ public class ABMUsuario extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.ValidarCampoVacioTXT(txtNombre, lblNombre) == false) {
+        if (metodostxt.CampoNoNulo(txtNombre, lblNombre) == false) {
             return false;
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtApellido, lblApellido) == false) {
+        if (metodostxt.CampoNoNulo(txtApellido, lblApellido) == false) {
             return false;
         }
-        if (metodostxt.ValidarCampoVacioTXT(txtAlias, lblAlias) == false) {
+        if (metodostxt.CampoNoNulo(txtAlias, lblAlias) == false) {
             return false;
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtPass, lblPass) == false) {
+        if (metodostxt.CampoNoNulo(txtPass, lblPass) == false) {
             return false;
         }
 

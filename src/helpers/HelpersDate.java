@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package helpers;
+
+import java.util.Date;
 
 /**
  *
  * @author Arnaldo_Cantero
  */
-public class Producto {
-    
+public class HelpersDate {
+    public Date fechaSQLActual(){
+        Date fechaActualUtil = new Date();
+        
+        return new java.sql.Date(fechaActualUtil.getTime());
+    }
 }
