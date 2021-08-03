@@ -1782,7 +1782,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     private void CalculoPrecioVentaPromocional(int codSelect) {
         try { //Calculo precio venta y promocion
             con = con.ObtenerRSSentencia("SELECT prom_cantidad, prom_precio, propreve_precioventa FROM producto_precioventa, promocion "
-                    + "WHERE propreve_promocion=prom_codigo AND propreve_producto='" + codSelect + "'");
+                    + "WHERE propreve_promocion=prom_codigo AND propreve_producto='" + codSelect + "' ORDER BY propreve_fecha DESC LIMIT 1");
             if (con.getResultSet().next()) {
                 double precioVenta = con.getResultSet().getDouble("propreve_precioventa");
                 int cantidadPromocion = con.getResultSet().getInt("prom_cantidad");

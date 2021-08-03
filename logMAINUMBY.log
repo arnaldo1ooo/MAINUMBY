@@ -266,3 +266,5 @@
 02/08/2021 20:22:10 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_VentaAlta('00000004','2021-08-01 20:22:09','1','1','0','','Guaranies','26000.0','26000.0','1','','NO','0.0')
 02/08/2021 20:22:10 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_VentaDetalleAlta('22','22','1','10375.0','0.0','13000.0')
 02/08/2021 20:22:10 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_VentaDetalleAlta('22','21','1','10375.0','0.0','13000.0')
+03/08/2021 15:45:30 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoModificar('30','24343','ALQUILER CANCHA','7','999998','A','')
+03/08/2021 15:45:30 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoPrecioVentaAlta('2021-08-03','30','1','140000.0')
