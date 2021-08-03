@@ -9,7 +9,7 @@ import vista.compra.ABMProveedor;
 import vista.compra.RegistrarCompra;
 import vista.producto.ProductoVista;
 import vista.usuario.ABMModulo;
-import vista.venta.ABMCliente;
+import vista.cliente.ClienteVista;
 import vista.venta.RegistrarVenta;
 
 import java.sql.SQLException;
@@ -747,7 +747,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        ABMCliente abmcliente = new ABMCliente(this, true);
+        ClienteVista abmcliente = new ClienteVista(this, true);
         abmcliente.setLocationRelativeTo(this); //Centrar
         abmcliente.setVisible(true);
     }//GEN-LAST:event_btnClienteActionPerformed

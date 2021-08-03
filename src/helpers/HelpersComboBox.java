@@ -14,6 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import org.apache.log4j.Logger;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
@@ -151,5 +152,15 @@ public class HelpersComboBox {
         JScrollPane scrollPane = (JScrollPane) popup.getComponent(0);
         scrollPane.setHorizontalScrollBar(new JScrollBar(JScrollBar.HORIZONTAL));
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    }
+    
+       public void CargarTitlesaCombo(JComboBox elCombo, JTable laTabla) {
+        if (elCombo.getItemCount() == 0) {//Si combo esta vacio
+            for (int i = 0; i < laTabla.getColumnCount(); i++) {
+                elCombo.addItem(laTabla.getColumnName(i));
+            }
+            elCombo.addItem("Todos");
+            elCombo.setSelectedItem("Todos");
+        }
     }
 }

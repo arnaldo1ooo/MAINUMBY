@@ -146,16 +146,6 @@ public class Metodos {
         }
     }
 
-    public void CargarTitlesaCombo(JComboBox elCombo, JTable laTabla) {
-        if (elCombo.getItemCount() == 0) {//Si combo esta vacio
-            for (int i = 0; i < laTabla.getColumnCount(); i++) {
-                elCombo.addItem(laTabla.getColumnName(i));
-            }
-            elCombo.addItem("Todos");
-            elCombo.setSelectedItem("Todos");
-        }
-    }
-
     public void ConsultaFiltroTablaBD(JTable LaTabla, String titlesJtabla[], String campoconsulta[], String nombresp, String filtro, JComboBox cbCampoBuscar) {
         String sentencia;
         DefaultTableModel modelotabla = new DefaultTableModel(null, titlesJtabla);

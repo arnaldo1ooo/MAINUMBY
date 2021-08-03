@@ -36,6 +36,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     HelpersTextField metodostxt = new HelpersTextField();
     HelpersComboBox metodoscombo = new HelpersComboBox();
     HelpersImagen metodosimagen = new HelpersImagen();
+    HelpersComboBox helpersComboBox = new HelpersComboBox();
     private final String rutaFotoProducto = "C:\\MAINUMBY\\productos\\imagenes\\";
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
     private DefaultTableModel tabmodelDetalleVenta;
@@ -155,7 +156,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
 
     private void Limpiar() {
         cbVendedor.setSelectedIndex(-1);
-        cbCliente.setSelectedIndex(-1);
+        cbCliente.setSelectedItem("CLIENTE OCASIONAL");
         cbTipoDocumento.setSelectedItem("SIN ESPECIFICAR");
         txtNumDoc.setText("");
         dcFechaVenta.setDate(new Date());
@@ -174,6 +175,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         txtTotalVenta.setText("0");
         txtImporte.setText("");
         txtVuelto.setText("");
+        lblCantRegistrosDetalleVenta.setText("0 Item seleccionado");
 
         tabmodelDetalleVenta.setRowCount(0);
         tbDetalleVenta.setModel(tabmodelDetalleVenta);
@@ -1716,7 +1718,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         tabmodelProductos.setRowCount(0);
 
         if (cbCampoBuscarProducto.getItemCount() == 0) {
-            metodos.CargarTitlesaCombo(cbCampoBuscarProducto, tbProductosBuscadorProductos);
+            helpersComboBox.CargarTitlesaCombo(cbCampoBuscarProducto, tbProductosBuscadorProductos);
         }
         try {
             String sentencia = "CALL SP_ProductoConsulta()";

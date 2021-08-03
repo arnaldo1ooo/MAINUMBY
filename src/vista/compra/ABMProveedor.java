@@ -35,6 +35,7 @@ public class ABMProveedor extends javax.swing.JDialog {
     private DefaultTableModel tableModelProveedor;
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);
+    private HelpersComboBox helpersComboBox = new HelpersComboBox();
 
     public ABMProveedor(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
@@ -63,7 +64,7 @@ public class ABMProveedor extends javax.swing.JDialog {
         tableModelProveedor = (DefaultTableModel) tbPrincipal.getModel();
         tableModelProveedor.setRowCount(0);
         if (cbCampoBuscar.getItemCount() == 0) {
-            metodos.CargarTitlesaCombo(cbCampoBuscar, tbPrincipal);
+            helpersComboBox.CargarTitlesaCombo(cbCampoBuscar, tbPrincipal);
         }
         try {
             String sentencia = "CALL SP_ProveedorConsulta()";

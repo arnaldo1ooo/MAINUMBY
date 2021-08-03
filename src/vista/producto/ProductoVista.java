@@ -32,7 +32,7 @@ public class ProductoVista extends javax.swing.JDialog {
     private DAO con = new DAO();
     private Metodos metodos = new Metodos();
     private HelpersTextField helpersTextField = new HelpersTextField();
-    private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersComboBox helpersComboBox = new HelpersComboBox();
     private HelpersImagen metodosimagen = new HelpersImagen();
     private ConvertersEstado convertersEstado = new ConvertersEstado();
     private DefaultTableModel tableModelProducto;
@@ -42,8 +42,9 @@ public class ProductoVista extends javax.swing.JDialog {
     private final String rutaFotoProducto = "C:\\MAINUMBY\\productos\\imagenes\\";
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
     private File elFichero;
-    private HelpersComboBox helpersComboBox = new HelpersComboBox();
     private HelpersDate helpersDate = new HelpersDate();
+    
+    
 
     public ProductoVista(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
@@ -66,15 +67,15 @@ public class ProductoVista extends javax.swing.JDialog {
     //--------------------------METODOS----------------------------//
     private void CargarComboBoxes() {
         //Carga los combobox con las consultas
-        metodoscombo.CargarComboConsulta(cbCategoria, "SELECT cat_codigo, cat_descripcion FROM categoria ORDER BY cat_descripcion", -1);
-        metodoscombo.CargarComboConsulta(cbPrecioPromocional, "SELECT prom_codigo, CONCAT(prom_cantidad, ' x ', prom_precio) AS promocion FROM promocion ORDER BY prom_cantidad", 0);
+        helpersComboBox.CargarComboConsulta(cbCategoria, "SELECT cat_codigo, cat_descripcion FROM categoria ORDER BY cat_descripcion", -1);
+        helpersComboBox.CargarComboConsulta(cbPrecioPromocional, "SELECT prom_codigo, CONCAT(prom_cantidad, ' x ', prom_precio) AS promocion FROM promocion ORDER BY prom_cantidad", 0);
     }
 
     private void ConsultaAllProducto() {//Realiza la consulta de los productos que tenemos en la base de datos
         tableModelProducto = (DefaultTableModel) tbPrincipal.getModel();
         tableModelProducto.setRowCount(0);
         if (cbCampoBuscar.getItemCount() == 0) {
-            metodos.CargarTitlesaCombo(cbCampoBuscar, tbPrincipal);
+            helpersComboBox.CargarTitlesaCombo(cbCampoBuscar, tbPrincipal);
         }
         try {
             String sentencia = "CALL SP_ProductoConsulta()";
@@ -118,7 +119,7 @@ public class ProductoVista extends javax.swing.JDialog {
                 codigo = txtCodigo.getText();
                 identificador = txtIdentificador.getText();
                 descripcion = txtDescripcion.getText();
-                categoria = metodoscombo.ObtenerIDSelectCombo(cbCategoria) + "";
+                categoria = helpersComboBox.ObtenerIDSelectCombo(cbCategoria) + "";
                 existencia = Integer.parseInt(txtExistencia.getText());
                 estado = convertersEstado.converterEstado(cbEstado.getSelectedItem().toString());
                 obs = taObs.getText();
@@ -210,7 +211,7 @@ public class ProductoVista extends javax.swing.JDialog {
         txtCodigo.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 0) + ""));
         txtIdentificador.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 1) + ""));
         txtDescripcion.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 2) + ""));
-        metodoscombo.SetSelectedNombreItem(cbCategoria, metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 3) + ""));
+        helpersComboBox.SetSelectedNombreItem(cbCategoria, metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 3) + ""));
         txtExistencia.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 4) + ""));
         cbEstado.setSelectedItem(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 5) + ""));
         taObs.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 6) + ""));

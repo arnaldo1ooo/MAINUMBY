@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista.venta;
+package vista.cliente;
 
 import dao.DAO;
 import java.awt.Color;
@@ -21,7 +21,7 @@ import helpers.HelpersTextField;
  *
  * @author Arnaldo Cantero
  */
-public final class ABMCliente extends javax.swing.JDialog {
+public final class ClienteVista extends javax.swing.JDialog {
 
     private DAO con = new DAO();
     private Metodos metodos = new Metodos();
@@ -30,7 +30,7 @@ public final class ABMCliente extends javax.swing.JDialog {
     private final Color colorAdvertencia = Color.RED;
     private final Color colorTitulos = Color.BLACK;
 
-    public ABMCliente(java.awt.Frame parent, Boolean modal) {
+    public ClienteVista(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
         initComponents();
 
@@ -782,7 +782,7 @@ public final class ABMCliente extends javax.swing.JDialog {
                 .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jpTabla, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jpBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtpEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
