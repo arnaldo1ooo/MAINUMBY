@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.venta;
+package vista.venta;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
@@ -31,11 +31,12 @@ import static login.Login.codUsuario;
  */
 public final class RegistrarVenta extends javax.swing.JDialog {
 
-    Conexion con = new Conexion();
+    DAO con = new DAO();
     Metodos metodos = new Metodos();
     HelpersTextField metodostxt = new HelpersTextField();
     HelpersComboBox metodoscombo = new HelpersComboBox();
     HelpersImagen metodosimagen = new HelpersImagen();
+    HelpersComboBox helpersComboBox = new HelpersComboBox();
     private final String rutaFotoProducto = "C:\\MAINUMBY\\productos\\imagenes\\";
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
     private DefaultTableModel tabmodelDetalleVenta;
@@ -155,7 +156,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
 
     private void Limpiar() {
         cbVendedor.setSelectedIndex(-1);
-        cbCliente.setSelectedIndex(-1);
+        cbCliente.setSelectedItem("CLIENTE OCASIONAL");
         cbTipoDocumento.setSelectedItem("SIN ESPECIFICAR");
         txtNumDoc.setText("");
         dcFechaVenta.setDate(new Date());
@@ -174,6 +175,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         txtTotalVenta.setText("0");
         txtImporte.setText("");
         txtVuelto.setText("");
+        lblCantRegistrosDetalleVenta.setText("0 Item seleccionado");
 
         tabmodelDetalleVenta.setRowCount(0);
         tbDetalleVenta.setModel(tabmodelDetalleVenta);
@@ -226,7 +228,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     }
 
     private boolean ComprobarCamposProducto() {
-        if (metodostxt.ValidarCampoVacioTXT(txtCodIdProducto, lblCodIdProducto) == false) {
+        if (metodostxt.CampoNoNulo(txtCodIdProducto, lblCodIdProducto) == false) {
             System.out.println("Validar CodigoProducto false");
             return false;
         } else {
@@ -247,7 +249,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
             }
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtCantidadUnitaria, lblCantidad) == false) {
+        if (metodostxt.CampoNoNulo(txtCantidadUnitaria, lblCantidad) == false) {
             System.out.println("Validar Cantidad adquirida false");
             return false;
         }
@@ -1716,7 +1718,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
         tabmodelProductos.setRowCount(0);
 
         if (cbCampoBuscarProducto.getItemCount() == 0) {
-            metodos.CargarTitlesaCombo(cbCampoBuscarProducto, tbProductosBuscadorProductos);
+            helpersComboBox.CargarTitlesaCombo(cbCampoBuscarProducto, tbProductosBuscadorProductos);
         }
         try {
             String sentencia = "CALL SP_ProductoConsulta()";

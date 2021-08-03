@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.usuario;
+package vista.usuario;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Color;
 
 import java.awt.Toolkit;
@@ -22,7 +22,7 @@ import helpers.HelpersTextField;
  */
 public class ABMModulo extends javax.swing.JDialog {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Metodos metodos = new Metodos();
     private HelpersTextField metodostxt = new HelpersTextField();
     private DefaultTableModel modelTableModulos;
@@ -140,7 +140,7 @@ public class ABMModulo extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.ValidarCampoVacioTXT(txtDenominacion, lblNombre) == false) {
+        if (metodostxt.CampoNoNulo(txtDenominacion, lblNombre) == false) {
             return false;
         }
         return true;

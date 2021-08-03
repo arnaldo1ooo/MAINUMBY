@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.venta;
+package vista.cliente;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Color;
 
 import java.awt.Toolkit;
@@ -21,16 +21,16 @@ import helpers.HelpersTextField;
  *
  * @author Arnaldo Cantero
  */
-public final class ABMCliente extends javax.swing.JDialog {
+public final class ClienteVista extends javax.swing.JDialog {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Metodos metodos = new Metodos();
     private HelpersTextField metodostxt = new HelpersTextField();
     private DefaultTableModel modelTableClientes;
     private final Color colorAdvertencia = Color.RED;
     private final Color colorTitulos = Color.BLACK;
 
-    public ABMCliente(java.awt.Frame parent, Boolean modal) {
+    public ClienteVista(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
         initComponents();
 
@@ -184,19 +184,19 @@ public final class ABMCliente extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.ValidarCampoVacioTXT(txtRucCedula, lblRucCedula) == false) {
+        if (metodostxt.CampoNoNulo(txtRucCedula, lblRucCedula) == false) {
             return false;
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtNombre, lblNombre) == false) {
+        if (metodostxt.CampoNoNulo(txtNombre, lblNombre) == false) {
             return false;
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtApellido, lblApellido) == false) {
+        if (metodostxt.CampoNoNulo(txtApellido, lblApellido) == false) {
             return false;
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtDireccion, lblDireccion) == false) {
+        if (metodostxt.CampoNoNulo(txtDireccion, lblDireccion) == false) {
             return false;
         }
 
@@ -782,7 +782,7 @@ public final class ABMCliente extends javax.swing.JDialog {
                 .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jpTabla, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jpBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtpEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)

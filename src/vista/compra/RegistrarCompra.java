@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.compra;
+package vista.compra;
 
-import conexion.Conexion;
-import forms.producto.ABMProducto;
+import dao.DAO;
+import vista.producto.ProductoVista;
 import helpers.Metodos;
 import helpers.HelpersComboBox;
 import helpers.HelpersImagen;
@@ -35,9 +35,8 @@ import static login.Login.codUsuario;
 public final class RegistrarCompra extends javax.swing.JDialog {
 
     private HelpersTextField metodostxt = new HelpersTextField();
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Metodos metodos = new Metodos();
-    private HelpersComboBox metodoscombo = new HelpersComboBox();
     private HelpersImagen metodosimagen = new HelpersImagen();
     private DefaultTableModel tabmodelDetalleCompra;
     private DefaultTableModel tabmodelProductos;
@@ -46,6 +45,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
     private final Color colorTitulos = Color.BLACK;
     private final String rutaFotoProducto = "C:\\MAINUMBY\\productos\\imagenes\\";
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
+    private HelpersComboBox helpersComboBox = new HelpersComboBox();
 
     public RegistrarCompra(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
@@ -69,8 +69,8 @@ public final class RegistrarCompra extends javax.swing.JDialog {
     //--------------------------METODOS----------------------------//
     public void CargarComboBoxes() {
         //Carga los combobox con las consultas
-        metodoscombo.CargarComboConsulta(cbTipoDocumento, "SELECT tidoc_codigo, tidoc_descripcion FROM tipo_documento ORDER BY tidoc_codigo", 1);
-        metodoscombo.CargarComboConsulta(cbProveedor, "SELECT prov_codigo, prov_descripcion FROM proveedor ORDER BY prov_descripcion", 1);
+        helpersComboBox.CargarComboConsulta(cbTipoDocumento, "SELECT tidoc_codigo, tidoc_descripcion FROM tipo_documento ORDER BY tidoc_codigo", 1);
+        helpersComboBox.CargarComboConsulta(cbProveedor, "SELECT prov_codigo, prov_descripcion FROM proveedor ORDER BY prov_descripcion", 1);
     }
 
     public void RegistroNuevo() {
@@ -95,9 +95,9 @@ public final class RegistrarCompra extends javax.swing.JDialog {
                 horaCompra = formatoHora.format(new Date());
                 fechaCompra = fechaCompra + " " + horaCompra;
 
-                idtipodoc = metodoscombo.ObtenerIDSelectCombo(cbTipoDocumento);
+                idtipodoc = helpersComboBox.ObtenerIDSelectCombo(cbTipoDocumento);
                 numdoc = txtNumDoc.getText();
-                idproveedor = metodoscombo.ObtenerIDSelectCombo(cbProveedor);
+                idproveedor = helpersComboBox.ObtenerIDSelectCombo(cbProveedor);
                 moneda = cbMoneda.getSelectedItem().toString();
                 costoTotalCompra = metodostxt.StringAFormatoAmericano(txtTotalCompra.getText());
                 idusuario = Integer.parseInt(codUsuario);
@@ -159,7 +159,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         dcFechaCompra.setDate(new Date());
         cbTipoDocumento.setSelectedItem("SIN ESPECIFICAR");
         txtNumDoc.setText("");
-        metodoscombo.SetSelectedCodigoItem(cbProveedor, -1);
+        helpersComboBox.SetSelectedCodigoItem(cbProveedor, -1);
         taObs.setText("");
 
         txtIdProducto.setText("");
@@ -219,7 +219,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
             }
         }
 
-        if (metodostxt.ValidarCampoVacioTXT(txtCantidadUnitaria, lblCantidadAdquirida) == false) {
+        if (metodostxt.CampoNoNulo(txtCantidadUnitaria, lblCantidadAdquirida) == false) {
             System.out.println("Validar Cantidad adquirida false");
             return false;
         }
@@ -1585,7 +1585,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
     }//GEN-LAST:event_btnProveedor1ActionPerformed
 
     private void btnABMProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnABMProductoActionPerformed
-        ABMProducto abmproducto = new ABMProducto(null, true);
+        ProductoVista abmproducto = new ProductoVista(null, true);
         abmproducto.setLocationRelativeTo(this);
         abmproducto.setVisible(true);
     }//GEN-LAST:event_btnABMProductoActionPerformed
@@ -1760,7 +1760,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
         tabmodelProductos.setRowCount(0);
 
         if (cbCampoBuscarBuscadorProductos.getItemCount() == 0) {
-            metodos.CargarTitlesaCombo(cbCampoBuscarBuscadorProductos, tbProductosBuscadorProductos);
+            helpersComboBox.CargarTitlesaCombo(cbCampoBuscarBuscadorProductos, tbProductosBuscadorProductos);
         }
         try {
             String sentencia = "CALL SP_ProductoConsulta()";

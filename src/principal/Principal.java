@@ -1,17 +1,16 @@
 package principal;
 
-import conexion.Conexion;
+import dao.DAO;
 
-import forms.usuario.ABMPerfil;
-import forms.usuario.ABMUsuario;
-import forms.usuario.ABMUsuarioRol;
-import forms.compra.ABMProveedor;
-import forms.compra.RegistrarCompra;
-import forms.producto.ABMProducto;
-
-import forms.usuario.ABMModulo;
-import forms.venta.ABMCliente;
-import forms.venta.RegistrarVenta;
+import vista.usuario.ABMPerfil;
+import vista.usuario.ABMUsuario;
+import vista.usuario.ABMUsuarioRol;
+import vista.compra.ABMProveedor;
+import vista.compra.RegistrarCompra;
+import vista.producto.ProductoVista;
+import vista.usuario.ABMModulo;
+import vista.cliente.ClienteVista;
+import vista.venta.RegistrarVenta;
 
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -32,7 +31,7 @@ import static login.Login.alias;
  */
 public class Principal extends javax.swing.JFrame implements Runnable {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Thread hilo;
 
     public Principal() {
@@ -748,7 +747,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        ABMCliente abmcliente = new ABMCliente(this, true);
+        ClienteVista abmcliente = new ClienteVista(this, true);
         abmcliente.setLocationRelativeTo(this); //Centrar
         abmcliente.setVisible(true);
     }//GEN-LAST:event_btnClienteActionPerformed
@@ -770,7 +769,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void btnProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductoActionPerformed
-        ABMProducto abmproducto = new ABMProducto(this, false);
+        ProductoVista abmproducto = new ProductoVista(this, false);
         abmproducto.setLocationRelativeTo(this); //Centrar
         abmproducto.setVisible(true);
     }//GEN-LAST:event_btnProductoActionPerformed

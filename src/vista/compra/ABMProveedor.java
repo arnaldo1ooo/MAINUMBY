@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.compra;
+package vista.compra;
 
-import forms.producto.*;
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
@@ -28,7 +27,7 @@ import helpers.HelpersTextField;
  */
 public class ABMProveedor extends javax.swing.JDialog {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Metodos metodos = new Metodos();
     private HelpersTextField metodostxt = new HelpersTextField();
     private HelpersComboBox metodoscombo = new HelpersComboBox();
@@ -36,6 +35,7 @@ public class ABMProveedor extends javax.swing.JDialog {
     private DefaultTableModel tableModelProveedor;
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);
+    private HelpersComboBox helpersComboBox = new HelpersComboBox();
 
     public ABMProveedor(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
@@ -64,7 +64,7 @@ public class ABMProveedor extends javax.swing.JDialog {
         tableModelProveedor = (DefaultTableModel) tbPrincipal.getModel();
         tableModelProveedor.setRowCount(0);
         if (cbCampoBuscar.getItemCount() == 0) {
-            metodos.CargarTitlesaCombo(cbCampoBuscar, tbPrincipal);
+            helpersComboBox.CargarTitlesaCombo(cbCampoBuscar, tbPrincipal);
         }
         try {
             String sentencia = "CALL SP_ProveedorConsulta()";
@@ -182,7 +182,7 @@ public class ABMProveedor extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.ValidarCampoVacioTXT(txtDescripcion, lblDescripcion) == false) {
+        if (metodostxt.CampoNoNulo(txtDescripcion, lblDescripcion) == false) {
             return false;
         }
 

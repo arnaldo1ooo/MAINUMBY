@@ -4,7 +4,7 @@
  */
 package login;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
@@ -19,7 +19,7 @@ public class Login extends javax.swing.JFrame {
     public String nomapeUsuario;
     public static String alias;
     private String pass;
-    Conexion con = new Conexion();
+    DAO con = new DAO();
     static Logger log_historial = Logger.getLogger(Login.class.getName());
 
     public Login() {

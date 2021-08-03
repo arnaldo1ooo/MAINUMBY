@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package forms.usuario;
+package vista.usuario;
 
-import conexion.Conexion;
+import dao.DAO;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
@@ -29,7 +29,7 @@ import helpers.HelpersComboBox;
  */
 public class ABMPerfil extends javax.swing.JDialog {
 
-    private Conexion con = new Conexion();
+    private DAO con = new DAO();
     private Metodos metodos = new Metodos();
     private HelpersTextField metodostxt = new HelpersTextField();
     private HelpersComboBox metodoscombo = new HelpersComboBox();
@@ -248,7 +248,7 @@ public class ABMPerfil extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.ValidarCampoVacioTXT(txtDenominacion, lblDenominacion) == false) {
+        if (metodostxt.CampoNoNulo(txtDenominacion, lblDenominacion) == false) {
             return false;
         }
 

@@ -47,8 +47,9 @@ public class HelpersImagen {
 
         fc.setDialogTitle("Buscar imagen o foto"); //El titulo de la ventana buscador
         fc.setFileFilter(new FileNameExtensionFilter("JPG", "jpg"));
+        fc.setFileFilter(new FileNameExtensionFilter("JPEG", "jpeg"));
         fc.setFileFilter(new FileNameExtensionFilter("PNG", "png"));
-        fc.setFileFilter(new FileNameExtensionFilter("JPG & PNG", "jpg", "png"));
+        fc.setFileFilter(new FileNameExtensionFilter("JPG, JPEG, PNG", "jpg", "jpeg", "png"));
 
         if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             EscalarImagen(ElLabelImagen, fc, null);
@@ -112,6 +113,15 @@ public class HelpersImagen {
             return true;
         }
 
+        //Probar si es ruta externa JPEG
+        ruta = rutaImagen + ".jpeg";
+        fileImagen = new File(ruta);
+        if (fileImagen.exists()) {
+            EscalarImagen(ElLabel, null, ruta);
+            System.out.println("Se cargó la imagen externa: " + ruta);
+            return true;
+        }
+        
         //Probar si es ruta externa PNG
         ruta = rutaImagen + ".png";
         fileImagen = new File(ruta);
