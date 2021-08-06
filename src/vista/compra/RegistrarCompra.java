@@ -1578,7 +1578,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
             return;
         }
 
-        String sentencia = "CALL SP_ProveedorAlta('" + provnombre.toUpperCase() + "','" + provdireccion + "','" + provcel + "','" + provemail + "')";
+        String sentencia = "CALL SP_ProveedorAlta('" + provnombre.toUpperCase() + "','" + provcel + "','" + provemail + "','" + provdireccion + "')";
         con.EjecutarABM(sentencia, true);
 
         CargarComboBoxes();
