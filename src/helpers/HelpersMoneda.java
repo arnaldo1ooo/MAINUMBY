@@ -6,6 +6,7 @@
 package helpers;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -74,5 +75,22 @@ public class HelpersMoneda {
                 break;
         }
         return BigDecimal.valueOf(Math.round(value * unidadDeMil) / unidadDeMil);
+    }
+    
+//Poner los puntos de miles
+    public String StringPuntosMiles(String elNumString) {
+        try {
+            if (elNumString.equals("") || elNumString.contains("-")) {
+                return elNumString;
+            }
+
+            elNumString = elNumString.replace(".", "");
+            DecimalFormat formatSudamerica = new DecimalFormat("#,###");
+            double elNumeroDouble = Double.parseDouble(elNumString);
+            elNumString = formatSudamerica.format(elNumeroDouble);
+        } catch (NullPointerException e) {
+            return "0";
+        }
+        return elNumString;
     }
 }

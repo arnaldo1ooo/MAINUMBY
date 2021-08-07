@@ -20,6 +20,7 @@ import helpers.Metodos;
 import helpers.HelpersComboBox;
 import helpers.HelpersDate;
 import helpers.HelpersImagen;
+import helpers.HelpersMoneda;
 import helpers.HelpersTextField;
 import helpers.VistaCompleta;
 
@@ -34,6 +35,7 @@ public class ProductoVista extends javax.swing.JDialog {
     private HelpersTextField helpersTextField = new HelpersTextField();
     private HelpersComboBox helpersComboBox = new HelpersComboBox();
     private HelpersImagen metodosimagen = new HelpersImagen();
+    private HelpersMoneda helpersMoneda = new HelpersMoneda();
     private ConvertersEstado convertersEstado = new ConvertersEstado();
     private DefaultTableModel tableModelProducto;
     private Color colorVerde = new Color(6, 147, 27);
@@ -43,6 +45,7 @@ public class ProductoVista extends javax.swing.JDialog {
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
     private File elFichero;
     private HelpersDate helpersDate = new HelpersDate();
+    
     
     
 
@@ -224,7 +227,7 @@ public class ProductoVista extends javax.swing.JDialog {
                     + "ORDER BY propreve_fecha DESC LIMIT 1");
 
             if (con.getResultSet().next()) {
-                txtPrecioVenta.setText(con.getResultSet().getString("propreve_precioventa"));
+                txtPrecioVenta.setText(helpersMoneda.StringPuntosMiles(con.getResultSet().getString("propreve_precioventa")));
                 helpersComboBox.SetSelectedCodigoItem(cbPrecioPromocional, con.getResultSet().getInt("propreve_promocion"));
             } else {
                 txtPrecioVenta.setText("0");

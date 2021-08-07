@@ -196,23 +196,6 @@ public class HelpersTextField {
         }
     }
 
-    //Poner los puntos de miles
-    public String StringPuntosMiles(String elNumString) {
-        try {
-            if (elNumString.equals("") || elNumString.contains("-")) {
-                return elNumString;
-            }
-
-            elNumString = elNumString.replace(".", "");
-            DecimalFormat formatSudamerica = new DecimalFormat("#,###");
-            double elNumeroDouble = Double.parseDouble(elNumString);
-            elNumString = formatSudamerica.format(elNumeroDouble);
-        } catch (NullPointerException e) {
-            return "0";
-        }
-        return elNumString;
-    }
-
     //Formatear double para que tenga solo dos numeros despues de la coma, y la coma es punto
     public double arredondamientoDouble(double ElDouble, int cantidadDecimales) {
         String elDoubleString = "";
