@@ -278,3 +278,19 @@
 06/08/2021 19:26:15 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProveedorAlta('"ANDRESITO" BEBIDAS','098398676','','Km 14 Monday, Ruta Minga Guazu - Cedrales')
 06/08/2021 19:43:41 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_CompraAlta('00000005','2021-08-05 19:43:41','3','0001581','3','GUARANIES','360000.0','1','')
 06/08/2021 19:43:42 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_CompraDetalleAlta('20','4','180','2000.0','2021-10-26')
+08/08/2021 17:54:10 ERROR [AWT-EventQueue-0] (DAO.java:227) â Error 1093: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'estado' at row 1
+08/08/2021 17:54:11 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoPrecioVentaAlta('2021-08-08','30','1','140.0')
+08/08/2021 17:55:26 ERROR [AWT-EventQueue-0] (DAO.java:227) â Error 1093: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'estado' at row 1
+08/08/2021 17:55:26 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoPrecioVentaAlta('2021-08-08','30','1','140000.0')
+08/08/2021 17:55:55 ERROR [AWT-EventQueue-0] (DAO.java:227) â Error 1093: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'estado' at row 1
+08/08/2021 17:55:55 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoPrecioVentaAlta('2021-08-08','30','1','140000.0')
+08/08/2021 17:56:25 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoModificar('30','24343','ALQUILER CANCHA','7','999997','A','')
+08/08/2021 17:56:25 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoPrecioVentaAlta('2021-08-08','30','1','140000.0')
+08/08/2021 17:59:10 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoModificar('30','24343','ALQUILER CANCHA','7','999997','A','')
+08/08/2021 17:59:10 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoPrecioVentaAlta('2021-08-08','30','1','140000.0')
+08/08/2021 18:00:37 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoModificar('30','24343','ALQUILER CANCHA','7','999997','A','')
+08/08/2021 18:00:37 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoPrecioVentaAlta('2021-08-08','30','1','140000.0')
+08/08/2021 18:50:39 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoModificar('30','24343','ALQUILER CANCHA','7','999997','A','')
+08/08/2021 18:50:40 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoPrecioVentaAlta('2021-08-08','30','1','140000.0')
+08/08/2021 19:02:23 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoModificar('30','24343','ALQUILER CANCHA','7','999997','A','')
+08/08/2021 19:02:23 DEBUG [AWT-EventQueue-0] (DAO.java:225) â EjecutarABM: CALL SP_ProductoPrecioVentaAlta('2021-08-08 19:02:23','30','1','140000.0')

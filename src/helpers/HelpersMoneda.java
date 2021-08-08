@@ -13,20 +13,18 @@ import java.text.DecimalFormat;
  * @author Arnaldo_Cantero
  */
 public class HelpersMoneda {
-       
-    
-    public static final BigDecimal arredondamientoBigdecimal(BigDecimal valor, int cantidadDecimales)
-    {
-        if (valor == null)
-        {
+
+    private HelpersString helpersString = new HelpersString();
+
+    public static final BigDecimal arredondamientoBigdecimal(BigDecimal valor, int cantidadDecimales) {
+        if (valor == null) {
             return new BigDecimal(0);
         }
 
         double value = valor.doubleValue();
         double unidadDeMil = 1;
 
-        switch (cantidadDecimales)
-        {
+        switch (cantidadDecimales) {
             case 1:
                 unidadDeMil = 10.0;
                 break;
@@ -45,9 +43,8 @@ public class HelpersMoneda {
         }
         return BigDecimal.valueOf(Math.round(value * unidadDeMil) / unidadDeMil);
     }
-    
-    public static final BigDecimal arredondamientoDouble(double valor, int cantidadDecimales)
-    {
+
+    public static final BigDecimal arredondamientoDouble(double valor, int cantidadDecimales) {
         /*if (valor == null)
         {
             return new BigDecimal(0);
@@ -56,8 +53,7 @@ public class HelpersMoneda {
         double value = valor;
         double unidadDeMil = 1;
 
-        switch (cantidadDecimales)
-        {
+        switch (cantidadDecimales) {
             case 1:
                 unidadDeMil = 10.0;
                 break;
@@ -76,11 +72,11 @@ public class HelpersMoneda {
         }
         return BigDecimal.valueOf(Math.round(value * unidadDeMil) / unidadDeMil);
     }
-    
+
 //Poner los puntos de miles
     public String StringPuntosMiles(String elNumString) {
         try {
-            if (elNumString.equals("") || elNumString.contains("-")) {
+            if (helpersString.esVacioONulo(elNumString) || elNumString.contains("-")) {
                 return elNumString;
             }
 
@@ -92,5 +88,25 @@ public class HelpersMoneda {
             return "0";
         }
         return elNumString;
+    }
+
+    public String DoublePuntosMiles(double elNumDouble) {
+        DecimalFormat formatSudamerica = new DecimalFormat("###,###,###");
+        System.out.println("formatSudamerica.format(elNumDoublee) " + formatSudamerica.format(elNumDouble));
+        return formatSudamerica.format(elNumDouble);
+    }
+
+    public String StringSinPuntosMiles(String elNumString) {
+        try {
+            if (elNumString.equals("")) {
+                return "0";
+            }
+
+            elNumString = elNumString.replace(".", "");
+
+            return elNumString;
+        } catch (NullPointerException e) {
+            return "0";
+        }
     }
 }

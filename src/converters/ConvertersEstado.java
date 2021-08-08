@@ -5,22 +5,39 @@
  */
 package converters;
 
+import helpers.HelpersValoresUniversales;
+
 /**
  *
  * @author Arnaldo_Cantero
  */
 public class ConvertersEstado {
-    public String converterEstado(String estado){
+
+    private HelpersValoresUniversales helpersValoresUniversales = new HelpersValoresUniversales();
+
+    public String converterEstado(String valor) {
+        if (valor.equals(helpersValoresUniversales.activoBd())) {
+            return "ACTIVO";
+        } else {
+            if (valor.equals(helpersValoresUniversales.inactivoBd())) {
+                return "INACTIVO";
+            } else {
+                System.out.println("Sin seleccion converterEstado " + valor);
+                return null;
+            }
+        }
+    }
+
+    public String converterEstadoBD(String estado) {
         switch (estado) {
             case "ACTIVO":
-                return "A";
+                return helpersValoresUniversales.activoBd();
             case "INACTIVO":
-                return "I";
+                return helpersValoresUniversales.inactivoBd();
             default:
-                System.out.println("Error en switch converterestado " + estado);
+                System.out.println("Error en switch converterEstadoBD " + estado);
                 return null;
         }
     }
-    
-    
+
 }

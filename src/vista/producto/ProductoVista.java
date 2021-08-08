@@ -124,10 +124,10 @@ public class ProductoVista extends javax.swing.JDialog {
                 descripcion = txtDescripcion.getText();
                 categoria = helpersComboBox.ObtenerIDSelectCombo(cbCategoria) + "";
                 existencia = Integer.parseInt(txtExistencia.getText());
-                estado = convertersEstado.converterEstado(cbEstado.getSelectedItem().toString());
+                estado = convertersEstado.converterEstadoBD(cbEstado.getSelectedItem().toString());
                 obs = taObs.getText();
                 precioPromocional = helpersComboBox.ObtenerIDSelectCombo(cbPrecioPromocional);
-                precioVenta = Double.parseDouble(txtPrecioVenta.getText());
+                precioVenta = Double.parseDouble(helpersMoneda.StringSinPuntosMiles(txtPrecioVenta.getText()));
 
                 if (txtCodigo.getText().equals("")) {//Si es nuevo
                     int confirmado = JOptionPane.showConfirmDialog(this, "¿Esta seguro crear este nuevo registro?", "Confirmación", JOptionPane.YES_OPTION);
@@ -158,11 +158,11 @@ public class ProductoVista extends javax.swing.JDialog {
                     con = con.ObtenerRSSentencia("SELECT propreve_precioventa FROM producto_precioventa WHERE propreve_producto = '" + codigo + "' ORDER BY propreve_fecha DESC LIMIT 1");
                     double precioVentaAnterior = 0;
                     if (con.getResultSet().next()) {
-                        precioVentaAnterior = con.getResultSet().getInt("propreve_precioventa");
+                        precioVentaAnterior = con.getResultSet().getDouble("propreve_precioventa");
                     }
 
                     if (precioVentaAnterior != precioVenta) {
-                        sentencia = "CALL SP_ProductoPrecioVentaAlta('" + helpersDate.fechaSQLActual() + "','"
+                        sentencia = "CALL SP_ProductoPrecioVentaAlta('" + helpersDate.stringFechaHoraActual() + "','"
                                 + ultimoIdProducto + "','" + precioPromocional + "','" + precioVenta + "')";
                         con.EjecutarABM(sentencia, false);
                     }
@@ -227,7 +227,7 @@ public class ProductoVista extends javax.swing.JDialog {
                     + "ORDER BY propreve_fecha DESC LIMIT 1");
 
             if (con.getResultSet().next()) {
-                txtPrecioVenta.setText(helpersMoneda.StringPuntosMiles(con.getResultSet().getString("propreve_precioventa")));
+                txtPrecioVenta.setText(helpersMoneda.DoublePuntosMiles(con.getResultSet().getDouble("propreve_precioventa")));
                 helpersComboBox.SetSelectedCodigoItem(cbPrecioPromocional, con.getResultSet().getInt("propreve_promocion"));
             } else {
                 txtPrecioVenta.setText("0");
@@ -1206,7 +1206,7 @@ public class ProductoVista extends javax.swing.JDialog {
     }//GEN-LAST:event_txtPrecioVentaFocusLost
 
     private void txtPrecioVentaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioVentaKeyReleased
-        // TODO add your handling code here:
+        txtPrecioVenta.setText(helpersTextField.StringAFormatSudamericaKeyRelease(txtPrecioVenta.getText()));
     }//GEN-LAST:event_txtPrecioVentaKeyReleased
 
     private void txtPrecioVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioVentaKeyTyped

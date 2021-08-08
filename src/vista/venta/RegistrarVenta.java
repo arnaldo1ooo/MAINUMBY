@@ -101,10 +101,10 @@ public final class RegistrarVenta extends javax.swing.JDialog {
             obs = taObs.getText();
 
             if (importe < totalVenta) {
-                deuda = "SI";
+                deuda = "S";
                 montoDeuda = totalVenta - importe;
             } else {
-                deuda = "NO";
+                deuda = "N";
                 montoDeuda = 0.0;
             }
 
@@ -276,13 +276,13 @@ public final class RegistrarVenta extends javax.swing.JDialog {
             txtCantidadUnitaria.setForeground(colorTitulos);
         }
 
-        double descuento = metodostxt.StringAFormatoAmericano(txtDescuento.getText());
+        /*double descuento = metodostxt.StringAFormatoAmericano(txtDescuento.getText());
         double subtotal = metodostxt.StringAFormatoAmericano(txtSubtotal.getText());
         if (descuento > subtotal) {
             Toolkit.getDefaultToolkit().beep();
             JOptionPane.showMessageDialog(this, "El descuento no puede ser mayor al subtotal del producto", "Error", JOptionPane.ERROR_MESSAGE);
             return false;
-        }
+        }*/
 
         return true;
     }
