@@ -257,6 +257,7 @@ public class ProductoVista extends javax.swing.JDialog {
         btnEliminar.setEnabled(false);
         btnGuardar.setEnabled(valor);
         btnCancelar.setEnabled(valor);
+        btnCargarImagen.setEnabled(valor);
 
         txtIdentificador.requestFocus();
     }
@@ -660,6 +661,7 @@ public class ProductoVista extends javax.swing.JDialog {
         btnCargarImagen.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         btnCargarImagen.setText("+");
         btnCargarImagen.setToolTipText("Cargar una imagen del producto");
+        btnCargarImagen.setEnabled(false);
         btnCargarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarImagenActionPerformed(evt);

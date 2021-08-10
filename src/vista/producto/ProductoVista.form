@@ -745,6 +745,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="+"/>
                     <Property name="toolTipText" type="java.lang.String" value="Cargar una imagen del producto"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCargarImagenActionPerformed"/>
