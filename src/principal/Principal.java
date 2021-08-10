@@ -10,7 +10,7 @@ import vista.compra.RegistrarCompra;
 import vista.producto.ProductoVista;
 import vista.usuario.ABMModulo;
 import vista.cliente.ClienteVista;
-import vista.venta.RegistrarVenta;
+import vista.venta.RegistrarVentaVista;
 
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -781,7 +781,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_meiReportePlanillaActionPerformed
 
     private void meitRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meitRegistrarVentaActionPerformed
-        RegistrarVenta registrarventa = new RegistrarVenta(this, true);
+        RegistrarVentaVista registrarventa = new RegistrarVentaVista(this, true);
         registrarventa.setLocationRelativeTo(this);
         registrarventa.setVisible(true);
     }//GEN-LAST:event_meitRegistrarVentaActionPerformed

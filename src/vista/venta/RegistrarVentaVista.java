@@ -29,7 +29,7 @@ import static login.Login.codUsuario;
  *
  * @author Lic. Arnaldo Cantero
  */
-public final class RegistrarVenta extends javax.swing.JDialog {
+public final class RegistrarVentaVista extends javax.swing.JDialog {
 
     DAO con = new DAO();
     Metodos metodos = new Metodos();
@@ -45,7 +45,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     private final Color colorTitulos = Color.BLACK;
     private final int advertenciaDeStock = 5;
 
-    public RegistrarVenta(java.awt.Frame parent, Boolean modal) {
+    public RegistrarVentaVista(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
         initComponents();
 
@@ -148,7 +148,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                     Limpiar();
                 } catch (HeadlessException ex) {
                     JOptionPane.showMessageDialog(this, "Ocurrió un Error " + ex.getMessage());
-                    Logger.getLogger(RegistrarVenta.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(RegistrarVentaVista.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -1341,7 +1341,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
             }
             lblNumVenta.setText(numultimaventa);
         } catch (SQLException e) {
-            Logger.getLogger(RegistrarVenta.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(RegistrarVentaVista.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }
         con.DesconectarBasedeDatos();
@@ -1707,7 +1707,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
                 ultimoCostoCompra = con.getResultSet().getDouble("ultimacostounitariocompra");
             }
         } catch (SQLException ex) {
-            Logger.getLogger(RegistrarVenta.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RegistrarVentaVista.class.getName()).log(Level.SEVERE, null, ex);
         }
         con.DesconectarBasedeDatos();
         return ultimoCostoCompra;
@@ -1782,7 +1782,7 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     private void CalculoPrecioVentaPromocional(int codSelect) {
         try { //Calculo precio venta y promocion
             con = con.ObtenerRSSentencia("SELECT prom_cantidad, prom_precio, propreve_precioventa FROM producto_precioventa, promocion "
-                    + "WHERE propreve_promocion=prom_codigo AND propreve_producto='" + codSelect + "' ORDER BY propreve_fecha DESC LIMIT 1");
+                    + "WHERE propreve_promocion=prom_codigo AND propreve_producto='" + codSelect + "' ORDER BY propreve_codigo DESC LIMIT 1");
             if (con.getResultSet().next()) {
                 double precioVenta = con.getResultSet().getDouble("propreve_precioventa");
                 int cantidadPromocion = con.getResultSet().getInt("prom_cantidad");
@@ -1812,10 +1812,10 @@ public final class RegistrarVenta extends javax.swing.JDialog {
     private javax.swing.JButton btnPantallaCompleta;
     private javax.swing.JButton btnQuitar;
     private javax.swing.JComboBox cbCampoBuscarProducto;
-    private static javax.swing.JComboBox<HelpersComboBox> cbCliente;
+    private static javax.swing.JComboBox<helpers.HelpersComboBox> cbCliente;
     private javax.swing.JComboBox<String> cbMoneda;
     private javax.swing.JComboBox<String> cbTipoDocumento;
-    private javax.swing.JComboBox<HelpersComboBox> cbVendedor;
+    private javax.swing.JComboBox<helpers.HelpersComboBox> cbVendedor;
     private com.toedter.calendar.JDateChooser dcFechaVenta;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JPanel jPanel1;
