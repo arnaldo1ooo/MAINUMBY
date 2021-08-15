@@ -125,7 +125,7 @@ public class SplashScreen extends javax.swing.JFrame implements Runnable {
         lbHora2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbHora2.setForeground(new java.awt.Color(0, 0, 0));
         lbHora2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lbHora2.setText("1.1.");
+        lbHora2.setText("1.0.");
         lbHora2.setFocusable(false);
         lbHora2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 

@@ -26,6 +26,7 @@ import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
 import helpers.Metodos;
 import helpers.HelpersComboBox;
 import helpers.HelpersTextField;
+import bean.UsuarioBean;
 
 /**
  *
@@ -41,6 +42,7 @@ public class ABMUsuario extends javax.swing.JDialog {
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);
     private Color colorGris = Color.GRAY;
+    private UsuarioBean usuarioBean = new UsuarioBean();
 
     public ABMUsuario(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
@@ -71,9 +73,7 @@ public class ABMUsuario extends javax.swing.JDialog {
             if (codigo.equals("")) {
                 int confirmado = JOptionPane.showConfirmDialog(this, "¿Esta seguro crear este nuevo registro?", "Confirmación", JOptionPane.YES_OPTION);
                 if (JOptionPane.YES_OPTION == confirmado) { //NUEVO REGISTRO
-                    String sentencia = "CALL SP_UsuarioAlta ('" + nombre + "','" + apellido + "','"
-                            + alias + "','" + pass + "','" + fechacreacion + "')";
-                    con.EjecutarABM(sentencia, true);
+                    usuarioBean.UsuarioAlta(nombre, apellido, alias, pass, fechacreacion);
 
                     TablaConsultaUsuarios(); //Actualizar tabla
                     ModoEdicion(false);
@@ -112,8 +112,7 @@ public class ABMUsuario extends javax.swing.JDialog {
         tablemodelUsuario = (DefaultTableModel) tbPrincipal.getModel();//Cargamos campos de jtable al modeltable
         tablemodelUsuario.setRowCount(0); //Vacia la tabla
         try {
-            String sentencia = "CALL SP_UsuarioConsulta()";
-            con = con.ObtenerRSSentencia(sentencia);
+            con = usuarioBean.UsuarioConsulta();
             int codigo;
             String nombre, apellido, alias, pass, fechacreacion;
             while (con.getResultSet().next()) {
