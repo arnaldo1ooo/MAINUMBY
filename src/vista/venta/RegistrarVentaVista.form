@@ -241,7 +241,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jpPrincipal" alignment="0" pref="749" max="32767" attributes="0"/>
+          <Component id="jpPrincipal" alignment="0" pref="729" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -301,11 +301,11 @@
                   <Component id="jpDatosVenta" min="-2" pref="141" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="panelDatosProducto" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jpProductos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jpBotones" min="-2" pref="55" max="-2" attributes="0"/>
@@ -429,16 +429,21 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cbTipoDocumento" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblRucCedula1" alignment="0" min="-2" pref="126" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblRucCedula1" min="-2" pref="126" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="cbTipoDocumento" pref="222" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblNumDoc" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <Component id="txtNumDoc" min="-2" pref="166" max="-2" attributes="0"/>
+                                  <Component id="txtNumDoc" min="-2" pref="148" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -717,10 +722,10 @@
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="lblImagen" min="-2" pref="118" max="-2" attributes="0"/>
+                      <Component id="lblImagen" min="-2" pref="106" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       <Component id="btnPantallaCompleta" min="-2" pref="39" max="-2" attributes="0"/>
-                      <EmptySpace pref="46" max="32767" attributes="0"/>
+                      <EmptySpace pref="58" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="txtPromocion" max="32767" attributes="0"/>
                           <Component id="lblCodigo8" alignment="0" max="32767" attributes="0"/>
@@ -739,52 +744,44 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="lblCodigo7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblMoneda" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="txtPrecioUnitarioVenta" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblCodigo8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtPromocion" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="lblMoneda2" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="lblIDProducto" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCodIdProducto" alignment="2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblExistencia" alignment="2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="2" attributes="0">
+                                  <Component id="txtCodProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="txtCodIdProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="btnBuscarProducto" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="txtExistenciaActual" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblTituloDescripcion" min="-2" pref="16" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                               <Component id="txtDescripcionProducto" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="btnPantallaCompleta" min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="lblImagen" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblCodigo7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="lblMoneda" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="txtPrecioUnitarioVenta" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="lblCodigo8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtPromocion" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="lblMoneda2" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="2" attributes="0">
-                                          <Component id="lblIDProducto" alignment="2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblCodIdProducto" alignment="2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblExistencia" alignment="2" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="2" attributes="0">
-                                          <Component id="txtCodProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="txtCodIdProducto" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
-                                          <Component id="btnBuscarProducto" alignment="2" min="-2" pref="36" max="-2" attributes="0"/>
-                                          <Component id="txtExistenciaActual" alignment="2" min="-2" pref="31" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="btnPantallaCompleta" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -912,7 +909,7 @@
             <Component class="javax.swing.JLabel" name="lblImagen">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Black" size="10" style="1"/>
+                  <Font name="Segoe UI Black" size="9" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="PRODUCTO SIN FOTO"/>
@@ -1347,7 +1344,7 @@
                   <Font name="Doppio One" size="14" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="TOTAL EFECTIVO"/>
+                <Property name="text" type="java.lang.String" value="TOTAL RECIBIDO"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtImporte">
