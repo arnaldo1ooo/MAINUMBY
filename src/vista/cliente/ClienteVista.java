@@ -6,6 +6,7 @@
 package vista.cliente;
 
 import dao.DAO;
+import helpers.HelpersTable;
 import java.awt.Color;
 
 import java.awt.Toolkit;
@@ -16,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
 import helpers.Metodos;
 import helpers.HelpersTextField;
+import helpers.HelpersUsuarioRol;
 
 /**
  *
@@ -24,8 +26,9 @@ import helpers.HelpersTextField;
 public final class ClienteVista extends javax.swing.JDialog {
 
     private DAO con = new DAO();
-    private Metodos metodos = new Metodos();
-    private HelpersTextField metodostxt = new HelpersTextField();
+    private HelpersTextField helpersTextField = new HelpersTextField();
+    private HelpersUsuarioRol helpersUsuarioRol = new HelpersUsuarioRol();
+    private HelpersTable helpersTable = new HelpersTable();
     private DefaultTableModel modelTableClientes;
     private final Color colorAdvertencia = Color.RED;
     private final Color colorTitulos = Color.BLACK;
@@ -35,7 +38,7 @@ public final class ClienteVista extends javax.swing.JDialog {
         initComponents();
 
         //Permiso Roles de usuario
-        String permisos = metodos.PermisoRol(codUsuario, "CLIENTE");
+        String permisos = helpersUsuarioRol.PermisoRol(codUsuario, "CLIENTE");
         btnNuevo.setVisible(permisos.contains("A"));
         btnEliminar.setVisible(permisos.contains("B"));
         btnModificar.setVisible(permisos.contains("M"));
@@ -50,12 +53,12 @@ public final class ClienteVista extends javax.swing.JDialog {
             String codigo, rucci, nombre, apellido, direccion, telefono, email, obs;
             codigo = txtCodigo.getText();
             rucci = txtRucCedula.getText();
-            nombre = metodostxt.MayusCadaPrimeraLetra(txtNombre.getText());
-            apellido = metodostxt.MayusCadaPrimeraLetra(txtApellido.getText());
-            direccion = metodostxt.MayusSoloPrimeraLetra(txtDireccion.getText());
+            nombre = helpersTextField.MayusCadaPrimeraLetra(txtNombre.getText());
+            apellido = helpersTextField.MayusCadaPrimeraLetra(txtApellido.getText());
+            direccion = helpersTextField.MayusSoloPrimeraLetra(txtDireccion.getText());
             telefono = txtTelefono.getText();
             email = txtEmail.getText();
-            obs = metodostxt.MayusSoloPrimeraLetra(taObs.getText());
+            obs = helpersTextField.MayusSoloPrimeraLetra(taObs.getText());
 
             if (txtCodigo.getText().equals("")) {//Si es nuevo
                 int confirmado = JOptionPane.showConfirmDialog(this, "¿Esta seguro crear este nuevo registro?", "Confirmación", JOptionPane.YES_OPTION);
@@ -121,7 +124,7 @@ public final class ClienteVista extends javax.swing.JDialog {
                 modelTableClientes.addRow(new Object[]{codigo, nombre});
             }
             tbPrincipal.setModel(modelTableClientes);
-            metodos.AnchuraColumna(tbPrincipal);
+            helpersTable.AnchuraColumna(tbPrincipal);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -184,19 +187,19 @@ public final class ClienteVista extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.CampoNoNulo(txtRucCedula, lblRucCedula) == false) {
+        if (helpersTextField.CampoNoNulo(txtRucCedula, lblRucCedula) == false) {
             return false;
         }
 
-        if (metodostxt.CampoNoNulo(txtNombre, lblNombre) == false) {
+        if (helpersTextField.CampoNoNulo(txtNombre, lblNombre) == false) {
             return false;
         }
 
-        if (metodostxt.CampoNoNulo(txtApellido, lblApellido) == false) {
+        if (helpersTextField.CampoNoNulo(txtApellido, lblApellido) == false) {
             return false;
         }
 
-        if (metodostxt.CampoNoNulo(txtDireccion, lblDireccion) == false) {
+        if (helpersTextField.CampoNoNulo(txtDireccion, lblDireccion) == false) {
             return false;
         }
 
@@ -812,7 +815,7 @@ public final class ClienteVista extends javax.swing.JDialog {
 
 //--------------------------Eventos de componentes----------------------------//
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
-        metodos.FiltroJTable(txtBuscar.getText(), cbCampoBuscar.getSelectedIndex(), tbPrincipal);
+        helpersTable.FiltroJTable(txtBuscar.getText(), cbCampoBuscar.getSelectedIndex(), tbPrincipal);
 
         btnModificar.setEnabled(false);
         btnEliminar.setEnabled(false);
@@ -874,11 +877,11 @@ public final class ClienteVista extends javax.swing.JDialog {
         //Solo numero y "-"
         char car = evt.getKeyChar();
         if (car != '-') {
-            metodostxt.SoloNumeroEnteroKeyTyped(evt);
+            helpersTextField.SoloNumeroEnteroKeyTyped(evt);
         }
 
         //Cantidad de caracteres
-        metodostxt.TxtCantidadCaracteresKeyTyped(txtRucCedula, 15);
+        helpersTextField.TxtCantidadCaracteresKeyTyped(txtRucCedula, 15);
     }//GEN-LAST:event_txtRucCedulaKeyTyped
 
     private void txtRucCedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRucCedulaKeyReleased
@@ -890,18 +893,18 @@ public final class ClienteVista extends javax.swing.JDialog {
     }//GEN-LAST:event_txtRucCedulaKeyPressed
 
     private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
-        metodostxt.SoloNumeroEnteroKeyTyped(evt);
+        helpersTextField.SoloNumeroEnteroKeyTyped(evt);
     }//GEN-LAST:event_txtTelefonoKeyTyped
 
     private void txtTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyPressed
-        metodostxt.SoloNumeroEnteroKeyTyped(evt);
+        helpersTextField.SoloNumeroEnteroKeyTyped(evt);
     }//GEN-LAST:event_txtTelefonoKeyPressed
 
     private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
-        metodostxt.SoloTextoKeyTyped(evt);
+        helpersTextField.SoloTextoKeyTyped(evt);
 
         //Cantidad de caracteres
-        metodostxt.TxtCantidadCaracteresKeyTyped(txtApellido, 30);
+        helpersTextField.TxtCantidadCaracteresKeyTyped(txtApellido, 30);
     }//GEN-LAST:event_txtApellidoKeyTyped
 
     private void txtApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyReleased
@@ -909,10 +912,10 @@ public final class ClienteVista extends javax.swing.JDialog {
     }//GEN-LAST:event_txtApellidoKeyReleased
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-        metodostxt.SoloTextoKeyTyped(evt);
+        helpersTextField.SoloTextoKeyTyped(evt);
 
         //Cantidad de caracteres
-        metodostxt.TxtCantidadCaracteresKeyTyped(txtNombre, 30);
+        helpersTextField.TxtCantidadCaracteresKeyTyped(txtNombre, 30);
     }//GEN-LAST:event_txtNombreKeyTyped
 
     private void txtNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyReleased
@@ -927,7 +930,7 @@ public final class ClienteVista extends javax.swing.JDialog {
     }//GEN-LAST:event_taObsKeyPressed
 
     private void txtEmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyTyped
-        metodostxt.BloquearTeclaKeyTyped(evt, KeyEvent.VK_SPACE);
+        helpersTextField.BloquearTeclaKeyTyped(evt, KeyEvent.VK_SPACE);
     }//GEN-LAST:event_txtEmailKeyTyped
 
     private void txtEmailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyPressed

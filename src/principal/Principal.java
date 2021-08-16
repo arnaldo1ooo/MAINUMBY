@@ -22,6 +22,7 @@ import login.Login;
 //Variables globales
 import static login.Login.codUsuario;
 import static login.Login.alias;
+import vista.venta.ReporteVentas;
 //import reportes.ReportePlanilla;
 //
 
@@ -87,7 +88,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
                     case "REPORTE" -> {
                         meReporte.setEnabled(true);
-                        meiReportePlanilla.setEnabled(true);
+                        meiReporteVenta.setEnabled(true);
                     }
 
                     case "CONFIGURACION" -> {
@@ -170,7 +171,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jSeparator14 = new javax.swing.JPopupMenu.Separator();
         meitRegistrarActualizacionStock = new javax.swing.JMenuItem();
         meReporte = new javax.swing.JMenu();
-        meiReportePlanilla = new javax.swing.JMenuItem();
+        meiReporteVenta = new javax.swing.JMenuItem();
         jSeparator13 = new javax.swing.JPopupMenu.Separator();
         meUsuario = new javax.swing.JMenu();
         meitRol = new javax.swing.JMenuItem();
@@ -588,14 +589,14 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         meReporte.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         meReporte.setPreferredSize(new java.awt.Dimension(130, 70));
 
-        meiReportePlanilla.setText("Reporte planilla");
-        meiReportePlanilla.setEnabled(false);
-        meiReportePlanilla.addActionListener(new java.awt.event.ActionListener() {
+        meiReporteVenta.setText("Reporte ventas");
+        meiReporteVenta.setEnabled(false);
+        meiReporteVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                meiReportePlanillaActionPerformed(evt);
+                meiReporteVentaActionPerformed(evt);
             }
         });
-        meReporte.add(meiReportePlanilla);
+        meReporte.add(meiReporteVenta);
         meReporte.add(jSeparator13);
 
         jMenuBar1.add(meReporte);
@@ -774,11 +775,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         abmproducto.setVisible(true);
     }//GEN-LAST:event_btnProductoActionPerformed
 
-    private void meiReportePlanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meiReportePlanillaActionPerformed
-        /*        ReportePlanilla reporteplanilla = new ReportePlanilla(this, true);
-        reporteplanilla.setLocationRelativeTo(this);
-        reporteplanilla.setVisible(true);*/
-    }//GEN-LAST:event_meiReportePlanillaActionPerformed
+    private void meiReporteVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meiReporteVentaActionPerformed
+        ReporteVentas reporteVentas = new ReporteVentas(this, true);
+        reporteVentas.setLocationRelativeTo(this);
+        reporteVentas.setVisible(true);
+    }//GEN-LAST:event_meiReporteVentaActionPerformed
 
     private void meitRegistrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meitRegistrarVentaActionPerformed
         RegistrarVentaVista registrarventa = new RegistrarVentaVista(this, true);
@@ -870,7 +871,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenu meUsuario;
     private javax.swing.JMenu meVenta;
     private javax.swing.JMenuItem meiCategoria;
-    private javax.swing.JMenuItem meiReportePlanilla;
+    private javax.swing.JMenuItem meiReporteVenta;
     private javax.swing.JMenuItem meitDeuda;
     private javax.swing.JMenuItem meitModulo;
     private javax.swing.JMenuItem meitPerfil;

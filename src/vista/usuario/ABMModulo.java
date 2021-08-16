@@ -6,6 +6,8 @@
 package vista.usuario;
 
 import dao.DAO;
+import helpers.HelpersString;
+import helpers.HelpersTable;
 import java.awt.Color;
 
 import java.awt.Toolkit;
@@ -23,8 +25,9 @@ import helpers.HelpersTextField;
 public class ABMModulo extends javax.swing.JDialog {
 
     private DAO con = new DAO();
-    private Metodos metodos = new Metodos();
+    private HelpersTable helpersTable = new HelpersTable();
     private HelpersTextField metodostxt = new HelpersTextField();
+    private HelpersString helpersString = new HelpersString();
     private DefaultTableModel modelTableModulos;
     private Color colorAdvertencia = new Color(206, 16, 45);
     private Color colorTitulos = Color.GRAY;
@@ -102,7 +105,7 @@ public class ABMModulo extends javax.swing.JDialog {
                 modelTableModulos.addRow(new Object[]{codigo, denominacion});
             }
             tbPrincipal.setModel(modelTableModulos);
-            metodos.AnchuraColumna(tbPrincipal);
+            helpersTable.AnchuraColumna(tbPrincipal);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -116,8 +119,8 @@ public class ABMModulo extends javax.swing.JDialog {
     }
 
     private void ModoVistaPrevia() {
-        txtCodigo.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 0) + ""));
-        txtDenominacion.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 1) + ""));
+        txtCodigo.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 0) + ""));
+        txtDenominacion.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 1) + ""));
     }
 
     private void ModoEdicion(boolean valor) {

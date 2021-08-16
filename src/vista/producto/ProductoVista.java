@@ -21,7 +21,10 @@ import helpers.HelpersComboBox;
 import helpers.HelpersDate;
 import helpers.HelpersImagen;
 import helpers.HelpersMoneda;
+import helpers.HelpersString;
+import helpers.HelpersTable;
 import helpers.HelpersTextField;
+import helpers.HelpersUsuarioRol;
 import helpers.VistaCompleta;
 
 /**
@@ -31,9 +34,11 @@ import helpers.VistaCompleta;
 public class ProductoVista extends javax.swing.JDialog {
 
     private DAO con = new DAO();
-    private Metodos metodos = new Metodos();
+    private HelpersTable helpersTable = new HelpersTable();
     private HelpersTextField helpersTextField = new HelpersTextField();
     private HelpersComboBox helpersComboBox = new HelpersComboBox();
+    private HelpersUsuarioRol helpersUsuarioRol = new HelpersUsuarioRol();
+    private HelpersString helpersString = new HelpersString();
     private HelpersImagen metodosimagen = new HelpersImagen();
     private HelpersMoneda helpersMoneda = new HelpersMoneda();
     private ConvertersEstado convertersEstado = new ConvertersEstado();
@@ -53,7 +58,7 @@ public class ProductoVista extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-        metodos.AnchuraColumna(tbPrincipal);
+        helpersTable.AnchuraColumna(tbPrincipal);
 
         //LLamar metodos
         //ConsultaAllAlumno(); //Trae todos los registros
@@ -61,7 +66,7 @@ public class ProductoVista extends javax.swing.JDialog {
         CargarComboBoxes();
 
         //Permiso Roles de usuario
-        String permisos = metodos.PermisoRol(codUsuario, "PRODUCTO");
+        String permisos = helpersUsuarioRol.PermisoRol(codUsuario, "PRODUCTO");
         btnNuevo.setVisible(permisos.contains("A"));
         btnModificar.setVisible(permisos.contains("M"));
         btnEliminar.setVisible(permisos.contains("B"));
@@ -98,7 +103,7 @@ public class ProductoVista extends javax.swing.JDialog {
                 tableModelProducto.addRow(new Object[]{codigo, identificador, descripcion, categoria, existencia, estado, obs});
             }
             tbPrincipal.setModel(tableModelProducto);
-            metodos.AnchuraColumna(tbPrincipal);
+            helpersTable.AnchuraColumna(tbPrincipal);
 
             if (tbPrincipal.getModel().getRowCount() == 1) {
                 lbCantRegistros.setText(tbPrincipal.getModel().getRowCount() + " Registro encontrado");
@@ -211,13 +216,13 @@ public class ProductoVista extends javax.swing.JDialog {
     }
 
     private void ModoVistaPrevia() {
-        txtCodigo.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 0) + ""));
-        txtIdentificador.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 1) + ""));
-        txtDescripcion.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 2) + ""));
-        helpersComboBox.SetSelectedNombreItem(cbCategoria, metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 3) + ""));
-        txtExistencia.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 4) + ""));
-        cbEstado.setSelectedItem(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 5) + ""));
-        taObs.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 6) + ""));
+        txtCodigo.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 0) + ""));
+        txtIdentificador.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 1) + ""));
+        txtDescripcion.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 2) + ""));
+        helpersComboBox.SetSelectedNombreItem(cbCategoria, helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 3) + ""));
+        txtExistencia.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 4) + ""));
+        cbEstado.setSelectedItem(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 5) + ""));
+        taObs.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 6) + ""));
 
         metodosimagen.LeerImagen(lblImagen, rutaFotoProducto + "image_" + txtCodigo.getText() + "_A", rutaFotoDefault);
 
@@ -1132,8 +1137,8 @@ public class ProductoVista extends javax.swing.JDialog {
     }//GEN-LAST:event_txtDescripcionFocusLost
 
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
-        metodos.FiltroJTable(txtBuscar.getText(), cbCampoBuscar.getSelectedIndex(), tbPrincipal);
-        metodos.AnchuraColumna(tbPrincipal);
+        helpersTable.FiltroJTable(txtBuscar.getText(), cbCampoBuscar.getSelectedIndex(), tbPrincipal);
+        helpersTable.AnchuraColumna(tbPrincipal);
         Limpiar();
         if (tbPrincipal.getRowCount() == 1) {
             lbCantRegistros.setText(tbPrincipal.getRowCount() + " Registro encontrado");

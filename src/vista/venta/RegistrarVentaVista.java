@@ -21,7 +21,9 @@ import javax.swing.table.DefaultTableModel;
 import helpers.Metodos;
 import helpers.HelpersComboBox;
 import helpers.HelpersImagen;
+import helpers.HelpersTable;
 import helpers.HelpersTextField;
+import helpers.HelpersUsuarioRol;
 import helpers.VistaCompleta;
 import static login.Login.codUsuario;
 
@@ -32,11 +34,12 @@ import static login.Login.codUsuario;
 public final class RegistrarVentaVista extends javax.swing.JDialog {
 
     DAO con = new DAO();
-    Metodos metodos = new Metodos();
-    HelpersTextField metodostxt = new HelpersTextField();
-    HelpersComboBox metodoscombo = new HelpersComboBox();
-    HelpersImagen metodosimagen = new HelpersImagen();
-    HelpersComboBox helpersComboBox = new HelpersComboBox();
+    private HelpersTable helpersTable = new HelpersTable();
+    private HelpersTextField metodostxt = new HelpersTextField();
+    private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersImagen metodosimagen = new HelpersImagen();
+    private HelpersComboBox helpersComboBox = new HelpersComboBox();
+    private HelpersUsuarioRol helpersUsuarioRol = new HelpersUsuarioRol(); 
     private final String rutaFotoProducto = "C:\\MAINUMBY\\productos\\imagenes\\";
     private final String rutaFotoDefault = "/src/images/IconoProductoSinFoto.png";
     private DefaultTableModel tabmodelDetalleVenta;
@@ -59,7 +62,7 @@ public final class RegistrarVentaVista extends javax.swing.JDialog {
         TablaAllProducto();
 
         //Permiso Roles de usuario
-        String permisos = metodos.PermisoRol(codUsuario, "VENTA");
+        String permisos = helpersUsuarioRol.PermisoRol(codUsuario, "VENTA");
         btnGuardar.setVisible(permisos.contains("A"));
     }
 
@@ -1424,7 +1427,7 @@ public final class RegistrarVentaVista extends javax.swing.JDialog {
 
     private void SumarSubtotalNeto() {
         //Suma la colmna subtotal
-        double totalventa = metodos.SumarColumnaDouble(tbDetalleVenta, 5); //El 6 es la columna 5, comienza de 0
+        double totalventa = helpersTable.SumarColumnaDouble(tbDetalleVenta, 5); //El 6 es la columna 5, comienza de 0
         totalventa = metodostxt.arredondamientoDouble(totalventa, 2);
         txtTotalVenta.setText(metodostxt.DoubleAFormatSudamerica(totalventa));
     }
@@ -1658,7 +1661,7 @@ public final class RegistrarVentaVista extends javax.swing.JDialog {
     }//GEN-LAST:event_txtDescuentoActionPerformed
 
     private void txtBuscarProductoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarProductoKeyReleased
-        metodos.FiltroJTable(txtBuscarProducto.getText(), cbCampoBuscarProducto.getSelectedIndex(), tbProductosBuscadorProductos);
+        helpersTable.FiltroJTable(txtBuscarProducto.getText(), cbCampoBuscarProducto.getSelectedIndex(), tbProductosBuscadorProductos);
 
         if (tbProductosBuscadorProductos.getRowCount() == 1) {
             lbCantRegistrosProducto.setText(tbProductosBuscadorProductos.getRowCount() + " Registro encontrado");

@@ -22,6 +22,8 @@ import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
 import helpers.Metodos;
 import helpers.HelpersTextField;
 import helpers.HelpersComboBox;
+import helpers.HelpersString;
+import helpers.HelpersTable;
 
 /**
  *
@@ -30,9 +32,9 @@ import helpers.HelpersComboBox;
 public class ABMPerfil extends javax.swing.JDialog {
 
     private DAO con = new DAO();
-    private Metodos metodos = new Metodos();
+    private HelpersTable helpersTable = new HelpersTable();
     private HelpersTextField metodostxt = new HelpersTextField();
-    private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersString helpersString = new HelpersString();
     private DefaultTableModel tablemodelPerfil;
     private DefaultTableModel tablemodelAllModulos;
 
@@ -150,7 +152,7 @@ public class ABMPerfil extends javax.swing.JDialog {
                 tablemodelPerfil.addRow(new Object[]{codigo, denominacion, descripcion});
             }
             tbAllPerfil.setModel(tablemodelPerfil);
-            metodos.AnchuraColumna(tbAllPerfil);
+            helpersTable.AnchuraColumna(tbAllPerfil);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -177,7 +179,7 @@ public class ABMPerfil extends javax.swing.JDialog {
                 tablemodelAllModulos.addRow(new Object[]{codigo, denominacion});
             }
             tbPerfilModulos.setModel(tablemodelAllModulos);
-            metodos.AnchuraColumna(tbPerfilModulos);
+            helpersTable.AnchuraColumna(tbPerfilModulos);
 
             /*tbPerfilModulos.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
             tbPerfilModulos.getColumnModel().getColumn(0).setPreferredWidth(70);
@@ -190,9 +192,9 @@ public class ABMPerfil extends javax.swing.JDialog {
     }
 
     private void ModoVistaPrevia() {
-        txtCodigo.setText(metodos.SiStringEsNull(tbAllPerfil.getValueAt(tbAllPerfil.getSelectedRow(), 0) + ""));
-        txtDenominacion.setText(metodos.SiStringEsNull(tbAllPerfil.getValueAt(tbAllPerfil.getSelectedRow(), 1) + ""));
-        taDescripcion.setText(metodos.SiStringEsNull(tbAllPerfil.getValueAt(tbAllPerfil.getSelectedRow(), 2) + ""));
+        txtCodigo.setText(helpersString.nuloAVacio(tbAllPerfil.getValueAt(tbAllPerfil.getSelectedRow(), 0) + ""));
+        txtDenominacion.setText(helpersString.nuloAVacio(tbAllPerfil.getValueAt(tbAllPerfil.getSelectedRow(), 1) + ""));
+        taDescripcion.setText(helpersString.nuloAVacio(tbAllPerfil.getValueAt(tbAllPerfil.getSelectedRow(), 2) + ""));
 
         try {
             for (int f = 0; f < tbPerfilModulos.getRowCount(); f++) {

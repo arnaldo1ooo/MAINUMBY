@@ -19,7 +19,10 @@ import static login.Login.codUsuario;
 import helpers.HelpersImagen;
 import helpers.Metodos;
 import helpers.HelpersComboBox;
+import helpers.HelpersString;
+import helpers.HelpersTable;
 import helpers.HelpersTextField;
+import helpers.HelpersUsuarioRol;
 
 /**
  *
@@ -28,27 +31,28 @@ import helpers.HelpersTextField;
 public class ABMProveedor extends javax.swing.JDialog {
 
     private DAO con = new DAO();
-    private Metodos metodos = new Metodos();
-    private HelpersTextField metodostxt = new HelpersTextField();
-    private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersTextField helpersTextFiled = new HelpersTextField();
     private HelpersImagen metodosimagen = new HelpersImagen();
+    private HelpersComboBox helpersComboBox = new HelpersComboBox();
+    private HelpersTable helpersTable = new HelpersTable();
+    private HelpersUsuarioRol helpersUsuarioRol = new HelpersUsuarioRol();
+    private HelpersString helpersString = new HelpersString();
     private DefaultTableModel tableModelProveedor;
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);
-    private HelpersComboBox helpersComboBox = new HelpersComboBox();
 
     public ABMProveedor(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);
         initComponents();
 
-        metodos.AnchuraColumna(tbPrincipal);
+        helpersTable.AnchuraColumna(tbPrincipal);
 
         //LLamar metodos
         ConsultaAllProveedor();
         CargarComboBoxes();
 
         //Permiso Roles de usuario
-        String permisos = metodos.PermisoRol(codUsuario, "PROVEEDOR");
+        String permisos = helpersUsuarioRol.PermisoRol(codUsuario, "PROVEEDOR");
         btnNuevo.setVisible(permisos.contains("A"));
         btnModificar.setVisible(permisos.contains("M"));
         btnEliminar.setVisible(permisos.contains("B"));
@@ -81,7 +85,7 @@ public class ABMProveedor extends javax.swing.JDialog {
                 tableModelProveedor.addRow(new Object[]{codigo, descripcion, celular, direccion});
             }
             tbPrincipal.setModel(tableModelProveedor);
-            metodos.AnchuraColumna(tbPrincipal);
+            helpersTable.AnchuraColumna(tbPrincipal);
 
             if (tbPrincipal.getModel().getRowCount() == 1) {
                 lbCantRegistros.setText(tbPrincipal.getModel().getRowCount() + " Registro encontrado");
@@ -149,10 +153,10 @@ public class ABMProveedor extends javax.swing.JDialog {
     }
 
     private void ModoVistaPrevia() {
-        txtCodigo.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 0) + ""));
-        txtDescripcion.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 1) + ""));
-        txtCelular.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 2) + ""));
-        txtDireccion.setText(metodos.SiStringEsNull(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 3) + ""));
+        txtCodigo.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 0) + ""));
+        txtDescripcion.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 1) + ""));
+        txtCelular.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 2) + ""));
+        txtDireccion.setText(helpersString.nuloAVacio(tbPrincipal.getValueAt(tbPrincipal.getSelectedRow(), 3) + ""));
     }
 
     private void ModoEdicion(boolean valor) {
@@ -182,7 +186,7 @@ public class ABMProveedor extends javax.swing.JDialog {
     }
 
     public boolean ComprobarCampos() {
-        if (metodostxt.CampoNoNulo(txtDescripcion, lblDescripcion) == false) {
+        if (helpersTextFiled.CampoNoNulo(txtDescripcion, lblDescripcion) == false) {
             return false;
         }
 
@@ -801,7 +805,7 @@ public class ABMProveedor extends javax.swing.JDialog {
 
     private void txtDescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescripcionKeyTyped
         //Cantidad de caracteres
-        metodostxt.TxtCantidadCaracteresKeyTyped(txtDescripcion, 45);
+        helpersTextFiled.TxtCantidadCaracteresKeyTyped(txtDescripcion, 45);
     }//GEN-LAST:event_txtDescripcionKeyTyped
 
     private void txtDescripcionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescripcionKeyReleased
@@ -826,8 +830,8 @@ public class ABMProveedor extends javax.swing.JDialog {
     }//GEN-LAST:event_txtDescripcionFocusLost
 
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
-        metodos.FiltroJTable(txtBuscar.getText(), cbCampoBuscar.getSelectedIndex(), tbPrincipal);
-        metodos.AnchuraColumna(tbPrincipal);
+        helpersTable.FiltroJTable(txtBuscar.getText(), cbCampoBuscar.getSelectedIndex(), tbPrincipal);
+        helpersTable.AnchuraColumna(tbPrincipal);
         Limpiar();
         if (tbPrincipal.getRowCount() == 1) {
             lbCantRegistros.setText(tbPrincipal.getRowCount() + " Registro encontrado");
@@ -837,7 +841,7 @@ public class ABMProveedor extends javax.swing.JDialog {
     }//GEN-LAST:event_txtBuscarKeyReleased
 
     private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
-        metodostxt.FiltroCaracteresProhibidos(evt);
+        helpersTextFiled.FiltroCaracteresProhibidos(evt);
     }//GEN-LAST:event_txtBuscarKeyTyped
 
     private void btnMasDosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasDosisActionPerformed

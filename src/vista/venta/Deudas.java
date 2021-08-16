@@ -7,19 +7,15 @@ package vista.venta;
 
 import dao.DAO;
 import java.awt.Color;
-import java.awt.HeadlessException;
-import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
-import java.net.URL;
-import java.sql.SQLException;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static login.Login.codUsuario;
 import helpers.HelpersImagen;
 import helpers.Metodos;
 import helpers.HelpersComboBox;
+import helpers.HelpersTable;
 import helpers.HelpersTextField;
+import helpers.HelpersUsuarioRol;
 
 /**
  *
@@ -28,10 +24,10 @@ import helpers.HelpersTextField;
 public class Deudas extends javax.swing.JDialog {
 
     private DAO con = new DAO();
-    private Metodos metodos = new Metodos();
-    private HelpersTextField metodostxt = new HelpersTextField();
-    private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersTextField helpersTextField = new HelpersTextField();
+    private HelpersTable helpersTable = new HelpersTable();
     private HelpersImagen metodosimagen = new HelpersImagen();
+    private HelpersUsuarioRol helpersUsuarioRol = new HelpersUsuarioRol();
     private DefaultTableModel tableModelProveedor;
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);
@@ -41,14 +37,14 @@ public class Deudas extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-        metodos.AnchuraColumna(tbPrincipal);
+        helpersTable.AnchuraColumna(tbPrincipal);
 
         //LLamar metodos
         ConsultaAllProveedor();
         CargarComboBoxes();
 
         //Permiso Roles de usuario
-        String permisos = metodos.PermisoRol(codUsuario, "DEUDA");
+        String permisos = helpersUsuarioRol.PermisoRol(codUsuario, "DEUDA");
         btnGuardar.setVisible(permisos.contains("M"));
     }
 
@@ -79,7 +75,7 @@ public class Deudas extends javax.swing.JDialog {
                 tableModelProveedor.addRow(new Object[]{codigo, descripcion, celular, direccion});
             }
             tbPrincipal.setModel(tableModelProveedor);
-            metodos.AnchuraColumna(tbPrincipal);
+            helpersTable.AnchuraColumna(tbPrincipal);
 
             if (tbPrincipal.getModel().getRowCount() == 1) {
                 lbCantRegistros.setText(tbPrincipal.getModel().getRowCount() + " Registro encontrado");
@@ -469,8 +465,8 @@ public class Deudas extends javax.swing.JDialog {
     }//GEN-LAST:event_tbPrincipalMouseClicked
 
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
-        metodos.FiltroJTable(txtBuscar.getText(), cbCampoBuscar.getSelectedIndex(), tbPrincipal);
-        metodos.AnchuraColumna(tbPrincipal);
+        helpersTable.FiltroJTable(txtBuscar.getText(), cbCampoBuscar.getSelectedIndex(), tbPrincipal);
+        helpersTable.AnchuraColumna(tbPrincipal);
         Limpiar();
         if (tbPrincipal.getRowCount() == 1) {
             lbCantRegistros.setText(tbPrincipal.getRowCount() + " Registro encontrado");
@@ -480,7 +476,7 @@ public class Deudas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtBuscarKeyReleased
 
     private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
-        metodostxt.FiltroCaracteresProhibidos(evt);
+        helpersTextField.FiltroCaracteresProhibidos(evt);
     }//GEN-LAST:event_txtBuscarKeyTyped
 
     /**

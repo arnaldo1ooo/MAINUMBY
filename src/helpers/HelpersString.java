@@ -19,4 +19,20 @@ public class HelpersString {
         }
     }
     
+    public Boolean esNulo(String laCadena) {
+        if (laCadena.equals("null") || laCadena.equals(null)) {
+            laCadena = "";
+            return true;
+        }
+        
+        return false;
+    }
+    
+        public String nuloAVacio(String laCadena) {
+        if (laCadena.equals("null")) {
+            laCadena = "";
+        }
+        return laCadena;
+    }
+    
 }

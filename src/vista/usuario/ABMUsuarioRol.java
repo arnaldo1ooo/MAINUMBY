@@ -15,6 +15,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import helpers.Metodos;
 import helpers.HelpersComboBox;
+import helpers.HelpersTable;
 import org.apache.log4j.Logger;
 import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
 
@@ -25,8 +26,8 @@ import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
 public class ABMUsuarioRol extends javax.swing.JDialog {
 
     private DAO con = new DAO();
-    private Metodos metodos = new Metodos();
     private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersTable helpersTable = new HelpersTable();
     private DefaultTableModel tableModelModulo;
 
     static Logger log_historial = Logger.getLogger(ABMUsuarioRol.class.getName());
@@ -84,9 +85,9 @@ public class ABMUsuarioRol extends javax.swing.JDialog {
         tbModulosUsuario.getColumnModel().getColumn(0).setResizable(false);
         tbModulosUsuario.getColumnModel().getColumn(1).setPreferredWidth(tbModulosUsuario.getWidth() - 60);
         tbModulosUsuario.getColumnModel().getColumn(1).setResizable(false);
-        metodos.OcultarColumna(tbModulosUsuario, 2);
-        metodos.OcultarColumna(tbModulosUsuario, 3);
-        metodos.OcultarColumna(tbModulosUsuario, 4);
+        helpersTable.OcultarColumna(tbModulosUsuario, 2);
+        helpersTable.OcultarColumna(tbModulosUsuario, 3);
+        helpersTable.OcultarColumna(tbModulosUsuario, 4);
     }
 
     public void RegistroGuardar() {

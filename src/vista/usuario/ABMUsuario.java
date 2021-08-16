@@ -27,6 +27,8 @@ import helpers.Metodos;
 import helpers.HelpersComboBox;
 import helpers.HelpersTextField;
 import bean.UsuarioBean;
+import helpers.HelpersTable;
+import helpers.HelpersUsuarioRol;
 
 /**
  *
@@ -35,9 +37,10 @@ import bean.UsuarioBean;
 public class ABMUsuario extends javax.swing.JDialog {
 
     private DAO con = new DAO();
-    private Metodos metodos = new Metodos();
+    private HelpersUsuarioRol helpersUsuarioRol = new HelpersUsuarioRol();
     private HelpersTextField metodostxt = new HelpersTextField();
     private HelpersComboBox metodoscombo = new HelpersComboBox();
+    private HelpersTable helpersTable = new HelpersTable();
     private DefaultTableModel tablemodelUsuario;
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);
@@ -49,7 +52,7 @@ public class ABMUsuario extends javax.swing.JDialog {
         initComponents();
 
 //Permiso Roles de usuario
-        String permisos = metodos.PermisoRol(codUsuario, "USUARIO");
+        String permisos = helpersUsuarioRol.PermisoRol(codUsuario, "USUARIO");
         btnNuevo.setVisible(permisos.contains("A"));
         btnModificar.setVisible(permisos.contains("M"));
         btnEliminar.setVisible(permisos.contains("B"));
@@ -126,7 +129,7 @@ public class ABMUsuario extends javax.swing.JDialog {
                 tablemodelUsuario.addRow(new Object[]{codigo, nombre, apellido, alias, pass, fechacreacion});
             }
             tbPrincipal.setModel(tablemodelUsuario);
-            metodos.AnchuraColumna(tbPrincipal);
+            helpersTable.AnchuraColumna(tbPrincipal);
         } catch (Exception e) {
             e.printStackTrace();
         }

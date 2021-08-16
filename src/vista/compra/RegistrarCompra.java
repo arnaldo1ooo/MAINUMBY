@@ -10,7 +10,9 @@ import vista.producto.ProductoVista;
 import helpers.Metodos;
 import helpers.HelpersComboBox;
 import helpers.HelpersImagen;
+import helpers.HelpersTable;
 import helpers.HelpersTextField;
+import helpers.HelpersUsuarioRol;
 import helpers.VistaCompleta;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -36,8 +38,9 @@ public final class RegistrarCompra extends javax.swing.JDialog {
 
     private HelpersTextField metodostxt = new HelpersTextField();
     private DAO con = new DAO();
-    private Metodos metodos = new Metodos();
+    private HelpersUsuarioRol helpersUsuarioRol = new HelpersUsuarioRol();
     private HelpersImagen metodosimagen = new HelpersImagen();
+    private HelpersTable helpersTable = new HelpersTable();
     private DefaultTableModel tabmodelDetalleCompra;
     private DefaultTableModel tabmodelProductos;
     private final Color colorVerde = new Color(6, 147, 27);
@@ -61,7 +64,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
                 new Date());
 
         //Permiso Roles de usuario
-        String permisos = metodos.PermisoRol(codUsuario, "COMPRA");
+        String permisos = helpersUsuarioRol.PermisoRol(codUsuario, "COMPRA");
 
         btnGuardar.setVisible(permisos.contains("A"));
     }
@@ -1428,7 +1431,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
 
     private void SumarSubtotal() {
         //Suma la colmna subtotal
-        double totalcompra = metodos.SumarColumnaDouble(tbDetalleCompra, 4);
+        double totalcompra = helpersTable.SumarColumnaDouble(tbDetalleCompra, 4);
         totalcompra = metodostxt.arredondamientoDouble(totalcompra, 2);
         String totalcompraString = metodostxt.DoubleAFormatSudamerica(totalcompra);
         txtTotalCompra.setText(totalcompraString);
@@ -1707,7 +1710,7 @@ public final class RegistrarCompra extends javax.swing.JDialog {
     }//GEN-LAST:event_spUnidadPorPackCalculoPacksStateChanged
 
     private void txtBuscarApoderadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarApoderadoKeyReleased
-        metodos.FiltroJTable(txtBuscarApoderado.getText(), cbCampoBuscarBuscadorProductos.getSelectedIndex(), tbProductosBuscadorProductos);
+        helpersTable.FiltroJTable(txtBuscarApoderado.getText(), cbCampoBuscarBuscadorProductos.getSelectedIndex(), tbProductosBuscadorProductos);
 
         if (tbProductosBuscadorProductos.getRowCount() == 1) {
             lbCantRegistrosBuscadorProductos.setText(tbProductosBuscadorProductos.getRowCount() + " Registro encontrado");

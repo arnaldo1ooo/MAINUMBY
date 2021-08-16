@@ -168,13 +168,13 @@
             </Property>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="meiReportePlanilla">
+            <MenuItem class="javax.swing.JMenuItem" name="meiReporteVenta">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Reporte planilla"/>
+                <Property name="text" type="java.lang.String" value="Reporte ventas"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="meiReportePlanillaActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="meiReporteVentaActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator13">
