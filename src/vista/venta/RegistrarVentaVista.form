@@ -236,7 +236,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jpPrincipal" pref="1127" max="32767" attributes="0"/>
+          <Component id="jpPrincipal" pref="1175" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -1414,7 +1414,7 @@
                   <Font name="Doppio One" size="14" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="Gs."/>
+                <Property name="text" type="java.lang.String" value="Guaranies"/>
                 <Property name="horizontalTextPosition" type="int" value="2"/>
               </Properties>
             </Component>
@@ -1453,7 +1453,7 @@
                   <Font name="Doppio One" size="14" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="Gs."/>
+                <Property name="text" type="java.lang.String" value="Guaranies"/>
                 <Property name="horizontalTextPosition" type="int" value="2"/>
               </Properties>
             </Component>
@@ -1463,7 +1463,7 @@
                   <Font name="Doppio One" size="14" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="Gs."/>
+                <Property name="text" type="java.lang.String" value="Guaranies"/>
                 <Property name="horizontalTextPosition" type="int" value="2"/>
               </Properties>
             </Component>

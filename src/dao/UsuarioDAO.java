@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bean;
+package dao;
 
 import dao.DAO;
 
-public class UsuarioBean {
+public class UsuarioDAO {
      private DAO con = new DAO();
     
      public DAO UsuarioConsulta(){

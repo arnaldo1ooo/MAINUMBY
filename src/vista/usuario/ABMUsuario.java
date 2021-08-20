@@ -26,7 +26,7 @@ import org.oxbow.swingbits.table.filter.TableRowFilterSupport;
 import helpers.Metodos;
 import helpers.HelpersComboBox;
 import helpers.HelpersTextField;
-import bean.UsuarioBean;
+import dao.UsuarioDAO;
 import helpers.HelpersTable;
 import helpers.HelpersUsuarioRol;
 
@@ -45,7 +45,7 @@ public class ABMUsuario extends javax.swing.JDialog {
     private Color colorVerde = new Color(6, 147, 27);
     private Color colorRojo = new Color(206, 16, 45);
     private Color colorGris = Color.GRAY;
-    private UsuarioBean usuarioBean = new UsuarioBean();
+    private UsuarioDAO usuarioBean = new UsuarioDAO();
 
     public ABMUsuario(java.awt.Frame parent, Boolean modal) {
         super(parent, modal);

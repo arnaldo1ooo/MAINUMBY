@@ -29,7 +29,7 @@ public class DAO {
     static Logger log_historial = Logger.getLogger(DAO.class.getName());
 
     public static Connection ConectarBasedeDatos() {
-        String tipoHost = "local";
+        String tipoHost = "remoto";
         controlador = "com.mysql.cj.jdbc.Driver";
         switch (tipoHost) {
             case "local" -> {
@@ -41,9 +41,9 @@ public class DAO {
                 puerto = "3306";
                 servidor = "jdbc:mysql://" + host + ":" + puerto + "/" + nombreBD
                         + "?useUnicode=true"
-                        + "&useJDBCCompliantTimezoneShift=true"
+                        //+ "&useJDBCCompliantTimezoneShift=true"
                         + "&useLegacyDatetimeCode=false"
-                        + "&serverTimezone=America/Mexico_City"
+                        //+ "&serverTimezone=America/Mexico_City"
                         //+ "&serverTimezone=UTC"
                         + "&useSSL=false"
                         + "&allowPublicKeyRetrieval=true";

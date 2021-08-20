@@ -221,7 +221,7 @@ public final class RegistrarVentaVista extends javax.swing.JDialog {
             return false;
         }
 
-        if (idcliente == 1 && importe < totalventa || importe == 0) { //Si va a realizar una venta con deuda y se selecciono cliente ocasional
+        if (idcliente == 1 && importe < totalventa) { //Si va a realizar una venta con deuda y se selecciono cliente ocasional
             JOptionPane.showMessageDialog(this, "Se va a realizar una venta con deuda, especifique el cliente", "Advertencia", JOptionPane.WARNING_MESSAGE);
             cbCliente.requestFocus();
             return false;
@@ -1115,7 +1115,7 @@ public final class RegistrarVentaVista extends javax.swing.JDialog {
 
         lblTotalMoneda.setFont(new java.awt.Font("Doppio One", 1, 14)); // NOI18N
         lblTotalMoneda.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblTotalMoneda.setText("Gs.");
+        lblTotalMoneda.setText("Guaranies");
         lblTotalMoneda.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         txtTotalVenta.setEditable(false);
@@ -1137,12 +1137,12 @@ public final class RegistrarVentaVista extends javax.swing.JDialog {
 
         lblTotalMoneda1.setFont(new java.awt.Font("Doppio One", 1, 14)); // NOI18N
         lblTotalMoneda1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblTotalMoneda1.setText("Gs.");
+        lblTotalMoneda1.setText("Guaranies");
         lblTotalMoneda1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         lblTotalMoneda2.setFont(new java.awt.Font("Doppio One", 1, 14)); // NOI18N
         lblTotalMoneda2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblTotalMoneda2.setText("Gs.");
+        lblTotalMoneda2.setText("Guaranies");
         lblTotalMoneda2.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1320,7 +1320,7 @@ public final class RegistrarVentaVista extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 1127, Short.MAX_VALUE)
+            .addComponent(jpPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 1175, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
